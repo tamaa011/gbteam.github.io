@@ -1,0 +1,258 @@
+body {
+  font-family: "Roboto";
+  font-weight: 300;
+  font-size: .9em;
+}
+*{
+	box-sizing: border-box;
+}
+/*/Start navbar/*/
+.navbar-default {
+    background-color: #A3ACB2;
+    border-color:transparent;
+    width: 100%;
+}
+.navbar-inverse .navbar-nav>li>a {
+	color: #FFF;
+}
+.navbar-default .navbar-nav>li>a:hover{color:#FE3D4C;}
+
+.navbar-default .navbar-nav > li > a{
+	color: #FFF;
+	font-size: 20px;
+/*	text-transform: uppercase;*/
+    font-family: 'B612', sans-serif;
+    margin-top: -10px;
+    padding: 15px;
+}
+.navbar-header img{
+	padding-top: 5px;
+}
+.navbar-right{
+	padding-top: 15px;
+}
+/*/End navbar/*/
+/*start contact*/
+.form {
+  width: 400px;
+  margin:auto;
+  background-color: forestgreen;
+  border-radius: 3px;
+  margin-top: 5em;
+  margin-bottom: 6em;
+  padding: 1.25em;
+}
+
+h3 {
+  font-size: 2.98em;
+  margin-bottom: .8em;
+  margin-top: .4em;
+  font-weight: 100;
+    text-align: center;
+}
+
+.btn-primary {
+  box-shadow: 0; 
+  border: none; 
+  background-color: #48c9b0;
+  border-color: #48c9b0;
+  color: #ffffff;
+  outline: none;
+  -webkit-font-smoothing: subpixel-antialiased;
+  transition: all .5s;
+  padding: 10px 19px;
+  font-size: 17px;
+  line-height: 1.471;
+  width: 30%;
+  border-radius: 3px;
+  text-transform: uppercase;
+  margin: auto;
+  margin-top: 1.44em;
+  margin-bottom: .55em;
+  display: inherit;
+}
+
+.btn-primary:hover {
+  background-color: #1ABC9C;
+}
+
+.form-group {
+  position: relative;
+  opacity: 1;
+  transition: .6s;
+}
+
+.input-field-icon {
+  color: #bfc9ca;
+  font-size: 25px;
+  position: absolute;
+  right: 10px;
+  bottom: 12px;
+  transition: .6s;
+}
+
+.form-control {
+  transition: opacity .6s;
+  opacity: 1;
+  border: 0;
+  border-bottom: 2px solid #bdc3c7;
+  border-radius: 0;
+  background: white;
+  font-size: 15px;
+  line-height: 1.467;
+  padding: 4px;
+  height: 42px;
+  -webkit-appearance: none;
+}
+
+input, textarea {
+  transition: all 800ms;
+  font-family: "Roboto";
+  resize: none;  /* removes the resize handle */
+  overflow: auto; /* removes default scrolling bars in IE */
+  outline:none; 
+  font-family:inherit; 
+  box-sizing:border-box;
+  width: 100%;
+  padding: 0px 4px;
+  color: #34495e;
+  margin-top: 1.25em;
+}
+
+
+.has-error input, .has-error textarea {
+  color: #ff1800;
+  border-color: #e74c3c;
+}
+
+.has-error .input-field-icon {
+  color: #ff1800;
+}
+
+.has-success input, .has-success textarea {
+  color: green;
+  border-color: green;
+}
+
+.has-success .input-field-icon {
+  color: green;
+}
+
+
+input:focus, textarea:focus {
+  border-color: #48c9b0;
+  color: #34495e;
+}
+
+input:focus + .input-field-icon {
+  color: #34495e;
+}
+
+textarea.form-control {
+  height: 120px;
+  transition: .6s;
+}
+
+textarea.form-control:focus {
+  height: 200px;
+  border-color: #48c9b0;
+}
+
+.social {
+  display: block;
+  margin: auto;
+  width: 250px;
+}
+
+.social li {
+  display: inline-block;
+  list-style: none;
+  margin: auto;
+  margin-right: 10px;
+}
+
+.social li a {
+  display:block;
+  text-decoration: none;
+  color: #999;
+  border: 2px solid #999;
+  border-radius: 100%;
+  font-size: 26px;
+  width: 34px;
+  padding: 3px;
+  text-align: center;
+  transition: all .4s;
+}
+
+.social li a:hover {
+  background: #999;
+  color: white;
+}
+
+.social li a span {
+  margin-top: 4px;
+  text-align: center;
+}
+
+
+@media (max-width: 600px) {
+  .form {
+    width: 90%;
+    margin-top: 12%;
+  }
+}
+.p {
+    display: none;
+    text-align: center;
+    font-size: 50px;
+    
+    
+}
+/*end contact*/
+/*/start footer/*/
+footer{
+	background-color:#A3ACB2;
+	padding: 15px;
+	margin-top: 70px;
+}
+
+.social-media-footer i{
+    font-size: 15px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 50%;
+    color: black;
+}
+.social-media-footer a{
+	font-size: 13px;
+	display: block;
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	line-height: 44px;
+	text-align: center;
+	background: white;
+}
+
+.social-media-footer a:hover , .social-media-footer i:hover{
+	  background: #FE3D4C ;
+	  color: #222;
+	  transition: .3s ease-in-out;
+}
+
+.copyright {
+	color: white;
+	font-family: 'B612', sans-serif;
+	font-size: 15px;
+	padding: 5px;
+}
+.copyright span , .copyright a{
+	color: #FE3D4C;
+	text-decoration: none;
+
+}
+
+/*/end footer/*/

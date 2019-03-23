@@ -1,0 +1,261 @@
+body {
+    overflow-x: hidden;
+}
+*{
+	box-sizing: border-box;
+}
+/*/Start navbar/*/
+.navbar-default {
+    background-color: #A3ACB2;
+    border-color: transparent;
+}
+.navbar-inverse .navbar-nav>li>a {
+	color: #FFF;
+}
+.navbar-default .navbar-nav>li>a:hover{color:#FE3D4C;}
+
+.navbar-default .navbar-nav > li > a{
+	color: #FFF;
+	font-size: 20px;
+/*	text-transform: uppercase;*/
+    font-family: 'B612', sans-serif;
+    margin-top: -10px;
+    padding: 15px;
+}
+.navbar-header img{
+	padding-top: 5px;
+    margin-top: -5px;
+}
+.navbar-right{
+	padding-top: 15px;
+}
+
+/*/End navbar/*/
+/*start pic*/
+.down-pic{
+    margin-top: -20px;
+    background-image: url(../img/WhatsApp%20Image%202019-03-09%20at%2010.48.21%20PM.jpeg);
+    background-size: cover;
+    height: auto;
+    
+}
+.down-pic .text h1 {
+    margin: 0 0 15px;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 1.4em;
+}
+.down-pic .text p {
+    font-size: 30px;
+    line-height: 1.5em;
+}
+.down-pic .text {
+    padding: 50px;
+}
+.down-pic .pic img {
+    padding-top: 20px;
+    height: 700px;
+    
+}
+.down-pic .text .bt {
+    width: 192.55px;
+    height: 56px; 
+    margin: 10px;
+    background-color: #fff;
+    color: black;
+    font-size: 20px;
+    border: none;
+}
+.down-pic .text .bt .ic {
+    height: 20px;
+    margin-right: 5px;
+    margin-top: -5px;
+    display: inline-block;
+}
+.down-pic .text .bt:hover {
+    background-color: forestgreen;
+    color: white;
+    transition: 0.3s;
+}
+/*end pic*/
+/*start about*/
+.about {
+    background-color: #000000;
+}
+.about h1 {
+    text-align: center;
+    font-size: 45px;
+    padding: 5px; 
+    color: #FBAE17;
+}
+.about p {
+    text-align: center;
+    font-size: 25px;
+    padding: 5px;
+    color: white;
+}
+/*start team*/
+.team {
+    padding-top: 20px;
+    margin-bottom: -35px;
+
+}
+ .box{
+   overflow:hidden;
+ 	position: relative;
+ 	-webkit-transition: all .35s ease;
+ 	transition: all .35s ease;
+     height: 428px;
+     margin-top: 10px;
+ }
+
+ 
+ .box:before {
+ 	content: "";
+ 	width: 100%;
+ 	height: 100%;
+ 	position: absolute;
+ 	top: 0;
+ 	left: 0;
+ 	background: #000000;
+ 	border-left: 3px solid #fff;
+ 	border-right: 3px solid #fff;
+ 	opacity: .9;
+ 	z-index: 1;
+ 	-webkit-transition: all .35s ease;
+ 	transition: all .35s ease;
+     
+ }
+.box:after{
+    content: "";
+ 	width: 100%;
+ 	height: 100%;
+ 	position: absolute;
+ 	top: 0;
+ 	left: 0;
+ 	background: #FE3D4C;
+ 	border-left: 3px solid #fff;
+ 	border-right: 3px solid #fff;
+ 	opacity: .9;
+ 	z-index: 1;
+ 	-webkit-transition: all .35s ease;
+ 	transition: all .35s ease
+}
+ .box img {
+ 	height: 100%;
+ 	width: 100%;
+ }
+ .box:before {
+ 	-webkit-transform: skew(45deg) translateX(-155%);
+ 	transform: skew(45deg) translateX(-155%)
+ }
+ .box:hover:before {
+ 	-webkit-transform: skew(45deg) translateX(-55%);
+ 	transform: skew(45deg) translateX(-55%)
+ }
+ .box:after {
+ 	-webkit-transform: skew(45deg) translateX(155%);
+ 	transform: skew(45deg) translateX(155%)
+ }
+ .box:hover:after {
+ 	-webkit-transform: skew(45deg) translateX(55%);
+ 	transform: skew(45deg) translateX(55%)
+ }
+ .box img {
+ 	-webkit-transition: all .35s ease;
+ 	transition: all .35s ease
+ }
+ .box:hover img {
+ 	opacity: .5
+ }
+ .box .box-content {
+ 	position: absolute;
+ 	top: 50%;
+ 	left: 50%; 	
+ 	opacity: 0;
+ 	z-index: 2;
+ 	-webkit-transform: translate(-50%, -50%) scale(.5);
+ 	transform: translate(-50%, -50%) scale(.5);
+ 	-webkit-transition: all .35s ease;
+ 	transition: all .35s ease
+ }
+ 
+ .box:hover .box-content {
+ 	-webkit-transform: translate(-50%, -50%) scale(1);
+ 	transform: translate(-50%, -50%) scale(1);
+ 	opacity: 1
+ }
+ .box .post,
+ .box .title {
+   text-align:center;
+ 	font-size: 18px;
+ 	font-weight: 600;
+ 	letter-spacing: 1px;
+/* 	text-transform: uppercase;*/
+ 	background: #000000;
+ 	border: 2px solid #A3ACB2;
+ 	color: #FBAE17;
+ 	padding: 15px 20px;
+ 	margin: 0;
+     border-radius: 10%;
+     font-family: serif;
+ }
+ .box .post{
+/* 	text-transform: capitalize*/
+ }
+ .box .post {
+ 	display: block;
+ 	font-size: 18px;
+ 	font-weight: 500;
+ 	padding: 5px 10px;
+ 	margin-top: 15px
+ }
+/*end team*/
+/*end about*/
+/*/start footer/*/
+footer{
+    background-color: #A3ACB2;
+	padding: 15px;
+	margin-top: 70px;
+}
+
+.social-media-footer i{
+    font-size: 15px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 50%;
+    color: black;
+}
+.social-media-footer a{
+	font-size: 13px;
+	display: block;
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	line-height: 44px;
+	text-align: center;
+	background: white;
+}
+
+.social-media-footer a:hover , .social-media-footer i:hover{
+	  background: #FE3D4C;
+	  color: #222;
+	  transition: .3s ease-in-out;
+}
+
+.copyright {
+	color: white;
+	font-family: 'B612', sans-serif;
+	font-size: 15px;
+	padding: 5px;
+}
+.copyright span , .copyright a{
+	color: #FE3D4C;
+	text-decoration: none;
+
+}
+
+/*/end footer/*/
