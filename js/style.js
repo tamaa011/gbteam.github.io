@@ -72,5 +72,12 @@ function validateName(){
       messageSuccess = false;
     }
   }
-
+//loading
+$(window).on('load',function(){ 
+    $(".loading").slideUp(3000);
+    $("body").css("overflow","auto");
+              
+           
+            });
+         
 

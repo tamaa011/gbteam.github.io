@@ -1,9 +1,10 @@
 body {
-    overflow-x: hidden;
-}
+
+overflow-y: hidden;}
 *{
 	box-sizing: border-box;
 }
+    
 /*/Start navbar/*/
 .navbar-default {
     background-color: #A3ACB2;
@@ -259,3 +260,29 @@ footer{
 }
 
 /*/end footer/*/
+/*loading*/
+.loading  {
+    z-index: 99999;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding-top: 300px;
+    background-image: url(../img/85-Wedding-Slider-3-D960.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.loading h1 {
+    font-size: 50px;
+}
+.loading .g {
+    color: #383E3E;
+}
+.loading .a {
+    color: #B0C0C9;
+}
+.loading .b {
+    color: #F84250;
+}
+
+/*loading*/
