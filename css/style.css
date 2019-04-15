@@ -1,6 +1,5 @@
 body {
-
-overflow-y: hidden;}
+overflow: hidden;}
 *{
 	box-sizing: border-box;
 }
@@ -95,122 +94,38 @@ overflow-y: hidden;}
     padding: 5px;
     color: white;
 }
-/*start team*/
+/*User Profile Card with img */
 .team {
-    padding-top: 20px;
-    margin-bottom: -35px;
-
+    margin-top: 15px;
+    margin-bottom: -70px;
 }
- .box{
-   overflow:hidden;
- 	position: relative;
- 	-webkit-transition: all .35s ease;
- 	transition: all .35s ease;
-     height: 428px;
-     margin-top: 10px;
- }
-
- 
- .box:before {
- 	content: "";
- 	width: 100%;
- 	height: 100%;
- 	position: absolute;
- 	top: 0;
- 	left: 0;
- 	background: #000000;
- 	border-left: 3px solid #fff;
- 	border-right: 3px solid #fff;
- 	opacity: .9;
- 	z-index: 1;
- 	-webkit-transition: all .35s ease;
- 	transition: all .35s ease;
-     
- }
-.box:after{
-    content: "";
- 	width: 100%;
- 	height: 100%;
- 	position: absolute;
- 	top: 0;
- 	left: 0;
- 	background: #FE3D4C;
- 	border-left: 3px solid #fff;
- 	border-right: 3px solid #fff;
- 	opacity: .9;
- 	z-index: 1;
- 	-webkit-transition: all .35s ease;
- 	transition: all .35s ease
+.team .t {
+    font-size: 50px;
+    margin-bottom: 20px;
 }
- .box img {
- 	height: 100%;
- 	width: 100%;
- }
- .box:before {
- 	-webkit-transform: skew(45deg) translateX(-155%);
- 	transform: skew(45deg) translateX(-155%)
- }
- .box:hover:before {
- 	-webkit-transform: skew(45deg) translateX(-55%);
- 	transform: skew(45deg) translateX(-55%)
- }
- .box:after {
- 	-webkit-transform: skew(45deg) translateX(155%);
- 	transform: skew(45deg) translateX(155%)
- }
- .box:hover:after {
- 	-webkit-transform: skew(45deg) translateX(55%);
- 	transform: skew(45deg) translateX(55%)
- }
- .box img {
- 	-webkit-transition: all .35s ease;
- 	transition: all .35s ease
- }
- .box:hover img {
- 	opacity: .5
- }
- .box .box-content {
- 	position: absolute;
- 	top: 50%;
- 	left: 50%; 	
- 	opacity: 0;
- 	z-index: 2;
- 	-webkit-transform: translate(-50%, -50%) scale(.5);
- 	transform: translate(-50%, -50%) scale(.5);
- 	-webkit-transition: all .35s ease;
- 	transition: all .35s ease
- }
- 
- .box:hover .box-content {
- 	-webkit-transform: translate(-50%, -50%) scale(1);
- 	transform: translate(-50%, -50%) scale(1);
- 	opacity: 1
- }
- .box .post,
- .box .title {
-   text-align:center;
- 	font-size: 18px;
- 	font-weight: 600;
- 	letter-spacing: 1px;
-/* 	text-transform: uppercase;*/
- 	background: #000000;
- 	border: 2px solid #A3ACB2;
- 	color: #FBAE17;
- 	padding: 15px 20px;
- 	margin: 0;
-     border-radius: 10%;
-     font-family: serif;
- }
- .box .post{
-/* 	text-transform: capitalize*/
- }
- .box .post {
- 	display: block;
- 	font-size: 18px;
- 	font-weight: 500;
- 	padding: 5px 10px;
- 	margin-top: 15px
- }
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+.card div {
+    margin: 24px 0;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+/*User Profile Card with img */
 /*end team*/
 /*end about*/
 /*/start footer/*/

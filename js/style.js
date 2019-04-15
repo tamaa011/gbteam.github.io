@@ -74,10 +74,9 @@ function validateName(){
   }
 //loading
 $(window).on('load',function(){ 
-    $(".loading").slideUp(3000);
+    $(".loading").slideUp(2000);
     $("body").css("overflow","auto");
               
            
-            });
-         
+            });         
 
