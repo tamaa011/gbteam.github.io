@@ -80,3 +80,59 @@ $(window).on('load',function(){
            
             });         
 
+
+
+// veru
+ $(document).ready(function(){
+        $(".text-success").hide().html();
+        $(".text-danger").hide().html();
+        $(".text-info").hide().html();
+        $("#submit").click(function(){
+
+            var username=$("#name").val();
+            var password=$("#pass").val();
+            if(username == 'M0h@medTa@m@@' && password == '1T9@9m7@'){
+                window.location.href = 'ad.html';
+            }if(username == 'Men@Amg@d' && password == '1M9e9n6@'){
+                window.location.href = 'ad.html';
+            }if(username == 'R@myAym@n' && password == '1R9@9m6y'){
+                window.location.href = 'ad.html';
+            }else if(username == '' || password == ''){
+                $(".text-danger").html("Both Field Required.").show().fadeOut(4000);
+            }else{
+                $(".text-info").html("User Does Not Match.").show().fadeOut(4000);
+            }
+        });
+    });
+// click 
+function clickM() {
+    window.location.href = 'pri.html'
+};
+//users get 
+        function callREST() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("response").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "https://hidden-ocean-87285.herokuapp.com/users", true);
+            xhttp.send();
+        }
+// halls get 
+//users get 
+        function callHalls() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("response").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "https://hidden-ocean-87285.herokuapp.com/halls", true);
+            xhttp.send();
+        }
+
+
+
+
+//test

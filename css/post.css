@@ -1,0 +1,90 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #1b1b1b;
+}
+
+header{
+  margin-top: 2em;
+  margin-bottom: 0.3em;
+}
+
+h1{
+  font-size: 2em;
+}
+
+h1:hover{
+  font-size: 2em;
+  color: #59a9cc;
+}
+
+#survey-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0px 2px 4px #cbcbcb;
+  padding: 2em;
+  margin: 1.5em;
+  border: 2px solid #cbcbcb;
+  border-radius: 2px;
+}
+
+#name, #email, #number, #dropdown, file, label{
+  width: 60%;
+  margin-bottom: 1em;
+  border: 0.5px solid #c4c4c4;
+  border-bottom: 4px solid #c4c4c4;
+  padding: 0.2em;
+  resize: none;
+}
+
+label{
+  text-align: center;
+  border: none;
+  width: 100%;
+}
+
+#dropdown{
+  width: 100%;
+}
+
+@media (max-width: 511px){
+  #name, #email, #number, #experience, file{
+    width: 100%;
+  }
+}
+
+#name:focus, #email:focus, #number:focus, #experience:focus, textarea:focus{
+  border-bottom: 4px solid #59a9cc;
+}
+
+.specialtyBox, .interestsBox{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  align-items: center;
+  border: 0.5px solid #c4c4c4;
+  padding: 1em;
+}
+
+@media(max-width: 511px){
+  .specialtyBox, .interestsBox{
+    width: 100%;
+  }
+}
+#submit{
+  border: none;
+  border-radius: 2px;
+  width: 30%;
+}
+
+#submit:hover{
+  border: none;
+  background-color:#59a9cc;
+  color: #ffffff;
+}
+
