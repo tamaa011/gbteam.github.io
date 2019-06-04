@@ -1,4 +1,5 @@
 
+
   var nameSuccess = false, emailSuccess = false, messageSuccess = false;
   
   var $elements = $("input, textarea");
@@ -72,13 +73,13 @@ function validateName(){
       messageSuccess = false;
     }
   }
-//loading
-$(window).on('load',function(){ 
-    $(".loading").slideUp(2000);
-    $("body").css("overflow","auto");
-              
-           
-            });         
+////loading
+//$(window).on('load',function(){ 
+//    $(".loading").slideUp(2000);
+//    $("body").css("overflow","auto");
+//              
+//           
+//            });         
 
 
 
@@ -87,23 +88,36 @@ $(window).on('load',function(){
         $(".text-success").hide().html();
         $(".text-danger").hide().html();
         $(".text-info").hide().html();
-        $("#submit").click(function(){
 
-            var username=$("#name").val();
-            var password=$("#pass").val();
-            if(username == 'M0h@medTa@m@@' && password == '1T9@9m7@'){
-                window.location.href = 'ad.html';
-            }if(username == 'Men@Amg@d' && password == '1M9e9n6@'){
-                window.location.href = 'ad.html';
-            }if(username == 'R@myAym@n' && password == '1R9@9m6y'){
-                window.location.href = 'ad.html';
-            }else if(username == '' || password == ''){
-                $(".text-danger").html("Both Field Required.").show().fadeOut(4000);
-            }else{
-                $(".text-info").html("User Does Not Match.").show().fadeOut(4000);
-            }
-        });
     });
+
+function signIn(){
+
+            var userEmail=$("#name").val();
+            var password=$("#pass").val();
+            let requestBody = {
+                userEmail : userEmail,
+                userPassword : password
+            }
+            console.log(requestBody)
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("response").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("POST",  "https://hidden-ocean-87285.herokuapp.com/users/signin", true);
+            xhttp.setRequestHeader("Content-Type", "application/json");
+    
+    xhttp.onload  = function() {
+   var jsonResponse = JSON.parse(xhttp.responseText);
+   console.log(jsonResponse)
+        localStorage.setItem("token" , jsonResponse.token)
+};
+            xhttp.send(JSON.stringify(requestBody));
+                
+}
+
 // click 
 function clickM() {
     window.location.href = 'pri.html'
@@ -119,20 +133,33 @@ function clickM() {
             xhttp.open("GET", "https://hidden-ocean-87285.herokuapp.com/users", true);
             xhttp.send();
         }
-// halls get 
-//users get 
-        function callHalls() {
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("response").innerHTML = this.responseText;
-                }
-            };
-            xhttp.open("GET", "https://hidden-ocean-87285.herokuapp.com/halls", true);
-            xhttp.send();
-        }
-
-
-
 
 //test
+$.urlParam = function (name) {
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)')
+                      .exec(window.location.search);
+
+    return (results !== null) ? results[1] || 0 : false;
+}
+
+function validateToken(){
+    let resetPasswordToken =  $.urlParam("token")
+    //send api request hide w show 
+    //localStorage.getItem("token")
+    //localStorage.setItem("token" , token)
+}
+
+console.log($.urlParam('ref')); //registration
+console.log($.urlParam('email')); //bobo@example.com
+
+
+
+
+
+
+
+
+
+
+
+

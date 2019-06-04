@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GB</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width , initial=1">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/addnewuser.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
+</head>
+<body>
+      <div class="slidebar">
+    <div class="logo">
+      <img src="img/Asset%203.png">
+    </div>
+    <ul>
+      <li><a href="admin.html" id="targeted">dashboard</a></li>
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Halls
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a href="addnewhall.html">Add New Hall</a></li>
+        <li><a href="listallhalls.html">List All Halls</a></li>
+        <li><a href="#">List Halls With Category</a></li>
+        <li><a href="#">List Hall Category</a></li>
+        <li><a href="#">Search For Hall</a></li>
+        <li><a href="#">Update Hall</a></li>
+        <li><a href="#">Delete Hall</a></li>
+        <li><a href="#">Add Category</a></li>
+        <li><a href="#">Delete Category</a></li>
+  </ul>
+    </div>
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Users
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a href="#">Add New User</a></li>
+        <li><a href="listallusers.html">List All Users</a></li>
+        <li><a href="#">Delete User</a></li>
+  </ul>
+    </div>
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Admin
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a href="#Halls">Add New Admin</a></li>
+        <li><a href="#get">List All Admins</a></li>
+        <li><a href="#">Update Admin Roles</a></li>
+        <li><a href="#">Change Admin Password</a></li>
+        <li><a href="#">Delete Admin</a></li>
+  </ul>
+    </div>
+    </ul>
+      <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Other
+        <span class="caret"></span>
+      </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a href="#Halls">Send Push Notification</a></li>
+        <li><a href="#get">List All Admins</a></li>
+        <li><a href="#">List Feedback Messages</a></li>
+        </ul>
+    </div>
+  </div>
+<div class="main">
+<nav class="navbar navbar-default ed">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" style="color: white; font-size: 20px;">Groom &amp; Bride Dashboard</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li style="color: white; font-size: 20px;"><a href="#" style="color: white"><i class="fas fa-sign-out-alt" style="color: white"></i> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+      <form id="survey-form" action="https://hidden-ocean-87285.herokuapp.com/users/signup" method="post">
+        <label id="name-label" for="name">User Name<br><input type="text" id="name" placeholder="Name" name="userName" required></label>
+        <label id="name-label" for="name">User E-mail<br><input type="email" id="name" placeholder="E-mail" name="userEmail" required></label>
+        <label id="name-label" for="name">Password<br><input type="password" id="name" placeholder="password" name="userPassword" required></label>
+        <button type="submit" id="submit" value="POST">Send</button>
+      </form>
+    </div>
+ <script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/edit.js"></script>
+	<script type="text/javascript" src="js/wow.min.js"></script>
+	<script type="text/javascript"> new WOW().init();</script>  
+</body>
+</html>

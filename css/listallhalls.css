@@ -1,0 +1,325 @@
+/*slidebar侧边栏*/
+.slidebar {
+	width: 20%;
+	min-height: 650px;
+	float: left;
+	border-right: 1px solid rgb(235,235,235);
+	background-color: #C6CED5;
+}
+.slidebar .logo {
+	height: 145px;
+	border-bottom: 1px solid #C6CED5;
+}
+.slidebar ul {
+	padding: 0;
+	margin:0;
+}
+.slidebar li {
+	list-style-type: none;
+	margin: 0;
+	position: relative;
+}
+
+.slidebar ul a, .dropdown {
+	color: black;
+	text-decoration: none;
+	font:18px helvetica,verdana,sans-serif;
+	box-sizing:border-box;
+	border-bottom: 1px solid #C6CED5;
+	display: block;
+	box-shadow:inset 0 1px 0 #C6CED5;
+	text-indent: 10px;
+	text-transform: capitalize;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.slidebar li:hover a {
+	background-color:#FE3D4C;
+	box-shadow: 1px 0 0 rgb(255,255,255),inset 5px 0 0 -1px rgb(255, 255, 255);
+}
+/*logo*/
+.logo img {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	position: relative;
+	left: 50%;
+	top: 50%;
+	margin: -45px 0 0 -45px;
+	border-radius: 50%;
+}
+
+.ed {
+    background-color: #FE3D4C;
+    color: white;
+}
+/*main*/
+.main {
+	float: left;
+	width: 79%;
+	height: 650px;
+	background-color: rgb(255,255,255);
+	position: relative;
+	font-family: helvetica,verdana,sans-serif;
+    overflow-y: scroll;
+    
+}
+.main h1 {
+    text-transform: capitalize;
+}
+
+/*mainContent*/
+.mainContent h4 {
+	line-height: 1;
+	font-size: 18px;
+	margin: 1.3em 0 1em;
+	margin-left: 17px;
+}
+ 
+.mainContent>div {
+	position: absolute;
+	opacity: 0;
+	-webkit-transition:opacity 200ms linear;
+	-moz-transition:opacity 200ms linear;
+	-ms-transition:opacity 200ms linear;
+	transition:opacity 200ms linear;
+}
+/*通过opacity来切换不同的选项卡*/
+.mainContent>div:target {
+	opacity: 1;
+}
+.mainContent h2 {
+	margin:1em 30px;
+	color: rgb(234,83,63);
+	font-size: 20px;
+}
+/*logo*/
+.logo img {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	position: relative;
+	left: 50%;
+	top: 50%;
+	margin: -45px 0 0 -45px;
+	border-radius: 50%;
+}
+#survey-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0px 2px 4px #cbcbcb;
+  padding: 2em;
+  margin: 2.5em;
+  border: 2px solid #cbcbcb;
+  border-radius: 2px;
+}
+
+#name, #email, #number, #dropdown, file, label{
+  width: 60%;
+  margin-bottom: 1em;
+  border: 0.5px solid #c4c4c4;
+  border-bottom: 4px solid #c4c4c4;
+  padding: 0.2em;
+  resize: none;
+}
+
+label{
+  text-align: center;
+  border: none;
+  width: 100%;
+}
+
+#dropdown{
+  width: 100%;
+}
+
+@media (max-width: 511px){
+  #name, #email, #number, #experience, file{
+    width: 100%;
+  }
+}
+
+#name:focus, #email:focus, #number:focus, #experience:focus, textarea:focus{
+  border-bottom: 4px solid #59a9cc;
+}
+
+.specialtyBox, .interestsBox{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  align-items: center;
+  border: 0.5px solid #c4c4c4;
+  padding: 1em;
+}
+
+@media(max-width: 511px){
+  .specialtyBox, .interestsBox{
+    width: 100%;
+  }
+}
+#submit{
+  border: none;
+  border-radius: 2px;
+  width: 30%;
+}
+
+#submit:hover{
+  border: none;
+  background-color:#59a9cc;
+  color: #ffffff;
+}
+/*table*/
+/* = Scroll body
+------------------------*/
+::-webkit-scrollbar{
+  width:0.2em;
+}
+::-webkit-scrollbar-track{
+  background-color:#bdc3c7;
+}
+::-webkit-scrollbar-thumb{
+  background-color:#7f8c8d;
+}
+/* = table
+------------------------*/
+.box-table table{
+  border-collapse:collapse;
+  text-align:left;
+  width:100%;
+  margin:0;
+  padding:0;
+  background:#7f8c8d;
+  animation: responsive 5s infinite ease-in-out;
+}
+.box-table{
+  font:normal 12px/150% Arial, Helvetica, sans-serif;
+  overflow:hidden;
+  margin:0 auto;
+  display:block;
+  width:95%;
+  padding:2.5%;
+}
+.box-table table thead th{
+  background-color:#7f8c8d;
+  color:#fff;
+  text-align:center;
+  padding: 0.75em;
+  font-family: 'Vollkorn', serif;
+  font-weight: bold;
+  font-size: 1.8em;
+  height: 1.5em;
+  vertical-align: top;
+  border-left:0.25em double #95a5a6;
+
+}
+.box-table table tbody td,
+.box-table table tbody tr{
+  font-family: 'Vollkorn', serif;
+  font-size:1.1em;
+  border:none;
+  padding:1em;
+}
+.box-table table tbody tr:nth-child(odd){
+  background:#ecf0f1;
+  color:#000;
+}
+.box-table table tbody tr:nth-child(even){
+  background:#727476;
+  color:#fff;
+}
+
+
+/* = Responsive table
+------------------------*/
+
+@media only screen and (max-width: 800px){
+  .box-table table{
+    width:100%;
+    border-collapse:collapse;
+    border-spacing:0;
+  }
+  .box-table th,
+  .box-table td{
+    margin:0;
+    vertical-align:top;
+  }
+  .box-table th{
+    text-align:left;
+  }
+  .box-table table{
+    display:block;
+    position:relative;
+    width:100%;
+  }
+  .box-table thead{
+    display:block;
+    float:left;
+  }
+  .box-table tbody{
+    display:block;
+    width:auto;
+    position:relative;
+    overflow-x:auto;
+    white-space:nowrap;
+  }
+  .box-table thead tr{
+    display:block;
+  }
+  .box-table th{
+    display:block;
+    text-align:right;
+  }
+  .box-table tbody tr{
+    display:inline-block;
+    vertical-align:top;
+  }
+  .box-table td{
+    display:block;
+    min-height:1.25em;
+    text-align:left;
+  }
+  .box-table th{
+    border-bottom:0;
+    border-left:0;
+  }
+  .box-table td{
+    border-left:0;
+    border-right:0;
+    border-bottom:0;
+  }
+}
+/* = Error
+------------------------*/
+.error_table {
+  display: block;
+  background: #E05E5E;
+  color: #D1D1D1;
+  font-family: 'Vollkorn', serif;
+  text-align: center;
+  font-size: 3em;
+  width: 90%;
+  padding: 5%;
+}
+/* = Loader
+------------------------*/
+.loading_table{
+  background:#d35400;
+  color:#ecf0f1;
+  font-family: 'Vollkorn', serif;
+  text-align: center;
+  font-size: 1em;
+  width: 0;
+  display: block;
+  overflow: hidden;
+  height: 1em;
+  padding:0.5em;
+  animation: table_loader 10s infinite ease;
+}
+@keyframes table_loader{50%{width:100%}}
+@-webkit-keyframes table_loader{50%{width:100%}}
+@-moz-keyframes table_loader{50%{width:100%}}
+@-ms-keyframes table_loader{50%{width:100%}}
+@-o-keyframes table_loader{ 50%{width:100%}}
+/*table*/
