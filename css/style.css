@@ -71,9 +71,9 @@ body {
     background: rgba(233, 236, 236, 0.35); /* Black background with 0.6 opacity */
     font-size: 40px;
     border-radius: 40px;
-    width: 540px;
+    width: 100%;
     padding: 11px;
-    margin-top: 186px;
+    margin-top: 145px;
 
     
 }
