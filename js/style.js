@@ -113,15 +113,13 @@ function signIn(){
    var jsonResponse = JSON.parse(xhttp.responseText);
    console.log(jsonResponse)
         localStorage.setItem("token" , jsonResponse.token)
+            window.location.href = 'admin.html'
+
 };
             xhttp.send(JSON.stringify(requestBody));
                 
 }
 
-// click 
-function clickM() {
-    window.location.href = 'pri.html'
-};
 //users get 
         function callREST() {
             var xhttp = new XMLHttpRequest();

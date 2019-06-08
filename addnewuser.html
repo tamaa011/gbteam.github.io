@@ -43,7 +43,7 @@
         <span class="caret"></span>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a href="#">Add New User</a></li>
+        <li><a href="#" onclick="listR()">Add New User</a></li>
         <li><a href="listallusers.html">List All Users</a></li>
         <li><a href="#">Delete User</a></li>
   </ul>
@@ -89,8 +89,13 @@
         <label id="name-label" for="name">User Name<br><input type="text" id="name" placeholder="Name" name="userName" required></label>
         <label id="name-label" for="name">User E-mail<br><input type="email" id="name" placeholder="E-mail" name="userEmail" required></label>
         <label id="name-label" for="name">Password<br><input type="password" id="name" placeholder="password" name="userPassword" required></label>
-        <button type="submit" id="submit" value="POST">Send</button>
-      </form>
+            
+
+<div id="resp">
+          </div>
+    </form>
+    
+
     </div>
  <script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
