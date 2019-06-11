@@ -43,7 +43,7 @@
         <span class="caret"></span>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a href="#" onclick="listR()">Add New User</a></li>
+        <li><a href="#" >Add New User</a></li>
         <li><a href="listallusers.html">List All Users</a></li>
         <li><a href="#">Delete User</a></li>
   </ul>
@@ -81,7 +81,7 @@
       <a class="navbar-brand" style="color: white; font-size: 20px;">Groom &amp; Bride Dashboard</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      <li style="color: white; font-size: 20px;"><a href="#" style="color: white"><i class="fas fa-sign-out-alt" style="color: white"></i> Logout</a></li>
+      <li style="color: white; font-size: 20px;"><a href="pri.html" style="color: white"><i class="fas fa-sign-out-alt" style="color: white"></i> Logout</a></li>
     </ul>
   </div>
 </nav>
@@ -89,10 +89,14 @@
         <label id="name-label" for="name">User Name<br><input type="text" id="name" placeholder="Name" name="userName" required></label>
         <label id="name-label" for="name">User E-mail<br><input type="email" id="name" placeholder="E-mail" name="userEmail" required></label>
         <label id="name-label" for="name">Password<br><input type="password" id="name" placeholder="password" name="userPassword" required></label>
-            
+                  <label id="name-label" for="name">root<br><input type="text" id="name" placeholder="Name" name="userRole" ></label>
+                  <label id="name-label" for="name">admin<br><input type="text" id="name" placeholder="Name" name="userRole" ></label>
+                  <label id="name-label" for="name">user<br><input type="text" id="name" placeholder="Name" name="userRole" ></label>
+                    <button type="submit" id="submit" value="POST">Send</button>
 
-<div id="resp">
-          </div>
+
+
+ <div id="add"></div>
     </form>
     
 
