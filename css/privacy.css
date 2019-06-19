@@ -78,14 +78,12 @@ footer{
     background-position: center;
     height: auto;
     position:relative;
-    margin-top: 50px;
+    margin-top: 30px;
+}
 
-}
-footer .cc {
-    margin-top: 20%;
-}
-.first {
+footer .first {
     color:  white;
+    margin-top: 30%;
 }
 footer i {
     font-size: 15px;
@@ -98,8 +96,9 @@ footer i {
 footer i span {
     margin-left: 8px;
 }
-.sec {
+footer .sec {
     text-align: center;
+    margin-top: 30%;
 }
 .sec .h1 {
     color: white;
@@ -118,7 +117,9 @@ footer i span {
     color: white;
     font-size: 15px;
 }
-
+footer .trd{
+    margin-top: 30%;
+}
 .trd .h1 {
     color: white;
     font-size: 25px;
@@ -150,10 +151,13 @@ footer i span {
 	display: block;
 	width: 42px;
 }
+footer .ed {
+    margin-bottom: -50px
+}
+/*/end footer/*/
 .card {
   
   max-width: 300px;
   margin: auto;
   text-align: center;
 }
-/*/end footer/*/

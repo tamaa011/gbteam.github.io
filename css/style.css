@@ -1,11 +1,13 @@
 body {
     overflow-x: hidden;
+   
 }
 
-    
 /*/Start navbar/*/
 .one {
-    border-top: 4px solid #FD6275;
+        border-top: 4px solid #FD6275;
+        margin-right: -14px;
+
 }
 .navbar-default {
     background-color: #FFFFFF;
@@ -55,6 +57,7 @@ body {
     background-position: center;
     height: 660px;
     position: relative;
+    margin-right: -14px
 }
 .down-pic .text {
       text-align: center;
@@ -121,6 +124,7 @@ body {
     position: relative;
     height: 650px;
     width: 100%;
+
     
 }
 /*User Profile Card with img */
@@ -153,6 +157,8 @@ body {
     background-image: url(../img/Download%20App%20Group.png);
     background-size: cover;
     height: 650px;
+    margin-right: -14px;
+
 }
 .team .tx {
     width: 360px;
@@ -194,14 +200,13 @@ footer{
     background-position: center;
     height: auto;
     position:relative;
-    margin-top: 50px;
+    margin-top: 30px;
+    margin-right: -14px;
+}
 
-}
-footer .cc {
-    margin-top: 20%;
-}
 .first {
     color:  white;
+    margin-top: 30%;
 }
 footer i {
     font-size: 15px;
@@ -216,6 +221,7 @@ footer i span {
 }
 .sec {
     text-align: center;
+    margin-top: 30%;
 }
 .sec .h1 {
     color: white;
@@ -234,7 +240,9 @@ footer i span {
     color: white;
     font-size: 15px;
 }
-
+.trd{
+    margin-top: 30%;
+}
 .trd .h1 {
     color: white;
     font-size: 25px;
@@ -265,5 +273,8 @@ footer i span {
 .social-media-footer a{
 	display: block;
 	width: 42px;
+}
+footer .ed {
+    margin-bottom: -50px
 }
 /*/end footer/*/
