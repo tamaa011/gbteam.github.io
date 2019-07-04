@@ -1,6 +1,6 @@
 
 
-  var nameSuccess = false, emailSuccess = false, messageSuccess = false;
+  var emailSuccess = false, messageSuccess = false;
   
   var $elements = $("input, textarea");
   $elements.on("focus", function() {
@@ -13,21 +13,19 @@
     $selected.parent().css("opacity", 1);
   });
   
-  $("#contact-name").on("blur", validateName);
+  
   $("#contact-email").on("blur", validateEmail);
   $("#contact-message").on("blur", validateMessage);
   
   $("#contact-send").on("click", function() {
-    validateName();
     validateEmail();
     validateMessage();
     
-    if(nameSuccess && emailSuccess && messageSuccess) {
+    if( emailSuccess && messageSuccess) {
       $(".form").slideUp();
         $(".p").show();
         
     }
-    else if(!nameSuccess) $("#contact-name").focus();
     else if(!emailSuccess) $("#contact-email").focus();
     else if(!messageSuccess) $("#contact-message").focus();
   });
@@ -73,15 +71,6 @@ function validateName(){
       messageSuccess = false;
     }
   }
-////loading
-//$(window).on('load',function(){ 
-//    $(".loading").slideUp(2000);
-//    $("body").css("overflow","auto");
-//              
-//           
-//            });         
-
-
 
 // veru
  $(document).ready(function(){
@@ -120,17 +109,6 @@ function signIn(){
                 
 }
 
-//users get 
-        function callREST() {
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("response").innerHTML = this.responseText;
-                }
-            };
-            xhttp.open("GET", "https://hidden-ocean-87285.herokuapp.com/users", true);
-            xhttp.send();
-        }
 
 //test
 $.urlParam = function (name) {
