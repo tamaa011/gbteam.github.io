@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
 </head>
 <body>
       <div class="slidebar">
@@ -85,17 +86,33 @@
     </ul>
   </div>
 </nav>
-<form id="survey-form" action="https://hidden-ocean-87285.herokuapp.com/halls/listHalls" method="post" enctype="multipart/form-data">
-        <label id="name-label" for="name">limit<br><input type="text" id="name" placeholder="limit" name="limit" required></label>
-        <label id="name-label" for="name">offset<br><input type="text" id="name" placeholder="offset" name="offset" required></label>
-        <button type="submit" id="submit" value="POST">Send</button>
-      </form>
-<!--<input id="btnGetResponse" type="button" value="Redirect" />-->
+<table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Rating</th>
+                <th>Price</th>
+                <th>Phone Number</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Rating</th>
+                <th>Price</th>
+                <th>Phone Number</th>
+            </tr>
+        </tfoot>
+    </table>
     </div>
- <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/edit.js"></script>
-	<script type="text/javascript" src="js/wow.min.js"></script>
-	<script type="text/javascript"> new WOW().init();</script>  
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>	
 </body>
 </html>
