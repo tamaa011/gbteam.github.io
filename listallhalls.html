@@ -15,18 +15,22 @@
     <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
 </head>
 <body>
-      <div class="slidebar">
-    <div class="logo">
-      <img src="img/Asset%203.png">
-    </div>
-    <ul>
-      <li><a href="admin.html" id="targeted">dashboard</a></li>
+    <section class="nav">
+<div class="navbar">
+<div class="container-fluid">
+  <div class="row">
+		
+	  <div class="col-xs-4 col-md-4">
+			  <div class="main">
+			    <div class="bars"><i class="fas fa-bars"></i></div>
+   <ul class="main-ul">
+      <li><a href="admin.html" id="targeted" class="dash">dashboard</a></li>
     <div class="dropdown">
       <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
         Halls
         <span class="caret"></span>
       </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <ul class="dropdown-menu " aria-labelledby="dropdownMenu1">
         <li><a href="addnewhall.html">Add New Hall</a></li>
         <li><a href="#">List All Halls</a></li>
         <li><a href="#">List Halls With Category</a></li>
@@ -62,8 +66,7 @@
         <li><a href="#">Delete Admin</a></li>
   </ul>
     </div>
-    </ul>
-      <div class="dropdown">
+             <div class="dropdown">
       <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
         Other
         <span class="caret"></span>
@@ -74,19 +77,35 @@
         <li><a href="#">List Feedback Messages</a></li>
         </ul>
     </div>
-  </div>
-<div class="main">
-<nav class="navbar navbar-default ed">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" style="color: white; font-size: 20px;">Groom &amp; Bride Dashboard</a>
-    </div>
-    <ul class="nav navbar-nav navbar-right">
-      <li style="color: white; font-size: 20px;"><a href="#" style="color: white"><i class="fas fa-sign-out-alt" style="color: white"></i> Logout</a></li>
     </ul>
-  </div>
-</nav>
-<table id="example" class="display" style="width:100%">
+
+
+			  </div>
+	  </div>
+
+    <div class="col-xs-4 col-md-4">
+      <div class="logo">
+      	<img src="img/logo2.png" >
+      </div>
+    </div>
+      	<div class="col-md-4 col-xs-4">
+		<div class="social-media">
+
+		<ul class="list-inline c-info fright">
+      <li><a href="pri.html" class="bor"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+	</div>
+</div>	
+		  
+</div>
+</div>
+</div>
+        </section>
+        <section class="name">
+    <h1 class="text-center">List Halls</h1>
+    </section>
+<section class="tab">
+<table id="example" class="table table-striped table-bordered" style="width: 100%;">
         <thead>
             <tr>
                 <th>ID</th>
@@ -95,6 +114,10 @@
                 <th>Rating</th>
                 <th>Price</th>
                 <th>Phone Number</th>
+                <th>Hall Image</th>
+                <th>Hall Adress</th>
+                <th>Hall Description</th>
+                <th>Hall Special Offers</th>
             </tr>
         </thead>
         <tfoot>
@@ -105,14 +128,19 @@
                 <th>Rating</th>
                 <th>Price</th>
                 <th>Phone Number</th>
+                <th>Hall Image</th>
+                <th>Hall Adress</th>
+                <th>Hall Description</th>
+                <th>Hall Special Offers</th>
             </tr>
         </tfoot>
     </table>
-    </div>
+    </section>
     <script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/edit.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>	
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
 </body>
 </html>
