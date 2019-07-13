@@ -6,35 +6,37 @@
 	<meta name="viewport" content="width=device-width , initial=1">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/addnewuser.css">
+	<link rel="stylesheet" type="text/css" href="css/listCategories.css">
     <link rel="stylesheet" type="text/css" href="css/animate.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
 </head>
 <body>
-      <div class="slidebar">
-    <div class="logo">
-      <img src="img/Asset%203.png">
-    </div>
-    <ul>
-      <li><a href="admin.html" id="targeted">dashboard</a></li>
+    <section class="nav">
+<div class="navbar">
+<div class="container-fluid">
+  <div class="row">
+		
+	  <div class="col-xs-4 col-md-4">
+			  <div class="main">
+			    <div class="bars"><i class="fas fa-bars"></i></div>
+   <ul class="main-ul">
+      <li><a href="admin.html" id="targeted" class="dash">dashboard</a></li>
     <div class="dropdown">
       <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
         Halls
         <span class="caret"></span>
       </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <ul class="dropdown-menu " aria-labelledby="dropdownMenu1">
         <li><a href="addnewhall.html">Add New Hall</a></li>
         <li><a href="listallhalls.html">List All Halls</a></li>
-        <li><a href="#">List Halls With Category</a></li>
-        <li><a href="#">List Hall Category</a></li>
-        <li><a href="#">Search For Hall</a></li>
+        <li><a href="listCategories.html">List Category</a></li>
+        <li><a href="searchByCategory.html">Search By Category</a></li>
+        <li><a href="searchByName.html">Search By Name</a></li>
         <li><a href="#">Update Hall</a></li>
-        <li><a href="#">Delete Hall</a></li>
-        <li><a href="#">Add Category</a></li>
-        <li><a href="#">Delete Category</a></li>
   </ul>
     </div>
     <div class="dropdown">
@@ -43,9 +45,7 @@
         <span class="caret"></span>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a href="#" >Add New User</a></li>
         <li><a href="listallusers.html">List All Users</a></li>
-        <li><a href="#">Delete User</a></li>
   </ul>
     </div>
     <div class="dropdown">
@@ -54,54 +54,71 @@
         <span class="caret"></span>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a href="#Halls">Add New Admin</a></li>
-        <li><a href="#get">List All Admins</a></li>
+        <li><a href="addnewadmin.html">Add New Admin</a></li>
+        <li><a href="ListAdmins.html">List All Admins</a></li>
         <li><a href="#">Update Admin Roles</a></li>
         <li><a href="#">Change Admin Password</a></li>
         <li><a href="#">Delete Admin</a></li>
   </ul>
     </div>
-    </ul>
-      <div class="dropdown">
+             <div class="dropdown">
       <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
         Other
         <span class="caret"></span>
       </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a href="#Halls">Send Push Notification</a></li>
-        <li><a href="#get">List All Admins</a></li>
+        <li><a href="sendNotification.html">Send Push Notification</a></li>
         <li><a href="#">List Feedback Messages</a></li>
         </ul>
     </div>
-  </div>
-<div class="main">
-<nav class="navbar navbar-default ed">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" style="color: white; font-size: 20px;">Groom &amp; Bride Dashboard</a>
-    </div>
-    <ul class="nav navbar-nav navbar-right">
-      <li style="color: white; font-size: 20px;"><a href="pri.html" style="color: white"><i class="fas fa-sign-out-alt" style="color: white"></i> Logout</a></li>
     </ul>
-  </div>
-</nav>
-      <form id="survey-form" action="https://hidden-ocean-87285.herokuapp.com/users/signup" method="post">
-        <label id="name-label" for="name">User Name<br><input type="text" id="name" placeholder="Name" name="userName" required></label>
-        <label id="name-label" for="name">User E-mail<br><input type="email" id="name" placeholder="E-mail" name="userEmail" required></label>
-        <label id="name-label" for="name">Password<br><input type="password" id="name" placeholder="password" name="userPassword" required></label>
-                    <button type="submit" id="submit" value="POST">Send</button>
 
 
+			  </div>
+	  </div>
 
- <div id="add"></div>
-    </form>
-    
-
+    <div class="col-xs-4 col-md-4">
+      <div class="logo">
+      	<img src="img/logo2.png" >
+      </div>
     </div>
- <script type="text/javascript" src="js/jquery.min.js"></script>
+      	<div class="col-md-4 col-xs-4">
+		<div class="social-media">
+
+		<ul class="list-inline c-info fright">
+      <li><a href="pri.html" class="bor"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+	</div>
+</div>	
+		  
+</div>
+</div>
+</div>
+        </section>
+        <section class="name">
+    <h1 class="text-center">List Categories</h1>
+    </section>
+    <section class="tab">
+<table id="exampleCategories" class="table table-striped table-bordered" style="width: 100%;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+        </tfoot>
+    </table>
+    </section>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/edit.js"></script>
-	<script type="text/javascript" src="js/wow.min.js"></script>
-	<script type="text/javascript"> new WOW().init();</script>  
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>	
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
 </body>
 </html>

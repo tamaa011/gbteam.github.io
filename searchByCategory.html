@@ -6,12 +6,13 @@
 	<meta name="viewport" content="width=device-width , initial=1">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/addnewhall.css">
+	<link rel="stylesheet" type="text/css" href="css/searchByCategory.css">
     <link rel="stylesheet" type="text/css" href="css/animate.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
 </head>
 <body>
     <section class="nav">
@@ -94,26 +95,37 @@
 </div>
 </div>
         </section>
-    <div class="add">
-        <h1 class="text-center">To add new hall please fill this form</h1>
-    <form id="survey-form" enctype="application/json" action="https://hidden-ocean-87285.herokuapp.com/halls" method="post">
-        <label id="name-label" for="name">Hall Name<br><input type="text" id="name" placeholder="Hall Name" name="hallName" required></label>
-        <label id="name-label" for="name">Hall Adress<br><input type="text" id="ha" placeholder="Hall Adress" name="hallAdress" required></label>
-        <label id="name-label" for="name">Hall Category<br><input type="text" id="hc" placeholder="Hall Category" name="hallCategory" required></label>
-        <label id="name-label" for="name">Hall Description<br><input type="text" id="hd" placeholder="Hall Description" name="hallDescription" required></label>
-        <label id="name-label" for="name">Hall Price<br><input type="text" id="hp" placeholder="Hall Price" name="hallPrice" required></label>
-        <label id="name-label" for="name">Hall Location Long<br><input type="text" id="hl" placeholder="Hall Location Long" name="hallLocationLong" required></label>
-        <label id="name-label" for="name">Hall Location Lat<br><input type="text" id="hla" placeholder="Hall Location Lat" name="hallLocationLat" required></label>
-        <label id="name-label" for="name">Hall Special Offers<br><input type="text" id="hs" placeholder="Hall Special Offers" name="hallSpecialOffers"></label>
-        <label id="name-label" for="name">Hall Phone Number<br><input type="text" id="hp" placeholder="Hall Phone Number" name="hallPhoneNumber" required></label>
-        <label id="name-label" for="name">Hall Image (Max 6 Images)<br><input type="file" id="hi" placeholder="Hall Image" name="hallImage" multiple></label>
- <button type="submit" id="submit" value="POST" onclick="signIn()">Send</button>        <div id="res"></div>
-      </form>
-    </div>
- <script type="text/javascript" src="js/jquery.min.js"></script>
+        <section class="name">
+    <h1 class="text-center">Search By Category</h1>
+    </section>
+
+<section class="tab">
+    <form id="survey-form">
+        <label id="name-label" for="name">Category ID<br><input type="text" id="name" placeholder="CategoryID" name="hallCategory" required></label>
+                    <button type="submit" id="submit">Send</button>
+
+        <div id="add"></div>
+    </form>
+<table id="exampleCategories" class="table table-striped table-bordered" style="width: 100%;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+        </tfoot>
+    </table>
+    </section>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/edit.js"></script>
-	<script type="text/javascript" src="js/wow.min.js"></script>
-	<script type="text/javascript"> new WOW().init();</script>  
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>	
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
 </body>
 </html>

@@ -1,9 +1,17 @@
+$(document).ready(function()
+ {
+    $(".bars").click(function()
+    { 
+      $('.bars i').toggleClass('fa-times')
+      $(".main").toggleClass("custom");
+  });
+  });
+
 //halls  
 $(document).ready(function() {
     $('#example').DataTable( {
         
-        "scrollX": true,
-        
+        "scrollX": true, 
         "ajax": {
             "url": "https://hidden-ocean-87285.herokuapp.com/halls/listHalls",
             "type": "POST"
@@ -14,15 +22,24 @@ $(document).ready(function() {
             { "data": "hallCategory.name" },
             { "data": "hallsAverageRating" },
             { "data": "hallPrice" },
-            { "data": "hallPhoneNumber" },
-            { "data": "hallImage" },
-            { "data": "hallAdress" },
-            { "data": "hallDescription" },
-            { "data": "hallSpecialOffers" }
-            
-            
-            
-            
+            { "data": "hallPhoneNumber" }
+        ]
+    } );
+      
+  });
+//categories
+$(document).ready(function() {
+    $('#exampleCategories').DataTable( {
+        
+        "scrollX": true,
+        
+        "ajax": {
+            "url": "https://hidden-ocean-87285.herokuapp.com/category/listCategories",
+            "type": "POST"
+        },
+        "columns": [
+            { "data": "_id" },
+            { "data": "name" }
         ]
     } );
       
@@ -46,15 +63,24 @@ $(document).ready(function() {
       
   });
                                                 //need token//
-$(document).ready(function()
- {
-    $(".bars").click(function()
-    { 
-      $('.bars i').toggleClass('fa-times')
-      $(".main").toggleClass("custom");
+$(document).ready(function() {
+    $('#exampleAdmin').DataTable( {
+        
+        "scrollX": true,
+        
+        "ajax": {
+            "url": "https://hidden-ocean-87285.herokuapp.com/users/listSystemUsers",
+            "type": "POST"
+        },
+        "columns": [
+            { "data": "_id" },
+            { "data": "userName" },
+            { "data": "userEmail" },
+            { "data": "userRole.role" }
+        ]
+    } );
+      
   });
-  });
-
-
+                                                //need token//
 
 
