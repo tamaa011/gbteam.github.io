@@ -84,3 +84,51 @@ $(document).ready(function() {
                                                 //need token//
 
 
+
+
+
+var obj, dbParam, xmlhttp, myObj, x, i, txt = "";
+obj = { table: "customers", limit: 20 };
+dbParam = JSON.stringify(obj);
+xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    myObj = JSON.parse(this.responseText);
+    txt += "<select>"
+    for (i = 0; i < myObj.data.length; i++) {
+      txt += "<option>" + myObj.data[i].name;
+    }
+    txt += "</select>"
+    document.getElementById("demo").innerHTML = txt;
+  }
+};
+xmlhttp.open("POST", "https://hidden-ocean-87285.herokuapp.com/category/listCategories", true);
+xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xmlhttp.send("x=" + dbParam);
+
+
+
+
+
+
+// add new admin
+
+var obj, dbParam, xmlhttp, myObj, x, i, txt = "";
+obj = { table: "customers", limit: 20 };
+dbParam = JSON.stringify(obj);
+xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    myObj = JSON.parse(this.responseText);
+    txt += "<select>"
+    for (i = 0; i < myObj.data.length; i++) {
+      txt += "<option>" + myObj.data[i].name;
+    }
+    txt += "</select>"
+    document.getElementById("name-label").innerHTML = txt;
+  }
+};
+xmlhttp.open("POST", "https://hidden-ocean-87285.herokuapp.com/roles/listRoles", true); // need token 
+xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xmlhttp.send("x=" + dbParam);
+

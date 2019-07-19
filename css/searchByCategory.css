@@ -6,7 +6,7 @@ body {
     height: 100vh;
     margin-left: -270px;
     position: absolute;
-    transition: 1s;
+/*    transition: 1s;*/
 }
 .main .bars i{
 	color: black;	
@@ -21,7 +21,6 @@ body {
     width: 320px;
 	height: 100vh;
 	z-index: 999;
-   transition: 1s;
 }
 
 #navbar{
