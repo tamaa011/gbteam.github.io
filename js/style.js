@@ -101,7 +101,7 @@ function signIn(){
     xhttp.onload  = function() {
    var jsonResponse = JSON.parse(xhttp.responseText);
    console.log(jsonResponse)
-        localStorage.setItem("token" , jsonResponse.token)
+        localStorage.setItem("token" , jsonResponse.user.token)
             window.location.href = 'admin.html'
 
 };
