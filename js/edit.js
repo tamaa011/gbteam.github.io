@@ -66,11 +66,32 @@ $(document).ready(function() {
 //users 
                                                 //need token//
   $(document).ready(function() {
+    var token =  window.localStorage.getItem('token'); 
     $('#exampleUsers').DataTable( {
         "scrollX": true,
         "ajax": {
             "url": "https://hidden-ocean-87285.herokuapp.com/users",
             "type": "POST",
+            beforeSend: function (xhr) {
+              /* Authorization header */
+              xhr.setRequestHeader('authorization','Bearer '+ token );
+          },
+          success : function(){
+            alert("zddf");
+          },
+          error : function(data){
+            console.log(data);
+            if(data.statusText== "Bad Request"){
+
+              localStorage.setItem("token", data.responseJSON.token);
+              listuser();
+
+
+
+
+              
+            }
+          }
         
         },
         "columns": [
@@ -79,6 +100,44 @@ $(document).ready(function() {
             { "data": "userEmail" }
         ]
     } );
+
+
+    function listuser(){
+      alert("dfszfgcf");
+      $('#exampleUsers').DataTable( {
+        "scrollX": true,
+        "ajax": {
+            "url": "https://hidden-ocean-87285.herokuapp.com/users",
+            "type": "POST",
+            beforeSend: function (xhr) {
+              /* Authorization header */
+              xhr.setRequestHeader('authorization','Bearer '+ token );
+          },
+          success : function(){
+            alert("zddf");
+          },
+          error : function(data){
+            console.log(data);
+            if(data.statusText== "Bad Request"){
+
+              localStorage.setItem("token", data.responseJSON.token);
+
+
+
+
+
+              
+            }
+          }
+        
+        },
+        "columns": [
+            { "data": "_id" },
+            { "data": "userName" },
+            { "data": "userEmail" }
+        ]
+    } );
+    }
       
   });
                                                 //need token//
@@ -98,7 +157,76 @@ $(document).ready(function() {
             { "data": "userRole.role" }
         ]
     } );
+     
+    
+
+
+    function AddHall(){
+alert("done");
+      var hallName=$("#name").val();
+      var hallAdress=$("#ha").val();
+      var hallCategory=$("#hc").val();
+      var hallDescription=$("#hd").val();
+      var hallPrice=$("#hp").val();
+      var hallLocationLong=$("#hl").val();
+      var hallLocationLat=$("#hla").val();
+      var hallSpecialOffers=$("#hs").val();
+      var hallPhoneNumber=$("#hp").val();
+      var hallImage=$("#hi").val();
+
+      let requestBody = {
+          hallName : hallName,
+          hallAdress : hallAdress,
+          hallCategory : hallCategory,
+          hallDescription : hallDescription,
+          hallPrice : hallPrice,
+          hallLocationLong : hallLocationLong,
+          hallLocationLat : hallLocationLat,
+          hallSpecialOffers : hallSpecialOffers,
+          hallPhoneNumber : hallPhoneNumber,
+          hallImage : hallImage
+      }
+     /* console.log(requestBody)
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("res").innerHTML = this.responseText;
+          }
+      };*/
+      var token =  window.localStorage.getItem('token'); 
+      $.ajax({
+        url: "https://hidden-ocean-87285.herokuapp.com/halls",
+        type: 'POST',
+        beforeSend: function (xhr) {
+            /* Authorization header */
+            xhr.setRequestHeader('authorization','Bearer '+ token );
+        },
+        data : {
+            hallName : hallName,
+            hallAdress : hallAdress,
+            hallCategory : document.getElementById("demo").value,
+            hallDescription : hallDescription,
+            hallPrice : hallPrice,
+            hallLocationLong : hallLocationLong,
+            hallLocationLat : hallLocationLat,
+            hallSpecialOffers : hallSpecialOffers,
+            hallPhoneNumber : hallPhoneNumber,
+            hallImage : hallImage
+        },
+        contentType: 'application/x-www-form-urlencoded',
+        success: function (result) {
+           // CallBack(result);
+        },
+        error: function (error) {
+            
+        }
+    });
       
+          
+  }
+
+
+
   });
                                                 //need token//
 
@@ -113,12 +241,12 @@ xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
     myObj = JSON.parse(this.responseText);
-    txt += "<select>"
-    for (i = 0; i < myObj.data.length; i++) {
-      txt += "<option>" + myObj.data[i].name;
-    }
-    txt += "</select>"
-    document.getElementById("demo").innerHTML = txt;
+
+  console.log(myObj);
+  $.each(myObj.data, function (i, obj) {
+    $('#demo').append($('<option>').text(obj.name).attr('value', obj._id));
+  });
+
   }
 };
 xmlhttp.open("POST", "https://hidden-ocean-87285.herokuapp.com/category/listCategories", true);

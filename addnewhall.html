@@ -96,10 +96,13 @@
         </section>
     <div class="add">
         <h1 class="text-center">To add new hall please fill this form</h1>
-    <form id="survey-form" enctype="application/json" action="https://hidden-ocean-87285.herokuapp.com/halls" method="post">
+    <form id="survey-form">
         <label id="name-label" for="name">Hall Name<br><input type="text" id="name" placeholder="Hall Name" name="hallName" required></label>
         <label id="name-label" for="name">Hall Adress<br><input type="text" id="ha" placeholder="Hall Adress" name="hallAdress" required></label>
-         <label id="name-label" for="name">Hall Category<br></label><p id="demo"></p>
+         <label id="name-label" for="name">Hall Category<br></label><p >
+           
+         </p>
+         <select id="demo"></select>
         <label id="name-label" for="name">Hall Description<br><input type="text" id="hd" placeholder="Hall Description" name="hallDescription" required></label>
         <label id="name-label" for="name">Hall Price<br><input type="text" id="hp" placeholder="Hall Price" name="hallPrice" required></label>
         <label id="name-label" for="name">Hall Location Long<br><input type="text" id="hl" placeholder="Hall Location Long" name="hallLocationLong" required></label>
@@ -107,13 +110,79 @@
         <label id="name-label" for="name">Hall Special Offers<br><input type="text" id="hs" placeholder="Hall Special Offers" name="hallSpecialOffers"></label>
         <label id="name-label" for="name">Hall Phone Number<br><input type="text" id="hp" placeholder="Hall Phone Number" name="hallPhoneNumber" required></label>
         <label id="name-label" for="name">Hall Image (Max 6 Images)<br><input type="file" id="hi" placeholder="Hall Image" name="hallImage" multiple></label>
- <button type="submit" id="submit" value="POST" onclick="signIn()">Send</button>        <div id="res"></div>
+ <button type="submit" id="submit" value="Send" onclick="AddHall()" > send</button>/      <div id="res"></div>
       </form>
     </div>
  <script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/edit.js"></script>
 	<script type="text/javascript" src="js/wow.min.js"></script>
-	<script type="text/javascript"> new WOW().init();</script>  
+  <script type="text/javascript"> new WOW().init();</script>  
+  <script>
+  
+  function AddHall(){
+alert("done");
+      var hallName=$("#name").val();
+      var hallAdress=$("#ha").val();
+      var hallCategory=$("#hc").val();
+      var hallDescription=$("#hd").val();
+      var hallPrice=$("#hp").val();
+      var hallLocationLong=$("#hl").val();
+      var hallLocationLat=$("#hla").val();
+      var hallSpecialOffers=$("#hs").val();
+      var hallPhoneNumber=$("#hp").val();
+      var hallImage=$("#hi").val();
+
+      let requestBody = {
+          hallName : hallName,
+          hallAdress : hallAdress,
+          hallCategory : hallCategory,
+          hallDescription : hallDescription,
+          hallPrice : hallPrice,
+          hallLocationLong : hallLocationLong,
+          hallLocationLat : hallLocationLat,
+          hallSpecialOffers : hallSpecialOffers,
+          hallPhoneNumber : hallPhoneNumber,
+          hallImage : hallImage
+      }
+     /* console.log(requestBody)
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("res").innerHTML = this.responseText;
+          }
+      };*/
+      var token =  window.localStorage.getItem('token'); 
+      $.ajax({
+        url: "https://hidden-ocean-87285.herokuapp.com/halls",
+        type: 'POST',
+        beforeSend: function (xhr) {
+            /* Authorization header */
+            xhr.setRequestHeader('authorization','Bearer '+ token );
+        },
+        data : {
+            hallName : hallName,
+            hallAdress : hallAdress,
+            hallCategory : document.getElementById("demo").value,
+            hallDescription : hallDescription,
+            hallPrice : hallPrice,
+            hallLocationLong : hallLocationLong,
+            hallLocationLat : hallLocationLat,
+            hallSpecialOffers : hallSpecialOffers,
+            hallPhoneNumber : hallPhoneNumber,
+            hallImage : hallImage
+        },
+        contentType: 'application/x-www-form-urlencoded',
+        success: function (result) {
+           // CallBack(result);
+        },
+        error: function (error) {
+            
+        }
+    });
+      
+          
+  }
+  </script>
 </body>
 </html>
