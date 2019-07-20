@@ -2,11 +2,30 @@ $(document).ready(function()
  {
     $(".bars").click(function()
     { 
-      $('.bars i').toggleClass('fa-times')
+//      $('.bars i').toggleClass('fa-times')
       $(".main").toggleClass("custom");
+
+        
+        
   });
   });
 
+// nav 
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+//end
 //halls  
 $(document).ready(function() {
     $('#example').DataTable( {

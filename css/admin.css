@@ -1,48 +1,58 @@
 body {
     overflow-x: hidden;
 }
+/*btn*/
+.dropdown-btn,a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  color: black;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+    outline: none;}
+.dropdown-container {
+    display: none;
+    padding-left: 8px;
+}
+.dropdown-container a {
+    font-size: 15px;
+    border-bottom: 1px solid #D6D6D6;
+    margin-top: 10px;
+}
+/*end*/
 .main{
     width: 320px;
-    height: 100vh;
-    margin-left: -270px;
+    height: auto;
+    margin-left: -570px;
     position: absolute;
-    transition: 1s;
 }
-.main .bars i{
+
+.navbar .bars i{
 	color: black;	
-	margin-left:85%;
-	margin-top: 8%;
-	font-size: 25px;
+	font-size: 20px;
 	cursor: pointer;
 }
 .custom{
-	background-color: #FD6275;
+	background-color: white;
     margin-left: -65px;
     width: 320px;
-	height: 100vh;
-	z-index: 999;
-   transition: 1s;
+	height: auto;
+
 }
 
-#navbar{
-	margin-top: 2%;
-}
 .navbar{
     width: 100%;
-    z-index: 99;
+    height: auto;
     border: 0;
     border-radius: 0;
     margin: 0;
     border-top: 4px solid #FD6275;
-    border-bottom: 4px solid #FD6275;
+    border-bottom: 0.5px solid rgba(237, 237, 237, 100%);
     background-color: white;
-}
-.logo{
-	text-align: center;
-    
-}
-.logo img{
-	border-radius:50%; 
 }
 /*end navrbar*/
 /*start jquery navbar*/
@@ -51,28 +61,23 @@ body {
     font-size: 20px;
     color: white;
     list-style-type: none;
-    margin-top: 35%
+    margin-top: 20%;
 }
 
 .main-ul li{
 	padding: 3%;
 	cursor: pointer;
 }
-.main-ul li{
-	padding: 3%;
-	cursor: pointer;
-}
+
 .main-ul li a {
     list-style-type: none;
     color:black;
+    
 }
 .main-ul li .dash {
-    color: white;
+    color: black;
 }
-.main-ul li .dash:hover {
-    color: white;
-}
-.main-ul li a:hover {
+.main-ul  a:hover {
     color: #FD6275;
     list-style-type: none;
     transition: 0.2s ease-in-out;
@@ -85,20 +90,26 @@ body {
     width: 70%;
 }
 .social-media{
-	margin-top: 7.5%;
-	margin-left:61%;
+	margin-left:85%;
+    margin-top: 10px;
+
 }
-.social-media .bor {
-    width: 125px;
-    height: 45px;
-    background-color: #FD6275;
-    border-radius: 8px;
-    font-size: 20px;
-    padding: 13px;
-    color: white;
-}
-.social-media .bor:hover {
+.social-media .dropdown-container a:hover {
+        color: #FD6275;
+    list-style-type: none;
+    transition: 0.2s ease-in-out;
     text-decoration: none;
 }
 
+
 /*end jquery navbar*/
+.main-ul img {
+    width: 30px;
+    height: 30px;
+    margin-right: 30px;
+    margin-top: -8px;
+}
+.main-ul .icon {
+    margin-left: 6px;
+}
+
