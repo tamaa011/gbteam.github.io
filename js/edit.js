@@ -44,7 +44,40 @@ $(document).ready(function() {
             { "data": "hallPhoneNumber" }
         ]
     } );
-      
+                            //search by category 
+        $('#exampleCategory').DataTable( {
+        
+        "scrollX": true, 
+        "ajax": {
+            "url": "https://hidden-ocean-87285.herokuapp.com/halls/listHalls",
+            "type": "POST"
+        },
+        "columns": [
+            { "data": "_id" },
+            { "data": "hallName" },
+            { "data": "hallCategory.name" },
+            { "data": "hallsAverageRating" },
+            { "data": "hallPrice" },
+            { "data": "hallPhoneNumber" }
+        ]
+    } );
+                        //search by name
+            $('#exampleName').DataTable( {
+        
+        "scrollX": true, 
+        "ajax": {
+            "url": "https://hidden-ocean-87285.herokuapp.com/halls/listHalls",
+            "type": "POST"
+        },
+        "columns": [
+            { "data": "_id" },
+            { "data": "hallName" },
+            { "data": "hallCategory.name" },
+            { "data": "hallsAverageRating" },
+            { "data": "hallPrice" },
+            { "data": "hallPhoneNumber" }
+        ]
+    } );
   });
 //categories
 $(document).ready(function() {
@@ -115,6 +148,7 @@ xmlhttp.onreadystatechange = function() {
     myObj = JSON.parse(this.responseText);
     txt += "<select>"
     for (i = 0; i < myObj.data.length; i++) {
+        
       txt += "<option>" + myObj.data[i].name;
     }
     txt += "</select>"
@@ -129,7 +163,7 @@ xmlhttp.send("x=" + dbParam);
 
 
 
-
+// need token 
 // add new admin
 
 var obj, dbParam, xmlhttp, myObj, x, i, txt = "";
