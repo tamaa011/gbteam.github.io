@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/searchByCategory.css">
+    <link rel="stylesheet" type="text/css" href="css/admin.css">
     <link rel="stylesheet" type="text/css" href="css/animate.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
@@ -17,82 +18,62 @@
 <body>
     <section class="nav">
 <div class="navbar">
-<div class="container-fluid">
-  <div class="row">
-		
+
 	  <div class="col-xs-4 col-md-4">
-			  <div class="main">
-			    <div class="bars"><i class="fas fa-bars"></i></div>
+           <div class="bars"><i class="fas fa-bars"><img src="img/logo2.png" style="width: 75px; margin-left: 20px;" height="60px;" > <span >Halls</span></i></div>
+			  <div class="main">    
    <ul class="main-ul">
-      <li><a href="admin.html" id="targeted" class="dash">dashboard</a></li>
-    <div class="dropdown">
-      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        Halls
-        <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu " aria-labelledby="dropdownMenu1">
-        <li><a href="addnewhall.html">Add New Hall</a></li>
-        <li><a href="listallhalls.html">List All Halls</a></li>
-        <li><a href="listCategories.html">List Category</a></li>
-        <li><a href="searchByCategory.html">Search By Category</a></li>
-        <li><a href="searchByName.html">Search By Name</a></li>
-        <li><a href="#">Update Hall</a></li>
-  </ul>
-    </div>
-    <div class="dropdown">
-      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        Users
-        <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a href="listallusers.html">List All Users</a></li>
-  </ul>
-    </div>
-    <div class="dropdown">
-      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        Admin
-        <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a href="addnewadmin.html">Add New Admin</a></li>
-        <li><a href="ListAdmins.html">List All Admins</a></li>
-        <li><a href="#">Update Admin Roles</a></li>
-        <li><a href="#">Change Admin Password</a></li>
-        <li><a href="#">Delete Admin</a></li>
-  </ul>
-    </div>
-             <div class="dropdown">
-      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        Other
-        <span class="caret"></span>
-      </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a href="sendNotification.html">Send Push Notification</a></li>
-        <li><a href="#">List Feedback Messages</a></li>
-        </ul>
-    </div>
+      <li><a href="admin.html" id="targeted" class="dash"><img src="img/HomeICON.png">Home</a></li>
+       <hr>
+ <button class="dropdown-btn"><img src="img/HallICON.png" class="icon">Halls 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+        <a href="addnewhall.html">Add New Hall</a>
+        <a href="listallhalls.html">List All Halls</a>
+        <a href="listCategories.html">List Category</a>
+        <a href="searchByCategory.html">Search By Category</a>
+        <a href="searchByName.html">Search By Name</a>
+        <a href="updateHall.html">Update Hall</a>
+  </div>
+       <hr>
+ <button class="dropdown-btn"><img src="img/UsersICON.png" class="icon">Users 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+<a href="listallusers.html">List All Users</a>
+  </div>
+       <hr>
+ <button class="dropdown-btn"><img src="img/AdminICON.png" class="icon">Admins 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+        <a href="addnewadmin.html">Add New Admin</a>
+        <a href="ListAdmins.html">List All Admins</a>
+        <a href="deleteAdmin.html">Delete Admin</a>
+  </div>
+       <hr>
+ <button class="dropdown-btn"><img src="img/OtherICON.png" class="icon">Other 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+        <a href="sendNotification.html">Send Push Notification</a>
+        <a href="listFeedBack.html">List Feedback Messages</a>
+  </div>
+       <hr>
     </ul>
-
-
-			  </div>
+  </div>
 	  </div>
-
-    <div class="col-xs-4 col-md-4">
-      <div class="logo">
-      	<img src="img/logo2.png" >
-      </div>
-    </div>
-      	<div class="col-md-4 col-xs-4">
 		<div class="social-media">
 
-		<ul class="list-inline c-info fright">
-      <li><a href="pri.html" class="bor"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
-        </ul>
-	</div>
-</div>	
-		  
-</div>
-</div>
+ <button class="dropdown-btn"><span id="username"></span> 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+        <a href="changePassword.html">Change password</a>
+        <a href="pri.html">Logout</a>
+  </div>
+	   </div>
 </div>
         </section>
         <section class="name">
