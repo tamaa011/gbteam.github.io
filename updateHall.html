@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width , initial=1">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/addnewadmin.css">
+	<link rel="stylesheet" type="text/css" href="css/updateHall.css">
     <link rel="stylesheet" type="text/css" href="css/admin.css">
     <link rel="stylesheet" type="text/css" href="css/animate.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
@@ -20,7 +20,7 @@
 <div class="navbar">
 
 	  <div class="col-xs-4 col-md-4">
-           <div class="bars"><i class="fas fa-bars"><img src="img/logo2.png" style="width: 75px; margin-left: 20px;" height="60px;" > <span >Admin</span></i></div>
+           <div class="bars"><i class="fas fa-bars"><img src="img/logo2.png" style="width: 75px; margin-left: 20px;" height="60px;" > <span >Halls</span></i></div>
 			  <div class="main">    
    <ul class="main-ul">
       <li><a href="admin.html" id="targeted" class="dash"><img src="img/HomeICON.png">Home</a></li>
@@ -66,7 +66,7 @@
 	  </div>
 		<div class="social-media">
 
- <button class="dropdown-btn"><span id="username"></span> 
+ <button class="dropdown-btn"><span id="username"></span>  
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
@@ -77,19 +77,23 @@
 </div>
         </section>
         <section class="name">
-    <h1 class="text-center">Add New Admin</h1>
+    <h1 class="text-center">Update Hall Data</h1>
     </section>
           <form id="survey-form">
-        <label id="name-label" for="name">User Name<br><input type="text" id="name" placeholder="Name" name="userName" required></label>
-        <label id="name-label" for="name">User E-mail<br><input type="email" id="name" placeholder="E-mail" name="userEmail" required></label>
-        <label id="name-label" for="name">Password<br><input type="password" id="name" placeholder="password" name="userPassword" required></label>
-        <p id="name-label">Role</p>
+        <label id="name-label" for="name">Hall Id<br><input type="text" id="name" placeholder="Hall Id" name="hallId" required></label>
+        <label id="name-label" for="name">Hall Name<br><input type="text" id="hallname" placeholder="Hall Name" name="hallName"></label>
+        <label id="name-label" for="name">Hall Description<br><input type="text" id="halldescription" placeholder="Hall Description" name="hallDescription" required></label>
+        <label id="name-label" for="name">Hall Price<br><input type="text" id="hallprice" placeholder="Hall Price" name="hallPrice" ></label>
+        <label id="name-label" for="name">Hall Location Long<br><input type="text" id="halllong" placeholder="Hall Location Long" name="hallLocationLong" ></label>
+        <label id="name-label" for="name">Hall Location Lat<br><input type="text" id="halllat" placeholder="Hall Location Lat" name="hallLocationLat" ></label>
+        <label id="name-label" for="name">Hall Special Offers<br><input type="text" id="hallspecial" placeholder="Hall Special Offers" name="hallSpecialOffers"></label>
+        <label id="name-label" for="name">Hall Phone Number<br><input type="text" id="hallphone" placeholder="Hall Phone Number" name="hallPhoneNumber" ></label>
+        <label id="name-label" for="name">Hall Image (Max 6 Images)<br><input type="file" id="hallimage" placeholder="Hall Image" name="hallImage" multiple></label>
         <button type="submit" id="submit" value="POST">Send</button>
 
-
-
-              <div id="add"></div>
     </form>
+    <div id="add"></div>
+
     
         <script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>

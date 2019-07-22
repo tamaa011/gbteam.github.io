@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width , initial=1">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/addnewadmin.css">
+	<link rel="stylesheet" type="text/css" href="css/listFeedBack.css">
     <link rel="stylesheet" type="text/css" href="css/admin.css">
     <link rel="stylesheet" type="text/css" href="css/animate.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
@@ -20,7 +20,7 @@
 <div class="navbar">
 
 	  <div class="col-xs-4 col-md-4">
-           <div class="bars"><i class="fas fa-bars"><img src="img/logo2.png" style="width: 75px; margin-left: 20px;" height="60px;" > <span >Admin</span></i></div>
+           <div class="bars"><i class="fas fa-bars"><img src="img/logo2.png" style="width: 75px; margin-left: 20px;" height="60px;" > <span >Others</span></i></div>
 			  <div class="main">    
    <ul class="main-ul">
       <li><a href="admin.html" id="targeted" class="dash"><img src="img/HomeICON.png">Home</a></li>
@@ -77,19 +77,25 @@
 </div>
         </section>
         <section class="name">
-    <h1 class="text-center">Add New Admin</h1>
+    <h1 class="text-center">List Feedback</h1>
     </section>
-          <form id="survey-form">
-        <label id="name-label" for="name">User Name<br><input type="text" id="name" placeholder="Name" name="userName" required></label>
-        <label id="name-label" for="name">User E-mail<br><input type="email" id="name" placeholder="E-mail" name="userEmail" required></label>
-        <label id="name-label" for="name">Password<br><input type="password" id="name" placeholder="password" name="userPassword" required></label>
-        <p id="name-label">Role</p>
-        <button type="submit" id="submit" value="POST">Send</button>
+<section class="tab">
+<table id="exampleFeedBack" class="table table-striped table-bordered nowrap" style="width: 100%;">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Text</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Email</th>
+                <th>Text</th>
+            </tr>
+        </tfoot>
+    </table>
+    </section>
 
-
-
-              <div id="add"></div>
-    </form>
     
         <script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>

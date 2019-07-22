@@ -86,7 +86,7 @@ $(document).ready(function () {
 
     "scrollX": true,
     "ajax": {
-      "url": "https://hidden-ocean-87285.herokuapp.com/halls/listHalls",
+      "url": "https://hidden-ocean-87285.herokuapp.com/halls/searchByCategory",
       "type": "POST"
     },
     "columns": [
@@ -103,7 +103,7 @@ $(document).ready(function () {
 
     "scrollX": true,
     "ajax": {
-      "url": "https://hidden-ocean-87285.herokuapp.com/halls/listHalls",
+      "url": "https://hidden-ocean-87285.herokuapp.com/halls/searchByName",
       "type": "POST"
     },
     "columns": [
@@ -192,6 +192,57 @@ $(document).ready(function () {
   }
 
   //need token//
+    //list feedback
+      $('#exampleFeedBack').DataTable({
+    "scrollX": true,
+    "ajax": {
+      "url": "https://hidden-ocean-87285.herokuapp.com/feedback/listFeedback",
+      "type": "POST",
+      beforeSend: function (xhr) {
+        /* Authorization header */
+        xhr.setRequestHeader('authorization', 'Bearer ' + token);
+      },
+
+      error: function (data) {
+        if (data.statusText == "Bad Request") {
+          localStorage.setItem("token", data.responseJSON.token);
+          listuser();
+        }
+      }
+    },
+    "columns": [
+      { "data": "email" },
+      { "data": "text" }
+    ]
+  });
+
+
+  function listfeedback() {
+    alert("list feedback , mean that have an error");
+    $('#exampleFeedBack').html('');
+    $('#exampleFeedBack').DataTable({
+      "scrollX": true,
+      "ajax": {
+        "url": "https://hidden-ocean-87285.herokuapp.com/users",
+        "type": "POST",
+        beforeSend: function (xhr) {
+          /* Authorization header */
+          xhr.setRequestHeader('authorization', 'Bearer ' + token);
+        },
+        error: function (data) {
+          if (data.statusText == "Bad Request") {
+            localStorage.setItem("token", data.responseJSON.token);
+          }
+        }
+
+      },
+      "columns": [
+        { "data": "email" },
+        { "data": "text" }
+      ]
+    });
+  }
+    //list feedback
 
   $('#exampleAdmin').DataTable({
 
