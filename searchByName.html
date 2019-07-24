@@ -79,12 +79,18 @@
         <section class="name">
     <h1 class="text-center">Search By Name</h1>
     </section>
-    <form id="survey-form">
-        <label id="name-label" for="name">Name<br><input type="text" id="name" placeholder="Name" name="hallName" required></label>
-                    <button type="submit" id="submit">Send</button>
+    <form>
+        <div>
+            <label id="name-label" for="name">Name<br><input type="text" id="SearchByName_Name" placeholder="Name" name="hallName" required></label>
+        </div>
+        <div>
+            <input type="button" id="submit" onclick="SearchByName()" value="send">
+        </div>
+
     </form>
+    
         <section class="tab">
-<table id="exampleName" class="table table-striped table-bordered" style="width: 100%;">
+<table id="SearchByName" class="table table-striped table-bordered" style="width: 100%;">
         <thead>
             <tr>
                 <th>ID</th>
@@ -95,16 +101,6 @@
                 <th>Phone Number</th>
             </tr>
         </thead>
-        <tfoot>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Category</th>
-                <th>Rating</th>
-                <th>Price</th>
-                <th>Phone Number</th>
-            </tr>
-        </tfoot>
     </table>
     </section>
     <script type="text/javascript" src="js/jquery.min.js"></script>

@@ -1,3 +1,51 @@
+function SearchByCategory(){
+ 
+  $('#SearchByCategoryTable').DataTable({
+
+    "scrollX": true,
+    "bDestroy": true,
+    "ajax": {
+      "url": "https://hidden-ocean-87285.herokuapp.com/halls/searchByCategory",
+      "type": "POST",
+      data : {
+        hallCategory : document.getElementById("SearchByCategory").value
+      }
+    },
+    "columns": [
+      { "data": "_id" },
+      { "data": "hallName" },
+      { "data": "hallCategory.name" },
+      { "data": "hallsAverageRating" },
+      { "data": "hallPrice" },
+      { "data": "hallPhoneNumber" }
+    ]
+  });
+}
+function SearchByName(){
+ 
+  $('#SearchByName').DataTable({
+
+    "scrollX": true,
+    "bDestroy": true,
+    "ajax": {
+      "url": "https://hidden-ocean-87285.herokuapp.com/halls/searchByName",
+      "type": "POST",
+      data : {
+        hallName : document.getElementById("SearchByName_Name").value
+      }
+    },
+    "columns": [
+      { "data": "_id" },
+      { "data": "hallName" },
+      { "data": "hallCategory.name" },
+      { "data": "hallsAverageRating" },
+      { "data": "hallPrice" },
+      { "data": "hallPhoneNumber" }
+    ]
+  });
+}
+
+
 $(document).ready(function () {
   $(".bars").click(function () {
     //      $('.bars i').toggleClass('fa-times')
@@ -41,11 +89,36 @@ $(document).ready(function () {
     },
     success: function (data) {
       $.each(data.data, function (i, obj) {
+        
+        $('#SearchByCategory').append($('<option>').text(obj.name).attr('value', obj._id));
+
         $('#demo').append($('<option>').text(obj.name).attr('value', obj._id));
       });
     }
   });
 
+  function SearchByCategory(){
+    hallCategory
+    $('#exampleCategory').DataTable({
+
+      "scrollX": true,
+      "ajax": {
+        "url": "https://hidden-ocean-87285.herokuapp.com/halls/searchByCategory",
+        "type": "POST",
+        data : {
+          hallCategory : document.getElementById("SearchByCategory").value
+        }
+      },
+      "columns": [
+        { "data": "_id" },
+        { "data": "hallName" },
+        { "data": "hallCategory.name" },
+        { "data": "hallsAverageRating" },
+        { "data": "hallPrice" },
+        { "data": "hallPhoneNumber" }
+      ]
+    });
+  }
 
   $.ajax({
     url: "https://hidden-ocean-87285.herokuapp.com/roles/listRoles",
