@@ -73,15 +73,27 @@ $.ajax({
       "url": "https://hidden-ocean-87285.herokuapp.com/halls/listHalls",
       "type": "POST"
     },
+      
     "columns": [
       { "data": "_id" },
       { "data": "hallName" },
       { "data": "hallCategory.name" },
       { "data": "hallsAverageRating" },
       { "data": "hallPrice" },
-      { "data": "hallPhoneNumber" }
+      { "data": "hallPhoneNumber" },
+         {
+      "data": null,
+      "defaultContent": "<button>Edit</button>"
+    }
     ]
+      
   });
+    
+    //buttom function
+    $('#example tbody').on( 'click', 'button', function () {
+        alert("done");// check
+    } );
+    
   //search by category 
   $('#exampleCategory').DataTable({
 
