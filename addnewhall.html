@@ -84,7 +84,7 @@
            
          </p>
          <label>Categories</label><select id="demo"></select>
-         <label>Roles</label><select id="roles"></select>
+         
         <label id="name-label" for="name">Hall Description<br><input type="text" id="hd" placeholder="Hall Description" name="hallDescription" required></label>
         <label id="name-label" for="name">Hall Price<br><input type="text" id="hp" placeholder="Hall Price" name="hallPrice" required></label>
         <label id="name-label" for="name">Hall Location Long<br><input type="text" id="hl" placeholder="Hall Location Long" name="hallLocationLong" required></label>
@@ -92,8 +92,7 @@
         <label id="name-label" for="name">Hall Special Offers<br><input type="text" id="hs" placeholder="Hall Special Offers" name="hallSpecialOffers"></label>
         <label id="name-label" for="name">Hall Phone Number<br><input type="text" id="hp" placeholder="Hall Phone Number" name="hallPhoneNumber" required></label>
         <label id="name-label" for="name">Hall Image (Max 6 Images)<br><input type="file" id="hi" placeholder="Hall Image" name="hallImage" multiple></label>
- <button type="submit" id="submit" value="Send" onclick="AddHall()" > send</button>
-        <div id="res"></div>
+ <button type="button" id="submit" value="Send" onclick="AddHall()" > send</button>/      <div id="res"></div>
       </form>
     </div>
  <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -104,7 +103,6 @@
   <script>
   
   function AddHall(){
-alert("done");
       var hallName=$("#name").val();
       var hallAdress=$("#ha").val();
       var hallCategory=$("#hc").val();
@@ -128,19 +126,13 @@ alert("done");
           hallPhoneNumber : hallPhoneNumber,
           hallImage : hallImage
       }
-     /* console.log(requestBody)
-      const xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-              document.getElementById("res").innerHTML = this.responseText;
-          }
-      };*/
+     
       var token =  window.localStorage.getItem('token'); 
       $.ajax({
         url: "https://hidden-ocean-87285.herokuapp.com/halls",
         type: 'POST',
         beforeSend: function (xhr) {
-            /* Authorization header */
+            
             xhr.setRequestHeader('authorization','Bearer '+ token );
         },
         data : {
@@ -153,19 +145,21 @@ alert("done");
             hallLocationLat : hallLocationLat,
             hallSpecialOffers : hallSpecialOffers,
             hallPhoneNumber : hallPhoneNumber,
-            hallImage : hallImage
+            
         },
         contentType: 'application/x-www-form-urlencoded',
         success: function (result) {
+          alert("xzxdz");
            // CallBack(result);
         },
         error: function (error) {
-            
+            alert("error");
         }
     });
       
           
   }
+  
   </script>
 </body>
 </html>
