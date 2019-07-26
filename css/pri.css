@@ -28,7 +28,6 @@
     border-bottom: 2px solid #FD6275;
 }
 .navbar .collapse .nav li .bor {
-    width: 125px;
     height: 45px;
     background-color: #FD6275;
     color: #FFFFFF;
@@ -141,4 +140,14 @@ footer .ed {
   max-width: 300px;
   margin: auto;
   text-align: center;
+}
+.header {
+    margin-bottom: 5%;
+    margin-top: 15%;
+}
+.header .container {
+    margin-top: -10%;
+    margin-bottom: 15%;
+
+    
 }
