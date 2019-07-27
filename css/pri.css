@@ -11,6 +11,7 @@
 /*/Start navbar/*/
 .one {
     border-top: 4px solid #FD6275;
+    box-shadow: 0 8px 20px 0 rgba(96, 96, 96, 0.09), 0 0 0px 0 rgba(0, 0, 0, 0.19);
 }
 .navbar-default {
     background-color: #FFFFFF;
@@ -143,6 +144,6 @@ footer .ed {
 }
 .header {
     margin-top: 11%;
-    height: 320px;
+    height: 360px;
 }
 

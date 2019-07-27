@@ -1,5 +1,4 @@
 function SearchByCategory(){
- 
   $('#SearchByCategoryTable').DataTable({
 
     "scrollX": true,
