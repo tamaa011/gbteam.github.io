@@ -157,7 +157,7 @@ $(document).ready(function () {
       { "data": "hallPhoneNumber" },
          {
       "data": null,
-      "defaultContent": "<button "+_id+" >Edit</button>"
+      "defaultContent": "<button>Edit</button>"
     }
     ]
       
