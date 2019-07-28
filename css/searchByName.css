@@ -65,3 +65,9 @@ label{
   background-color:#59a9cc;
   color: #ffffff;
 }
+form #submit {
+    margin-left: 585px;
+    margin-bottom: 10px;
+    width: 193px;
+    height: 26px;
+}

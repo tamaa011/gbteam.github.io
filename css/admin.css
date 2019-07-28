@@ -24,35 +24,55 @@ body {
     margin-top: 10px;
 }
 /*end*/
-.nav {
-    box-shadow: 0 6px 20px 0 rgba(139, 139, 139, 0.09), 0 0 0px 0 rgba(0, 0, 0, 0.19);
+.navbar {
+     box-shadow: 0 6px 20px 0 rgba(139, 139, 139, 0.09), 0 0 0px 0 rgba(0, 0, 0, 0.19);
 }
+
 .main{
     width: 320px;
-    height: auto;
+    height: 650px;
     margin-left: -570px;
     position: absolute;
+    margin-top: -45px;
+    transition: 0.4s;
 }
 
 .navbar .bars i{
 	color: black;	
 	font-size: 20px;
 	cursor: pointer;
+    margin-top: 8px;
 }
+.navbar .bars i img {
+    height: 40px;
+    width: 50px;
+}
+.navbar .bars i span {
+    font-size: 17px;
+}
+
 .custom{
 	background-color: #fff;
     margin-left: -65px;
     width: 320px;
-	height: 598px;
+	height: 650px;
     z-index: 99999;
-    transition: 1s;
-    
+    transition: 0.8s;
+}
 
+.main-ul .pic {
+    margin-left: 10px;
+    margin-top: 7px;
+}
+.main-ul .pic img {
+    width: 75px;
+    height: 60px;
+    margin-left: 20px;
 }
 
 .navbar{
     width: 100%;
-    height: auto;
+    height: 60px;
     border: 0;
     border-radius: 0;
     margin: 0;
@@ -93,9 +113,13 @@ body {
     width: 70%;
 }
 .social-media{
-	margin-left:85%;
+	margin-left:95%;
     margin-top: 10px;
 
+}
+.social-media .dropdown-container {
+    margin-left: -110px;
+    width: 150px;
 }
 .social-media .dropdown-container a:hover {
         color: #FD6275;
@@ -155,4 +179,11 @@ body {
 }
 .nav .panel-body .edit-update {
     padding-bottom: 20px;
+}
+.name .text-center {
+    font-size: 25px;
+}
+.tab {
+    margin-left: 2%;
+    margin-right: 2%;
 }

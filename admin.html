@@ -17,12 +17,15 @@
 <body>
     <section class="nav">
 <div class="navbar">
-
 	  <div class="col-xs-4 col-md-4">
-           <div class="bars"><i class="fas fa-bars"><img src="img/logo2.png" style="width: 75px; margin-left: 20px;" height="60px;" > <span >Dashboard</span></i></div>
+           <div class="bars"><i class="fas fa-bars"><img src="img/logo2.png" style="margin-left: 20px;" > <span >G&amp;B Admin Panel</span></i></div>
 			  <div class="main">    
    <ul class="main-ul">
 <div class="container">
+    <div class="pic">
+    <div class="bars gb"><i class="fas fa-bars speed"><img src="img/logo2.png"><span style="margin-left: -17px;">G&amp;B Admin Panel</span></i></div>
+    </div>
+    <hr>
   <div class="panel-group" id="accordion">
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -39,15 +42,15 @@
       </div>
       <div id="collapse1" class="panel-collapse collapse ">
         <div class="panel-body">
-        <a href="addnewhall.html">Add New Hall</a>
+        <a href="listallhalls.html">List halls</a>
             <hr>
-        <a href="listallhalls.html">List All Halls</a>
+        <a href="searchByCategory.html">List halls by category</a>
             <hr>
-        <a href="listCategories.html">List Category</a>
+        <a href="searchByName.html">Search for hall</a>
             <hr>
-        <a href="searchByCategory.html">Search By Category</a>
+        <a href="listCategories.html">List halls categories</a>
             <hr>
-        <a href="searchByName.html">Search By Name</a>
+        <a href="addnewhall.html">Add new hall</a>
             <hr>
         <a href="updateHall.html" class="edit-update">Update Hall</a>
           </div>
@@ -73,9 +76,9 @@
       </div>
       <div id="collapse3" class="panel-collapse collapse">
         <div class="panel-body">
-            <a href="addnewadmin.html">Add New Admin</a>
+            <a href="ListAdmins.html">List system admins</a>
             <hr>
-        <a href="ListAdmins.html">List All Admins</a>
+        <a href="addnewadmin.html">Add new admin</a>
             <hr>
         <a href="deleteAdmin.html" class="edit-update">Delete Admin</a>
           </div>
@@ -89,9 +92,9 @@
       </div>
       <div id="collapse4" class="panel-collapse collapse">
         <div class="panel-body">
-            <a href="sendNotification.html">Send Push Notification</a>
+            <a href="listFeedBack.html">List users feedback</a>
             <hr>
-            <a href="listFeedBack.html" class="edit-update">List Feedback Messages</a>
+            <a href="sendNotification.html" class="edit-update">Send notification</a>
 
           </div>
       </div>
@@ -109,6 +112,8 @@
   </button>
   <div class="dropdown-container">
         <a href="changePassword.html">Change password</a>
+        <a href="index.html">Back to website</a>
+        <a href="https://trello.com/b/Z86BhDl2/groom-and-bride">Open project on trello</a>
         <a href="pri.html">Logout</a>
   </div>
 	   </div>
@@ -118,25 +123,7 @@
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/edit.js"></script>
 	<script type="text/javascript" src="js/wow.min.js"></script>
-	<script type="text/javascript"> new WOW().init();</script> 
-    <!-- <script>
-var obj, dbParam, xmlhttp, myObj, x, i, txt = "";
-obj = { table: "customers", limit: 20 };
-dbParam = JSON.stringify(obj);
-xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function () {
-  if (this.readyState == 4 && this.status == 200) {
-    myObj = JSON.parse(this.responseText);
-    for (i = 0; i < myObj.data.length; i++) {
-      txt =  myObj.data[i].name;
-    }
-    document.getElementById("username").innerHTML = txt;
-  }
-};
-xmlhttp.open("POST", "https://hidden-ocean-87285.herokuapp.com/roles/listRoles", true); // need token 
-xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-xmlhttp.send("x=" + dbParam);
-    </script>
--->
+	<script type="text/javascript"> new WOW().init();</script>
+
 </body>
 </html>

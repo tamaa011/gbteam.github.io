@@ -18,67 +18,111 @@
 <body>
     <section class="nav">
 <div class="navbar">
-
 	  <div class="col-xs-4 col-md-4">
-           <div class="bars"><i class="fas fa-bars"><img src="img/logo2.png" style="width: 75px; margin-left: 20px;" height="60px;" > <span >Others</span></i></div>
+           <div class="bars"><i class="fas fa-bars"><img src="img/logo2.png" style="margin-left: 20px;" > <span >G&amp;B Admin Panel</span></i></div>
 			  <div class="main">    
    <ul class="main-ul">
-      <li><a href="admin.html" id="targeted" class="dash"><img src="img/HomeICON.png">Home</a></li>
-       <hr>
- <button class="dropdown-btn"><img src="img/HallICON.png" class="icon">Halls 
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-container">
-        <a href="addnewhall.html">Add New Hall</a>
-        <a href="listallhalls.html">List All Halls</a>
-        <a href="listCategories.html">List Category</a>
-        <a href="searchByCategory.html">Search By Category</a>
-        <a href="searchByName.html">Search By Name</a>
-        <a href="updateHall.html">Update Hall</a>
-  </div>
-       <hr>
- <button class="dropdown-btn"><img src="img/UsersICON.png" class="icon">Users 
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-container">
-<a href="listallusers.html">List All Users</a>
-  </div>
-       <hr>
- <button class="dropdown-btn"><img src="img/AdminICON.png" class="icon">Admins 
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-container">
-        <a href="addnewadmin.html">Add New Admin</a>
-        <a href="ListAdmins.html">List All Admins</a>
-        <a href="deleteAdmin.html">Delete Admin</a>
-  </div>
-       <hr>
- <button class="dropdown-btn"><img src="img/OtherICON.png" class="icon">Other 
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-container">
-        <a href="sendNotification.html">Send Push Notification</a>
-        <a href="listFeedBack.html">List Feedback Messages</a>
-  </div>
-       <hr>
-    </ul>
-  </div>
-	  </div>
-		<div class="social-media">
+<div class="container">
+    <div class="pic">
+    <div class="bars gb"><i class="fas fa-bars speed"><img src="img/logo2.png"><span style="margin-left: -17px;">G&amp;B Admin Panel</span></i></div>
+    </div>
+    <hr>
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a href="admin.html" class="edit"><img src="img/HomeICON.png">Home</a>
+        </h4>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><img src="img/HallICON.png" class="icon">Halls <i class="fa fa-caret-down move-hall"></i></a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse ">
+        <div class="panel-body">
+        <a href="listallhalls.html">List halls</a>
+            <hr>
+        <a href="searchByCategory.html">List halls by category</a>
+            <hr>
+        <a href="searchByName.html">Search for hall</a>
+            <hr>
+        <a href="listCategories.html">List halls categories</a>
+            <hr>
+        <a href="addnewhall.html">Add new hall</a>
+            <hr>
+        <a href="updateHall.html" class="edit-update">Update Hall</a>
+          </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><img src="img/UsersICON.png" class="icon">Users <i class="fa fa-caret-down move"></i></a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">
+            <a href="listallusers.html" class="edit-update">List All Users</a>
+          </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"><img src="img/AdminICON.png" class="icon">Admins <i class="fa fa-caret-down move-admin"></i></a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">
+            <a href="ListAdmins.html">List system admins</a>
+            <hr>
+        <a href="addnewadmin.html">Add new admin</a>
+            <hr>
+        <a href="deleteAdmin.html" class="edit-update">Delete Admin</a>
+          </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4"><img src="img/OtherICON.png" class="icon">Other <i class="fa fa-caret-down move"></i></a>
+        </h4>
+      </div>
+      <div id="collapse4" class="panel-collapse collapse">
+        <div class="panel-body">
+            <a href="listFeedBack.html">List users feedback</a>
+            <hr>
+            <a href="sendNotification.html" class="edit-update">Send notification</a>
 
- <button class="dropdown-btn"><span id="username"></span>  
+          </div>
+      </div>
+    </div>
+  </div> 
+</div>
+                  </ul>
+	  </div>
+
+</div>
+    <div class="social-media">
+
+ <button class="dropdown-btn"><span id="username"></span> 
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
         <a href="changePassword.html">Change password</a>
+        <a href="index.html">Back to website</a>
+        <a href="https://trello.com/b/Z86BhDl2/groom-and-bride">Open project on trello</a>
         <a href="pri.html">Logout</a>
   </div>
 	   </div>
-</div>
+        </div>
         </section>
         <section class="name">
-    <h1 class="text-center">Send Push Notification</h1>
-    </section>
+    <h1 class="text-center">Send Notification</h1>
+        </section>
           <form id="survey-form">
         <label id="name-label" for="name">Title<br><input type="text" id="name" placeholder="title" name="title" required></label>
         <label id="name-label" for="name">Body<br><input type="text" id="name" placeholder="body" name="body" required></label>

@@ -13,7 +13,6 @@ function SearchByCategory(){
     "columns": [
       { "data": "_id" },
       { "data": "hallName" },
-      { "data": "hallCategory" },
       { "data": "hallsAverageRating" },
       { "data": "hallPrice" },
       { "data": "hallPhoneNumber" }
@@ -49,9 +48,13 @@ $(document).ready(function () {
   $(".bars").click(function () {
     //      $('.bars i').toggleClass('fa-times')
     $(".main").toggleClass("custom");
-
-
-
+      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+      document.body.style.transition = "0.8s";
+  });
+      $(".gb").click(function () {
+    //      $('.bars i').toggleClass('fa-times')
+    $(".main").remove("custom");
+      document.body.style.backgroundColor = "white";
   });
 });
 
@@ -241,9 +244,9 @@ $(document).ready(function () {
       }
     },
     "columns": [
-      { "data": "_id" },
       { "data": "userName" },
-      { "data": "userEmail" }
+      { "data": "userEmail" },
+      { "data": "_id" }
     ]
   });
 
@@ -341,10 +344,10 @@ $(document).ready(function () {
       },
     },
     "columns": [
-      { "data": "_id" },
       { "data": "userName" },
       { "data": "userEmail" },
-      { "data": "userRole.role" }
+      { "data": "userRole.role" },
+      { "data": "_id" }
     ]
   });
 
