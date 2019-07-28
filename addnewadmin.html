@@ -126,11 +126,12 @@
     <h1 class="text-center" >Add New Admin</h1>
         </section>
           <form id="survey-form">
-        <label id="name-label" for="name">User Name<br><input type="text" id="name" placeholder="Name" name="userName" required></label>
-        <label id="name-label" for="name">User E-mail<br><input type="email" id="name" placeholder="E-mail" name="userEmail" required></label>
-        <label id="name-label" for="name">Password<br><input type="password" id="name" placeholder="password" name="userPassword" required></label>
+        <label id="name-label" for="name">User Name<br><input type="text" id="UserName" placeholder="Name" name="userName" required></label>
+        <label id="name-label" for="name">User E-mail<br><input type="email" id="UserEmail" placeholder="E-mail" name="userEmail" required></label>
+        <label id="name-label" for="name">Password<br><input type="password" id="UserPassword" placeholder="password" name="userPassword" required></label>
         <p id="name-label">Role</p>
-        <button type="submit" id="submit" value="POST">Send</button>
+        <select class="roles"></select>
+        <button type="button" id="submit"  onclick="AddNewAdmin()">Send</button>
 
 
 
@@ -144,4 +145,50 @@
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>	
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
 </body>
+
+<script>
+    var token = window.localStorage.getItem('token');
+
+  $(document).ready(function(){
+
+    $.ajax({
+    url: "https://hidden-ocean-87285.herokuapp.com/roles/listRoles",
+    method: "POST",
+    data: {
+      x: JSON.stringify(obj)
+    },
+    beforeSend: function (xhr) {
+      /* Authorization header */
+      xhr.setRequestHeader('authorization', 'Bearer ' + token);
+      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    },
+    success: function (data) {
+      $.each(data.data, function (i, obj) {
+        $('.roles').append($('<option>').text(obj.role).attr('value', obj._id));
+      });
+    }
+  });
+  });
+
+  function AddNewAdmin(){
+    $.ajax({
+    url: "https://hidden-ocean-87285.herokuapp.com/users/addUser",
+    method: "POST",
+    data: {
+      userEmail: $("#UserEmail").val(),
+      userName : $("#UserName").val(),
+      userPassword : $("#UserPassword").val(),
+      userRole : $(".roles").val()
+    },
+    beforeSend: function (xhr) {
+      /* Authorization header */
+      xhr.setRequestHeader('authorization', 'Bearer ' + token);
+      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    },
+    success: function (data) {
+     console.log("addedd Successfully");
+    }
+  });
+  }
+</script>
 </html>
