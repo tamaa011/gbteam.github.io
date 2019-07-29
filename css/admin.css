@@ -115,11 +115,14 @@ body {
 .social-media{
 	margin-left:95%;
     margin-top: 10px;
-
 }
 .social-media .dropdown-container {
     margin-left: -110px;
-    width: 150px;
+
+}
+
+.social-media  {
+    z-index: 99999;
 }
 .social-media .dropdown-container a:hover {
         color: #FD6275;
@@ -127,7 +130,6 @@ body {
     transition: 0.2s ease-in-out;
     text-decoration: none;
 }
-
 
 /*end jquery navbar*/
 .main-ul img {
@@ -186,4 +188,11 @@ body {
 .tab {
     margin-left: 2%;
     margin-right: 2%;
+}
+.dropdown-container {
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.19);
+  z-index: 1;
+    margin-top: 15px;
 }
