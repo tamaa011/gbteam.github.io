@@ -35,7 +35,7 @@ function SearchByName(){
     "columns": [
       { "data": "_id" },
       { "data": "hallName" },
-      { "data": "hallCategory" },
+      { "data": "hallCategory.name" },
       { "data": "hallsAverageRating" },
       { "data": "hallPrice" },
       { "data": "hallPhoneNumber" }

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width , initial=1">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="css/sendNotification.css">
+  <link rel="stylesheet" type="text/css" href="css/formdesign.css">
   <link rel="stylesheet" type="text/css" href="css/admin.css">
   <link rel="stylesheet" type="text/css" href="css/animate.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
@@ -80,7 +80,7 @@
       </div>
       <div id="collapse3" class="panel-collapse collapse">
         <div class="panel-body">
-            <a href="ListAdmins.html">List system admins</a>
+            <a href="ListAdmins.html">List &amp; Delete admins</a>
             <hr>
         <a href="addnewadmin.html">Add new admin</a>
             <hr>
@@ -130,7 +130,7 @@
         required></label>
     <label id="name-label" for="name">Body<br><input type="text" id="body" placeholder="body" name="body"
         required></label>
-    <button type="button" onclick="sendNotification()">Send</button>
+    <button type="button" onclick="sendNotification()" id="submit">Send</button>
 
 
 
@@ -162,10 +162,11 @@
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
       },
       success: function (data) {
-        alert("Send Successfully");
+        alert("Massage Send Successfully");
+          window.location.href = 'sendNotification.html'
       },
       error: function (data) {
-        alert(data);
+        alert("fill the form");
       }
 
     });

@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width , initial=1">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/searchByName.css">
+	<link rel="stylesheet" type="text/css" href="css/formdesign.css">
     <link rel="stylesheet" type="text/css" href="css/admin.css">
     <link rel="stylesheet" type="text/css" href="css/animate.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
@@ -77,7 +77,7 @@
       </div>
       <div id="collapse3" class="panel-collapse collapse">
         <div class="panel-body">
-            <a href="ListAdmins.html">List system admins</a>
+            <a href="ListAdmins.html">List &amp; Delete admins</a>
             <hr>
         <a href="addnewadmin.html">Add new admin</a>
             <hr>
@@ -122,13 +122,9 @@
         <section class="name">
     <h1 class="text-center">Search By Name</h1>
     </section>
-    <form>
-        <div>
+    <form id="survey-form">
             <label id="name-label" for="name">Write hall name<br><input type="text" id="SearchByName_Name" placeholder="Name" name="hallName" required></label>
-        </div>
-        <div>
             <input type="button" id="submit" onclick="SearchByName()" value="send">
-        </div>
 
     </form>
     

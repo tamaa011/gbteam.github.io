@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width , initial=1">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/addnewadmin.css">
+	<link rel="stylesheet" type="text/css" href="css/formdesign.css">
     <link rel="stylesheet" type="text/css" href="css/admin.css">
     <link rel="stylesheet" type="text/css" href="css/animate.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
@@ -183,9 +183,10 @@
     },
       success: function (data) {
         alert("add Successfully");
+          window.location.href = 'addnewadmin.html'
       },
       error: function (data) {
-        alert(data);
+        alert("Password Length  Must be 6 ");
       }
   });
   }
