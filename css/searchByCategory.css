@@ -1,7 +1,11 @@
 body #SearchByCategory  {
-    margin-left: 600px;
+    margin-left: 550px;
     margin-bottom: 10px;
     font-size: 15px;
+    width: 20%;
+    padding: 0.5em;
+    border-radius: 10px;
+    border: 1px solid #707070;
 }
 .tab {
     margin-left: 2%;
