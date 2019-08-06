@@ -77,7 +77,7 @@
         </section>
     <div class="add">
         <h1 class="text-center">To add new hall please fill this form</h1>
-    <form id="survey-form">
+    <form id="survey-form" enctype="application/x-www-form-urlencoded">
         <label id="name-label" for="name">Hall Name<br><input type="text" id="name" placeholder="Hall Name" name="hallName" required></label>
         <label id="name-label" for="name">Hall Adress<br><input type="text" id="ha" placeholder="Hall Adress" name="hallAdress" required></label>
          <label id="name-label" for="name">Hall Category<br></label><p >
@@ -91,8 +91,9 @@
         <label id="name-label" for="name">Hall Location Lat<br><input type="text" id="hla" placeholder="Hall Location Lat" name="hallLocationLat" required></label>
         <label id="name-label" for="name">Hall Special Offers<br><input type="text" id="hs" placeholder="Hall Special Offers" name="hallSpecialOffers"></label>
         <label id="name-label" for="name">Hall Phone Number<br><input type="text" id="hp" placeholder="Hall Phone Number" name="hallPhoneNumber" required></label>
-        <label id="name-label" for="name">Hall Image (Max 6 Images)<br><input type="file" id="hi" placeholder="Hall Image" name="hallImage" multiple></label>
- <button type="button" id="submit" value="Send" onclick="AddHall()" > send</button>/      <div id="res"></div>
+        <label id="name-label" for="name">Hall Image (Max 6 Images)<br>
+          <input type="file" id="hi" placeholder="Hall Image" name="hallImage" multiple onchange="upload()"></label>
+ <button type="button" id="submit" value="Send" onclick="AddHall()"> send</button>      <div id="res"></div>
       </form>
     </div>
  <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -100,8 +101,42 @@
 	<script type="text/javascript" src="js/edit.js"></script>
 	<script type="text/javascript" src="js/wow.min.js"></script>
   <script type="text/javascript"> new WOW().init();</script>  
+  <script type="text/javascript" src="js/simpleUpload.js"></script>
   <script>
-  
+
+      var token =  window.localStorage.getItem('token'); 
+
+ var SERVER_URL = 'https://hidden-ocean-87285.herokuapp.com';
+  var IMAGES_UPLOAD_URL = '/halls/UploadImages';
+
+  var $fileInputElement = $('input[type="file"]');
+
+  function upload(){
+
+    $fileInputElement.simpleUpload(SERVER_URL + IMAGES_UPLOAD_URL, {
+      start: function handleStart(file) {
+        // Upload started
+
+      },
+
+      progress: function handleProgress(progress) {
+        // Received progress
+      },
+
+      success: function handleSuccess(data) {
+        // Upload successful
+
+      },
+
+      error: function handleError(error) {
+        // Upload failed
+
+        console.error(error);
+      }
+    });
+    
+  }
+
   function AddHall(){
       var hallName=$("#name").val();
       var hallAdress=$("#ha").val();
@@ -123,18 +158,19 @@
           hallLocationLong : hallLocationLong,
           hallLocationLat : hallLocationLat,
           hallSpecialOffers : hallSpecialOffers,
-          hallPhoneNumber : hallPhoneNumber,
-          hallImage : hallImage
+          hallPhoneNumber : hallPhoneNumber
+          
       }
-     
-      var token =  window.localStorage.getItem('token'); 
       $.ajax({
         url: "https://hidden-ocean-87285.herokuapp.com/halls",
         type: 'POST',
+        contentType: 'application/x-www-form-urlencoded',
         beforeSend: function (xhr) {
+          //xhr.setRequestHeader('file',JSON.parse( fd));
             
             xhr.setRequestHeader('authorization','Bearer '+ token );
         },
+        
         data : {
             hallName : hallName,
             hallAdress : hallAdress,
@@ -145,11 +181,9 @@
             hallLocationLat : hallLocationLat,
             hallSpecialOffers : hallSpecialOffers,
             hallPhoneNumber : hallPhoneNumber,
-            hallImage : "C:\\Users\\OpenMind\\Desktop\\1.jpeg"
         },
-        contentType: 'application/x-www-form-urlencoded',
         success: function (result) {
-          alert("xzxdz");
+          alert("success");
            // CallBack(result);
         },
         error: function (error) {
