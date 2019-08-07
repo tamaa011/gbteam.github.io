@@ -7,7 +7,7 @@
   margin: 2.5em;
 }
 
-#name, #email, #body, #Title, #SearchByName_Name, #new, #re, #UserName, #UserEmail, #UserPassword{
+#name, #email, #body, #Title, #SearchByName_Name, #new, #re, #UserName, #UserEmail, #UserPassword, #ha, #hd ,#hp ,#hl ,#hla ,#hs ,#hp ,#hi{
   width: 60%;
   margin-bottom: 1em;
   border: 1px solid #707070;
@@ -23,7 +23,7 @@ label{
 }
 
 @media (max-width: 511px){
-  #name, #email,  #body, #Title, #SearchByName_Name, #new, #re, #UserName, #UserEmail, #UserPassword{
+  #name, #email, #body, #Title, #SearchByName_Name, #new, #re, #UserName, #UserEmail, #UserPassword, #ha, #hd ,#hp ,#hl ,#hla ,#hs ,#hp ,#hi{
     width: 100%;
   }
 }
@@ -44,4 +44,15 @@ label{
   padding: 0.5em;
   resize: none;
   border-radius: 10px;
+}
+.add select {
+      width: 60%;
+  margin-bottom: 1em;
+  border: 1px solid #707070;
+  padding: 0.5em;
+  resize: none;
+  border-radius: 10px;
+}
+.add .move {
+    margin-left: 246px;
 }
