@@ -1,0 +1,8 @@
+
+.tab {
+    margin-top: 10px;
+}
+.tab .table thead td {
+    width: 100px;
+    overflow: hidden;
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GB</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width , initial=1">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/listallhalls.css">
+    <link rel="stylesheet" type="text/css" href="css/admin.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+</head>
+<body>
+    <section class="nav">
+<div class="navbar">
+	  <div class="col-xs-4 col-md-4">
+           <div class="bars"><i class="fas fa-bars"><img src="img/logo2.png" style="margin-left: 20px;" > <span >G&amp;B Admin Panel</span></i></div>
+			  <div class="main">    
+   <ul class="main-ul">
+<div class="container">
+    <div class="pic">
+    <div class="bars gb"><i class="fas fa-bars speed"><img src="img/logo2.png"><span style="margin-left: -17px;">G&amp;B Admin Panel</span></i></div>
+    </div>
+    <hr>
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a href="admin.html" class="edit"><img src="img/HomeICON.png">Home</a>
+        </h4>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><img src="img/HallICON.png" class="icon">Halls <i class="fa fa-caret-down move-hall"></i></a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse ">
+        <div class="panel-body">
+        <a href="listallhalls.html">List halls</a>
+            <hr>
+        <a href="searchByCategory.html">List halls by category</a>
+            <hr>
+        <a href="searchByName.html">Search for hall</a>
+            <hr>
+        <a href="listCategories.html">List halls categories</a>
+            <hr>
+        <a href="addnewhall.html">Add new hall</a>
+            <hr>
+        <a href="updateHall.html" class="edit-update">Update Hall</a>
+          </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><img src="img/UsersICON.png" class="icon">Users <i class="fa fa-caret-down move"></i></a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">
+            <a href="listallusers.html" class="edit-update">List All Users</a>
+          </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"><img src="img/AdminICON.png" class="icon">Admins <i class="fa fa-caret-down move-admin"></i></a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">
+            <a href="ListAdmins.html">List system admins</a>
+            <hr>
+        <a href="addnewadmin.html">Add new admin</a>
+            <hr>
+        <a href="deleteAdmin.html" class="edit-update">Delete Admin</a>
+          </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4"><img src="img/OtherICON.png" class="icon">Other <i class="fa fa-caret-down move"></i></a>
+        </h4>
+      </div>
+      <div id="collapse4" class="panel-collapse collapse">
+        <div class="panel-body">
+            <a href="listFeedBack.html">List users feedback</a>
+            <hr>
+            <a href="sendNotification.html" class="edit-update">Send notification</a>
+
+          </div>
+      </div>
+    </div>
+  </div> 
+</div>
+                  </ul>
+	  </div>
+
+</div>
+    <div class="social-media">
+ <button class="dropdown-btn"><span id="username"></span> 
+    <i class="fa fa-caret-down"></i>
+  </button>
+         <div class="dropdown-container">
+        <a href="changePassword.html">Change password</a>
+        <a href="index.html">Back to website</a>
+        <a href="https://trello.com/b/Z86BhDl2/groom-and-bride" target="_blank">Open project on trello</a>
+        <a href="pri.html">Logout</a>
+        </div>
+	   </div>
+        </div>
+        </section>
+    <section class="name">
+    <h1 class="text-center">List Users</h1>
+    </section>
+<section class="tab">
+<table id="exampleUsers" class="table table-striped table-bordered nowrap" style="width: 100%;">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>ID</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>ID</th>
+            </tr>
+        </tfoot>
+    </table>
+    </section>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/edit.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>	
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+</body>
+</html>
