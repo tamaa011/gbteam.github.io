@@ -1,0 +1,58 @@
+
+#survey-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+  margin: 2.5em;
+}
+
+#name, #email, #body, #Title, #SearchByName_Name, #new, #re, #UserName, #UserEmail, #UserPassword, #ha, #hd ,#hp ,#hl ,#hla ,#hs ,#hp ,#hi{
+  width: 60%;
+  margin-bottom: 1em;
+  border: 1px solid #707070;
+  padding: 0.5em;
+  resize: none;
+  border-radius: 10px;
+}
+
+label{
+  text-align: center;
+  border: none;
+  width: 100%;
+}
+
+@media (max-width: 511px){
+  #name, #email, #body, #Title, #SearchByName_Name, #new, #re, #UserName, #UserEmail, #UserPassword, #ha, #hd ,#hp ,#hl ,#hla ,#hs ,#hp ,#hi{
+    width: 100%;
+  }
+}
+
+#submit{
+  border-radius: 10px;
+  width: 40%;
+    padding: 0.5em;
+    background-color: #FD6275;
+    color: white;
+    border: none;
+}
+
+#survey-form select option {
+      width: 60%;
+  margin-bottom: 1em;
+  border: 1px solid #707070;
+  padding: 0.5em;
+  resize: none;
+  border-radius: 10px;
+}
+.add select {
+      width: 60%;
+  margin-bottom: 1em;
+  border: 1px solid #707070;
+  padding: 0.5em;
+  resize: none;
+  border-radius: 10px;
+}
+.add .move {
+    margin-left: 246px;
+}

@@ -9,6 +9,7 @@
   <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="css/addnewhall.css">
   <link rel="stylesheet" type="text/css" href="css/admin.css">
+  <link rel="stylesheet" type="text/css" href="css/formdesign.css">
   <link rel="stylesheet" type="text/css" href="css/animate.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
     crossorigin="anonymous">
@@ -138,104 +139,109 @@
         </button>
         <div class="dropdown-container">
           <a href="changePassword.html">Change password</a>
-          <a href="index.html">Back to website</a>
+          <a href="index.html" target="_blank">Open website</a>
           <a href="https://trello.com/b/Z86BhDl2/groom-and-bride" target="_blank">Open project on trello</a>
           <a href="pri.html">Logout</a>
         </div>
       </div>
     </div>
   </section>
-  <div class="add">
-    <h1 class="text-center">To add new hall please fill this form</h1>
-    <form id="survey-form" enctype="multipart/form-data">
-      <label id="name-label" for="name">Hall Name
-        <br>
-        <input type="text" id="name" placeholder="Hall Name" name="hallName" required>
-      </label>
-      <label id="name-label" for="name">Hall Adress
-        <br>
-        <input type="text" id="ha" placeholder="Hall Adress" name="hallAdress" required>
-      </label>
-      <label id="name-label" for="name">Hall Category
-        <br>
-      </label>
-      <p>
+  <section id="op">
+    <div class="add">
 
-      </p>
-      <label>Categories</label>
-      <select id="demo"></select>
+      <h1 class="text-center">add new hall</h1>
+      <form id="survey-form" enctype="application/x-www-form-urlencoded">
 
-      <label id="name-label" for="name">Hall Description
-        <br>
-        <input type="text" id="hd" placeholder="Hall Description" name="hallDescription" required>
-      </label>
-      <label id="name-label" for="name">Hall Price
-        <br>
-        <input type="text" id="hp" placeholder="Hall Price" name="hallPrice" required>
-      </label>
-      <label id="name-label" for="name">Hall Location Long
-        <br>
-        <input type="text" id="hl" placeholder="Hall Location Long" name="hallLocationLong" required>
-      </label>
-      <label id="name-label" for="name">Hall Location Lat
-        <br>
-        <input type="text" id="hla" placeholder="Hall Location Lat" name="hallLocationLat" required>
-      </label>
-      <label id="name-label" for="name">Hall Special Offers
-        <br>
-        <input type="text" id="hs" placeholder="Hall Special Offers" name="hallSpecialOffers">
-      </label>
-      <label id="name-label" for="name">Hall Phone Number
-        <br>
-        <input type="text" id="hp" placeholder="Hall Phone Number" name="hallPhoneNumber" required>
-      </label>
-      <label id="name-label" for="name">Hall Image (Max 6 Images)
-        <br>
-        <input type="file" id="hi" placeholder="Hall Image" name="hallImage" onchange="fileSelected()" multiple>
-      </label>
-      <button type="button" id="submit" value="Send" onclick="AddHall()"> send</button>/
-      <div id="res"></div>
-    </form>
-    <img id="preview" />
+        <label id="name-label" for="name">Hall Name
+          <br>
+          <input type="text" id="name" placeholder="Hall Name" name="hallName" required>
+        </label>
+        <label id="name-label" for="name">Hall Adress
+          <br>
+          <input type="text" id="ha" placeholder="Hall Adress" name="hallAdress" required>
+        </label>
+        <label class="">Categories</label>
+        <select id="demo">
+          <option>Select Category</option>
+        </select>
+        <label id="name-label" for="name">Hall Description
+          <br>
+          <input type="text" id="hd" placeholder="Hall Description" name="hallDescription" required>
+        </label>
+        <label id="name-label" for="name">Hall Price
+          <br>
+          <input type="text" id="hp" placeholder="Hall Price" name="hallPrice" required>
+        </label>
+        <label id="name-label" for="name">Hall Location Long
+          <br>
+          <input type="text" id="hl" placeholder="Hall Location Long" name="hallLocationLong" required>
+        </label>
+        <label id="name-label" for="name">Hall Location Lat
+          <br>
+          <input type="text" id="hla" placeholder="Hall Location Lat" name="hallLocationLat" required>
+        </label>
+        <label id="name-label" for="name">Hall Special Offers
+          <br>
+          <input type="text" id="hs" placeholder="Hall Special Offers" name="hallSpecialOffers">
+        </label>
+        <label id="name-label" for="name">Hall Phone Number
+          <br>
+          <input type="text" id="hp" placeholder="Hall Phone Number" name="hallPhoneNumber" required>
+        </label>
 
-  </div>
+        <label id="name-label" for="name">Hall Image (Max 6 Images)
+          <br>
+          <input type="file" id="hi" placeholder="Hall Image" name="hallImage" multiple class="move">
+        </label>
+        <button type="button" id="submit" value="Send" onclick="upload()"> send</button>
+
+        <div id="res"></div>
+      </form>
+    </div>
+  </section>
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/edit.js"></script>
   <script type="text/javascript" src="js/wow.min.js"></script>
   <script type="text/javascript"> new WOW().init();</script>
+  <script type="text/javascript" src="js/simpleUpload.js"></script>
   <script>
 
+    var token = window.localStorage.getItem('token');
 
-    var oImage
+    var SERVER_URL = 'http://localhost:8000';
+    var IMAGES_UPLOAD_URL = '/halls/UploadImages';
 
-    function fileSelected() {
+    var $fileInputElement = $('input[type="file"]');
 
-      // get selected file element
-      var oFile = document.getElementById('hi').files[0];
-      // filter for image files
-      var rFilter = /^(image\/bmp|image\/gif|image\/jpeg|image\/png|image\/tiff)$/i;
-      if (!rFilter.test(oFile.type)) {
-        document.getElementById('error').style.display = 'block';
-        return;
-      }
+    function upload() {
 
-      // get preview element
-      oImage = document.getElementById('preview');
-      // prepare HTML5 FileReader
-      var oReader = new FileReader();
-      oReader.onload = function (e) {
-        // e.target.result contains the DataURL which we will use as a source of the image        
-        oImage.src = e.target.result;
+      $fileInputElement.simpleUpload(SERVER_URL + IMAGES_UPLOAD_URL, {
 
+        start: function handleStart(file) {
 
-      };
-      // read selected file as DataURL
-      console.log(oFile);
-      console.log(oReader.readAsDataURL(oFile));
+        },
+
+        progress: function handleProgress(progress) {
+          // Received progress
+        },
+
+        success: function handleSuccess(data) {
+          AddHall()
+        },
+
+        error: function handleError(error) {
+          // Upload failed
+
+          console.error(error);
+        }
+      });
+
     }
 
     function AddHall() {
+
+
       var hallName = $("#name").val();
       var hallAdress = $("#ha").val();
       var hallCategory = $("#hc").val();
@@ -245,28 +251,36 @@
       var hallLocationLat = $("#hla").val();
       var hallSpecialOffers = $("#hs").val();
       var hallPhoneNumber = $("#hp").val();
-      var hallImage = oImage.src
-      let requestBody = { ...$("#survey-form").serialize(), ...hallImage }
 
-      console.log(requestBody);
+      let requestBody = {
+        hallName: hallName,
+        hallAdress: hallAdress,
+        hallCategory: hallCategory,
+        hallDescription: hallDescription,
+        hallPrice: hallPrice,
+        hallLocationLong: hallLocationLong,
+        hallLocationLat: hallLocationLat,
+        hallSpecialOffers: hallSpecialOffers,
+        hallPhoneNumber: hallPhoneNumber,
 
-      var token = window.localStorage.getItem('token');
+      }
       $.ajax({
         url: "http://localhost:8000/halls",
         type: 'POST',
+        contentType: 'application/x-www-form-urlencoded',
         beforeSend: function (xhr) {
+          //xhr.setRequestHeader('file',JSON.parse( fd));
 
           xhr.setRequestHeader('authorization', 'Bearer ' + token);
         },
+
         data: requestBody,
         success: function (result) {
-          alert("xzxdz");
+          alert("success");
           // CallBack(result);
         },
         error: function (error) {
-
-          console.log(error);
-
+          alert("error");
         }
       });
 

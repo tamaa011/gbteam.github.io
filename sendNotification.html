@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width , initial=1">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="css/sendNotification.css">
+  <link rel="stylesheet" type="text/css" href="css/formdesign.css">
   <link rel="stylesheet" type="text/css" href="css/admin.css">
   <link rel="stylesheet" type="text/css" href="css/animate.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
@@ -80,7 +80,7 @@
       </div>
       <div id="collapse3" class="panel-collapse collapse">
         <div class="panel-body">
-            <a href="ListAdmins.html">List system admins</a>
+            <a href="ListAdmins.html">List &amp; Delete admins</a>
             <hr>
         <a href="addnewadmin.html">Add new admin</a>
             <hr>
@@ -115,14 +115,15 @@
   </button>
          <div class="dropdown-container">
         <a href="changePassword.html">Change password</a>
-        <a href="index.html">Back to website</a>
+        <a href="index.html" target="_blank">Open website</a>
         <a href="https://trello.com/b/Z86BhDl2/groom-and-bride" target="_blank">Open project on trello</a>
         <a href="pri.html">Logout</a>
         </div>
 	   </div>
         </div>
         </section>
-  <section class="name">
+  <section id="op">
+      <section class="name">
     <h1 class="text-center">Send Notification</h1>
   </section>
   <form id="survey-form">
@@ -130,12 +131,13 @@
         required></label>
     <label id="name-label" for="name">Body<br><input type="text" id="body" placeholder="body" name="body"
         required></label>
-    <button type="button" onclick="sendNotification()">Send</button>
+    <button type="button" onclick="sendNotification()" id="submit">Send</button>
 
 
 
     <div id="add"></div>
   </form>
+      </section>
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/edit.js"></script>
@@ -162,10 +164,11 @@
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
       },
       success: function (data) {
-        alert("Send Successfully");
+        alert("Massage Send Successfully");
+          window.location.href = 'sendNotification.html'
       },
       error: function (data) {
-        alert(data);
+        alert("fill the form");
       }
 
     });

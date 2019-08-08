@@ -55,7 +55,11 @@ body {
 	background-color: #fff;
     margin-left: -65px;
     width: 320px;
+<<<<<<< HEAD
 	height: 650px;
+=======
+	height: 750px;
+>>>>>>> 0aa9fdc3c17ac5b60a5cb9dd3e16b345ca25cd67
     z-index: 99999;
     transition: 0.8s;
 }
@@ -196,3 +200,16 @@ body {
   z-index: 1;
     margin-top: 15px;
 }
+<<<<<<< HEAD
+=======
+
+
+.roles {
+    margin-bottom: 10px;
+    font-size: 15px;
+    width: 20%;
+    padding: 0.5em;
+    border-radius: 10px;
+    border: 1px solid #707070;
+}
+>>>>>>> 0aa9fdc3c17ac5b60a5cb9dd3e16b345ca25cd67
