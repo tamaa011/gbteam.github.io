@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/addnewhall.css">
     <link rel="stylesheet" type="text/css" href="css/admin.css">
+    <link rel="stylesheet" type="text/css" href="css/formdesign.css">
     <link rel="stylesheet" type="text/css" href="css/animate.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
@@ -111,7 +112,7 @@
   </button>
          <div class="dropdown-container">
         <a href="changePassword.html">Change password</a>
-        <a href="index.html">Back to website</a>
+        <a href="index.html" target="_blank">Open website</a>
         <a href="https://trello.com/b/Z86BhDl2/groom-and-bride" target="_blank">Open project on trello</a>
         <a href="pri.html">Logout</a>
         </div>
@@ -121,16 +122,12 @@
     <section id="op">
     <div class="add">
 
-        <h1 class="text-center">To add new hall please fill this form</h1>
+        <h1 class="text-center">add new hall</h1>
     <form id="survey-form" enctype="application/x-www-form-urlencoded">
 
         <label id="name-label" for="name">Hall Name<br><input type="text" id="name" placeholder="Hall Name" name="hallName" required></label>
         <label id="name-label" for="name">Hall Adress<br><input type="text" id="ha" placeholder="Hall Adress" name="hallAdress" required></label>
-         <label id="name-label" for="name">Hall Category<br></label><p >
-           
-         </p>
-         <label>Categories</label><select id="demo"></select>
-         
+         <label class="">Categories</label><select id="demo"><option>Select Category</option></select>
         <label id="name-label" for="name">Hall Description<br><input type="text" id="hd" placeholder="Hall Description" name="hallDescription" required></label>
         <label id="name-label" for="name">Hall Price<br><input type="text" id="hp" placeholder="Hall Price" name="hallPrice" required></label>
         <label id="name-label" for="name">Hall Location Long<br><input type="text" id="hl" placeholder="Hall Location Long" name="hallLocationLong" required></label>
@@ -139,9 +136,10 @@
         <label id="name-label" for="name">Hall Phone Number<br><input type="text" id="hp" placeholder="Hall Phone Number" name="hallPhoneNumber" required></label>
 
         <label id="name-label" for="name">Hall Image (Max 6 Images)<br>
-          <input type="file" id="hi" placeholder="Hall Image" name="hallImage" multiple onchange="upload()"></label>
- <button type="button" id="submit" value="Send" onclick="AddHall()"> send</button>      <div id="res"></div>
-
+          <input type="file" id="hi" placeholder="Hall Image" name="hallImage" multiple onchange="upload()" class="move"></label>
+            <button type="button" id="submit" value="Send" onclick="AddHall()"> send</button>     
+        
+        <div id="res"></div>
       </form>
     </div>
         </section>
