@@ -159,12 +159,20 @@ $(document).ready(function () {
       { "data": "hallPhoneNumber" },
          {
       "data": null,
-      "defaultContent": "<button>Edit</button>"
+        'render': function (data, type, row) {
+          var id = "'"+data._id.toString()+"'";
+            return '<input id="btnEdit" type="button" onclick="EditHalls(' + id +');" value="Edit" />' +
+            '<input id="btnEdit" type="button" onclick="DeleteHalls(' + data._id + ')" value="Delete" />' + 
+            '<input id="btnEdit" type="button" onclick="HallDetails(' + data._id + ')" value="Details" />';
+            
+        } 
     }
     ]
       
   });
-    
+
+ 
+  
     //buttom function
     $('#example tbody').on( 'click', 'button', function () {
         alert("done");// check
@@ -418,4 +426,13 @@ $(document).ready(function () {
   }
 });
 
+function EditHalls(id){
+   alert(id);
+  }
+     function DeleteHalls(id){
+   alert("Delete "+ id);
+  }
 
+   function HallDetails(id){
+   alert("HallDetails "+ id);
+  }
