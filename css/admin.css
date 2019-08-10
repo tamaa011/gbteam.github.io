@@ -34,7 +34,7 @@ body {
     margin-left: -570px;
     position: absolute;
     margin-top: -45px;
-    transition: 0.4s;
+    transition: 0.2s;
 }
 
 .navbar .bars i{
@@ -57,7 +57,7 @@ body {
     width: 320px;
 	height: 750px;
     z-index: 99999;
-    transition: 0.8s;
+    transition: 0.5s;
 }
 
 .main-ul .pic {
@@ -86,7 +86,6 @@ body {
     font-size: 20px;
     color: white;
     list-style-type: none;
-    margin-top: 20%;
     overflow: hidden;
 }
 
@@ -184,10 +183,12 @@ body {
 }
 .name .text-center {
     font-size: 25px;
+    margin-bottom: -25px;
 }
 .tab {
     margin-left: 2%;
     margin-right: 2%;
+    margin-top: 2%;
 }
 .dropdown-container {
   position: absolute;

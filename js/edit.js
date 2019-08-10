@@ -49,7 +49,7 @@ $(document).ready(function () {
     //      $('.bars i').toggleClass('fa-times')
     $(".main").toggleClass("custom");
       document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-      document.body.style.transition = "0.8s";
+      document.body.style.transition = "0.3s";
       document.getElementById("op").style.opacity = "0.5";
   });
       $(".gb").click(function () {
@@ -57,6 +57,7 @@ $(document).ready(function () {
     $(".main").remove("custom");
       document.body.style.backgroundColor = "white";
         document.getElementById("op").style.opacity = "1";
+        document.body.style.transition = "0.3s";
   });
 });
 
