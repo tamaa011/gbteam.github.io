@@ -227,7 +227,11 @@
         },
 
         success: function handleSuccess(data) {
-          AddHall()
+
+          let images = data.result
+          AddHall(images)
+          console.log(images);
+
         },
 
         error: function handleError(error) {
@@ -239,8 +243,9 @@
 
     }
 
-    function AddHall() {
+    function AddHall(images) {
 
+      console.log(images);
 
       var hallName = $("#name").val();
       var hallAdress = $("#ha").val();
@@ -251,6 +256,7 @@
       var hallLocationLat = $("#hla").val();
       var hallSpecialOffers = $("#hs").val();
       var hallPhoneNumber = $("#hp").val();
+      var hallImage = $("#hi").val();
 
       let requestBody = {
         hallName: hallName,
@@ -262,6 +268,7 @@
         hallLocationLat: hallLocationLat,
         hallSpecialOffers: hallSpecialOffers,
         hallPhoneNumber: hallPhoneNumber,
+        hallImage: images
 
       }
       $.ajax({
