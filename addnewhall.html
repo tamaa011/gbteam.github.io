@@ -1,212 +1,279 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>GB</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width , initial=1">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/addnewhall.css">
-    <link rel="stylesheet" type="text/css" href="css/admin.css">
-    <link rel="stylesheet" type="text/css" href="css/formdesign.css">
-    <link rel="stylesheet" type="text/css" href="css/animate.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
+  <title>GB</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width , initial=1">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/addnewhall.css">
+  <link rel="stylesheet" type="text/css" href="css/admin.css">
+  <link rel="stylesheet" type="text/css" href="css/formdesign.css">
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
 </head>
+
 <body>
-    <section class="nav">
-<div class="navbar">
-	  <div class="col-xs-4 col-md-4">
-           <div class="bars"><i class="fas fa-bars"><img src="img/logo2.png" style="margin-left: 20px;" > <span >G&amp;B Admin Panel</span></i></div>
-			  <div class="main">    
-   <ul class="main-ul">
-<div class="container">
-    <div class="pic">
-    <div class="bars gb"><i class="fas fa-bars speed"><img src="img/logo2.png"><span style="margin-left: -17px;">G&amp;B Admin Panel</span></i></div>
-    </div>
-    <hr>
-  <div class="panel-group" id="accordion">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a href="admin.html" class="edit"><img src="img/HomeICON.png">Home</a>
-        </h4>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><img src="img/HallICON.png" class="icon">Halls <i class="fa fa-caret-down move-hall"></i></a>
-        </h4>
-      </div>
-      <div id="collapse1" class="panel-collapse collapse ">
-        <div class="panel-body">
-        <a href="listallhalls.html">List halls</a>
-            <hr>
-        <a href="searchByCategory.html">List halls by category</a>
-            <hr>
-        <a href="searchByName.html">Search for hall</a>
-            <hr>
-        <a href="listCategories.html">List halls categories</a>
-            <hr>
-        <a href="addnewhall.html">Add new hall</a>
-            <hr>
-        <a href="updateHall.html" class="edit-update">Update Hall</a>
-          </div>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><img src="img/UsersICON.png" class="icon">Users <i class="fa fa-caret-down move"></i></a>
-        </h4>
-      </div>
-      <div id="collapse2" class="panel-collapse collapse">
-        <div class="panel-body">
-            <a href="listallusers.html" class="edit-update">List All Users</a>
-          </div>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"><img src="img/AdminICON.png" class="icon">Admins <i class="fa fa-caret-down move-admin"></i></a>
-        </h4>
-      </div>
-      <div id="collapse3" class="panel-collapse collapse">
-        <div class="panel-body">
-            <a href="ListAdmins.html">List system admins</a>
-            <hr>
-        <a href="addnewadmin.html">Add new admin</a>
-            <hr>
-        <a href="deleteAdmin.html" class="edit-update">Delete Admin</a>
-          </div>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4"><img src="img/OtherICON.png" class="icon">Other <i class="fa fa-caret-down move"></i></a>
-        </h4>
-      </div>
-      <div id="collapse4" class="panel-collapse collapse">
-        <div class="panel-body">
-            <a href="listFeedBack.html">List users feedback</a>
-            <hr>
-            <a href="sendNotification.html" class="edit-update">Send notification</a>
+  <section class="nav">
+    <div class="navbar">
+      <div class="col-xs-4 col-md-4">
+        <div class="bars">
+          <i class="fas fa-bars">
+            <img src="img/logo2.png" style="margin-left: 20px;">
+            <span>G&amp;B Admin Panel</span>
+          </i>
+        </div>
+        <div class="main">
+          <ul class="main-ul">
+            <div class="container">
+              <div class="pic">
+                <div class="bars gb">
+                  <i class="fas fa-bars speed">
+                    <img src="img/logo2.png">
+                    <span style="margin-left: -23px;">G&amp;B Admin Panel</span>
+                  </i>
+                </div>
+              </div>
+              <hr>
+              <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a href="admin.html" class="edit">
+                        <img src="img/HomeICON.png">Home</a>
+                    </h4>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                        <img src="img/HallICON.png" class="icon">Halls
+                        <i class="fa fa-caret-down move-hall"></i>
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapse1" class="panel-collapse collapse ">
+                    <div class="panel-body">
+                      <a href="listallhalls.html">List halls</a>
+                      <hr>
+                      <a href="searchByCategory.html">List halls by category</a>
+                      <hr>
+                      <a href="searchByName.html">Search for hall</a>
+                      <hr>
+                      <a href="listCategories.html">List halls categories</a>
+                      <hr>
+                      <a href="addnewhall.html">Add new hall</a>
+                      <hr>
+                      <a href="updateHall.html" class="edit-update">Update Hall</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                        <img src="img/UsersICON.png" class="icon">Users
+                        <i class="fa fa-caret-down move"></i>
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapse2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <a href="listallusers.html" class="edit-update">List All Users</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                        <img src="img/AdminICON.png" class="icon">Admins
+                        <i class="fa fa-caret-down move-admin"></i>
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapse3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <a href="ListAdmins.html">List system admins</a>
+                      <hr>
+                      <a href="addnewadmin.html">Add new admin</a>
+                      <hr>
+                      <a href="deleteAdmin.html" class="edit-update">Delete Admin</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                        <img src="img/OtherICON.png" class="icon">Other
+                        <i class="fa fa-caret-down move"></i>
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapse4" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <a href="listFeedBack.html">List users feedback</a>
+                      <hr>
+                      <a href="sendNotification.html" class="edit-update">Send notification</a>
 
-          </div>
-      </div>
-    </div>
-  </div> 
-</div>
-                  </ul>
-	  </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ul>
+        </div>
 
-</div>
-    <div class="social-media">
- <button class="dropdown-btn"><span id="username"></span> 
-    <i class="fa fa-caret-down"></i>
-  </button>
-         <div class="dropdown-container">
+      </div>
+      <div class="social-media">
+        <button class="dropdown-btn">
+          <span id="username"></span>
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
         <a href="changePassword.html">Change password</a>
-        <a href="index.html" target="_blank">Open website</a>
-        <a href="https://trello.com/b/Z86BhDl2/groom-and-bride" target="_blank">Open project on trello</a>
+        <a href="index.html" target="_blank">Website</a>
+        <a href="https://trello.com/b/Z86BhDl2/groom-and-bride" target="_blank"> Trello</a>
+        <a href="https://github.com/tamaa011/tamaaa.github.io" target="_blank"> Github</a>
+        <a href="https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fus-east-2.console.aws.amazon.com%2Fconsole%2Fhome%3Fnc2%3Dh_ct%26region%3Dus-east-2%26src%3Dheader-signin%26state%3DhashArgs%2523%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fhomepage&forceMobileApp=0" target="_blank"> AWS </a>
+        <a href="https://cloud.mongodb.com/user#/atlas/login" target="_blank"> MongoDB</a>
+        <a href="https://id.heroku.com/login" target="_blank"> Heroku</a>
+        <a href="https://accounts.google.com/ServiceLogin/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=AddSession" target="_blank"> Gmail</a>
         <a href="pri.html">Logout</a>
         </div>
-	   </div>
-        </div>
-        </section>
-    <section id="op">
-    <div class="add">
+      </div>
+    </div>
+  </section>
+  <section id="op">
+    <div class="add">   
+      <h1 class="text-center">add new hall</h1>
+      <form id="survey-form" enctype="application/x-www-form-urlencoded">
 
-        <h1 class="text-center">add new hall</h1>
-    <form id="survey-form" enctype="application/x-www-form-urlencoded">
+        <label id="name-label" for="name"><p>Hall Name</p>
+          <br>
+          <input type="text" id="name" placeholder="Hall Name" name="hallName" required>
+        </label>
+        <label id="name-label" for="name"><p>Hall Adress</p>
+          <br>
+          <input type="text" id="ha" placeholder="Hall Adress" name="hallAdress" required>
+        </label>
+        <label class=""><p>Categories</p></label>
+        <select id="demo">
+          <option>Select Category</option>
+        </select>
+        <label id="name-label" for="name"><p>Hall Description</p>
+          <br>
+          <input type="text" id="hd" placeholder="Hall Description" name="hallDescription" required>
+        </label>
+        <label id="name-label" for="name"><p>Hall Price</p>
+          <br>
+          <input type="text" id="hp" placeholder="Hall Price" name="hallPrice" required>
+        </label>
+        <label id="name-label" for="name"><p>Hall Location Long</p>
+          <br>
+          <input type="text" id="hl" placeholder="Hall Location Long" name="hallLocationLong" required>
+        </label>
+        <label id="name-label" for="name"><p>Hall Location Lat</p>
+          <br>
+          <input type="text" id="hla" placeholder="Hall Location Lat" name="hallLocationLat" required>
+        </label>
+        <label id="name-label" for="name"><p>Hall Special Offers</p>
+          <br>
+          <input type="text" id="hs" placeholder="Hall Special Offers" name="hallSpecialOffers">
+        </label>
+        <label id="name-label" for="name"><p>Hall Phone Number</p>
+          <br>
+          <input type="text" id="hp" placeholder="Hall Phone Number" name="hallPhoneNumber" required>
+        </label>
 
-        <label id="name-label" for="name">Hall Name<br><input type="text" id="name" placeholder="Hall Name" name="hallName" required></label>
-        <label id="name-label" for="name">Hall Adress<br><input type="text" id="ha" placeholder="Hall Adress" name="hallAdress" required></label>
-         <label>Categories</label><select id="demo"><option hidden>Select Category</option></select>
-        <label id="name-label" for="name">Hall Description<br><input type="text" id="hd" placeholder="Hall Description" name="hallDescription" required></label>
-        <label id="name-label" for="name">Hall Price<br><input type="text" id="hp" placeholder="Hall Price" name="hallPrice" required></label>
-        <label id="name-label" for="name">Hall Location Long<br><input type="text" id="hl" placeholder="Hall Location Long" name="hallLocationLong" required></label>
-        <label id="name-label" for="name">Hall Location Lat<br><input type="text" id="hla" placeholder="Hall Location Lat" name="hallLocationLat" required></label>
-        <label id="name-label" for="name">Hall Special Offers<br><input type="text" id="hs" placeholder="Hall Special Offers" name="hallSpecialOffers"></label>
-        <label id="name-label" for="name">Hall Phone Number<br><input type="text" id="hp" placeholder="Hall Phone Number" name="hallPhoneNumber" required></label>
+        <label id="name-label" for="name"><p>Hall Image (Max 6 Images)</p>
+          <br>
+          <input type="file" id="hi" placeholder="Hall Image" name="hallImage" multiple class="move">
+        </label>
+        <button type="button" id="submit" value="Send" onclick="upload()"> send</button>
 
-        <label id="name-label" for="name">Hall Image (Max 6 Images)<br>
-          <input type="file" id="hi" placeholder="Hall Image" name="hallImage" multiple onchange="upload()" class="move"></label>
-            <button type="button" id="submit" value="Send" onclick="AddHall()"> send</button>     
-        
         <div id="res"></div>
       </form>
     </div>
-        </section>
- <script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/edit.js"></script>
-	<script type="text/javascript" src="js/wow.min.js"></script>
-  <script type="text/javascript"> new WOW().init();</script>  
+  </section>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/edit.js"></script>
+  <script type="text/javascript" src="js/wow.min.js"></script>
+  <script type="text/javascript"> new WOW().init();</script>
   <script type="text/javascript" src="js/simpleUpload.js"></script>
   <script>
 
-      var token =  window.localStorage.getItem('token'); 
+    var token = window.localStorage.getItem('token');
 
- var SERVER_URL = 'https://hidden-ocean-87285.herokuapp.com';
-  var IMAGES_UPLOAD_URL = '/halls/UploadImages';
+    var SERVER_URL = 'https://hidden-ocean-87285.herokuapp.com';
+    var IMAGES_UPLOAD_URL = '/halls/UploadImages';
 
-  var $fileInputElement = $('input[type="file"]');
+    var $fileInputElement = $('input[type="file"]');
 
-  function upload(){
+    function upload() {
 
-    $fileInputElement.simpleUpload(SERVER_URL + IMAGES_UPLOAD_URL, {
-      start: function handleStart(file) {
-        // Upload started
+      $fileInputElement.simpleUpload(SERVER_URL + IMAGES_UPLOAD_URL, {
 
-      },
+        start: function handleStart(file) {
 
-      progress: function handleProgress(progress) {
-        // Received progress
-      },
+        },
 
-      success: function handleSuccess(data) {
-        // Upload successful
+        progress: function handleProgress(progress) {
+          // Received progress
+        },
 
-      },
+        success: function handleSuccess(data) {
 
-      error: function handleError(error) {
-        // Upload failed
+          let images = data.result
+          AddHall(images)
+          console.log(images);
 
-        console.error(error);
-      }
-    });
-    
-  }
+        },
 
-  function AddHall(){
-      var hallName=$("#name").val();
-      var hallAdress=$("#ha").val();
-      var hallCategory=$("#hc").val();
-      var hallDescription=$("#hd").val();
-      var hallPrice=$("#hp").val();
-      var hallLocationLong=$("#hl").val();
-      var hallLocationLat=$("#hla").val();
-      var hallSpecialOffers=$("#hs").val();
-      var hallPhoneNumber=$("#hp").val();
-      var hallImage=$("#hi").val();
+        error: function handleError(error) {
+          // Upload failed
+
+          console.error(error);
+        }
+      });
+
+    }
+
+    function AddHall(images) {
+
+      console.log(images);
+
+      var hallName = $("#name").val();
+      var hallAdress = $("#ha").val();
+      var hallCategory = $("#hc").val();
+      var hallDescription = $("#hd").val();
+      var hallPrice = $("#hp").val();
+      var hallLocationLong = $("#hl").val();
+      var hallLocationLat = $("#hla").val();
+      var hallSpecialOffers = $("#hs").val();
+      var hallPhoneNumber = $("#hp").val();
+      var hallImage = $("#hi").val();
 
       let requestBody = {
-          hallName : hallName,
-          hallAdress : hallAdress,
-          hallCategory : hallCategory,
-          hallDescription : hallDescription,
-          hallPrice : hallPrice,
-          hallLocationLong : hallLocationLong,
-          hallLocationLat : hallLocationLat,
-          hallSpecialOffers : hallSpecialOffers,
-          hallPhoneNumber : hallPhoneNumber
-          
+        hallName: hallName,
+        hallAdress: hallAdress,
+        hallCategory: hallCategory,
+        hallDescription: hallDescription,
+        hallPrice: hallPrice,
+        hallLocationLong: hallLocationLong,
+        hallLocationLat: hallLocationLat,
+        hallSpecialOffers: hallSpecialOffers,
+        hallPhoneNumber: hallPhoneNumber,
+        hallImage: images
+
       }
       $.ajax({
         url: "https://hidden-ocean-87285.herokuapp.com/halls",
@@ -214,33 +281,24 @@
         contentType: 'application/x-www-form-urlencoded',
         beforeSend: function (xhr) {
           //xhr.setRequestHeader('file',JSON.parse( fd));
-            
-            xhr.setRequestHeader('authorization','Bearer '+ token );
+
+          xhr.setRequestHeader('authorization', 'Bearer ' + token);
         },
-        
-        data : {
-            hallName : hallName,
-            hallAdress : hallAdress,
-            hallCategory : document.getElementById("demo").value,
-            hallDescription : hallDescription,
-            hallPrice : hallPrice,
-            hallLocationLong : hallLocationLong,
-            hallLocationLat : hallLocationLat,
-            hallSpecialOffers : hallSpecialOffers,
-            hallPhoneNumber : hallPhoneNumber,
-        },
+
+        data: requestBody,
         success: function (result) {
           alert("success");
-           // CallBack(result);
+          // CallBack(result);
         },
         error: function (error) {
-            alert("error");
+          alert("error");
         }
-    });
-      
-          
-  }
-  
+      });
+
+
+    }
+
   </script>
 </body>
+
 </html>

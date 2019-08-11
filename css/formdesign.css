@@ -5,6 +5,7 @@
   align-items: center;
   padding: 2em;
   margin: 2.5em;
+    margin-top: 15px;
 }
 
 #name, #email, #body, #Title, #SearchByName_Name, #new, #re, #UserName, #UserEmail, #UserPassword, #ha, #hd ,#hp ,#hl ,#hla ,#hs ,#hp ,#hi{
@@ -35,7 +36,7 @@ label{
     background-color: #FD6275;
     color: white;
     border: none;
-    margin-top: 0px;
+    margin-top: 22px;
 }
 
 #survey-form select option {
@@ -46,15 +47,20 @@ label{
   resize: none;
   border-radius: 10px;
 }
+#survey-form .roles {
+    width: 60%;
+}
 .add select {
-      width: 30%;
+      width: 60%;
   margin-bottom: 1em;
   border: 1px solid #707070;
   padding: 0.6em;
   resize: none;
   border-radius: 10px;
-    margin-left: 30px;
 }
 .add .move {
     margin-left: 247px;
+}
+ p{
+     margin-bottom: -3px;
 }

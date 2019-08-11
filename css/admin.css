@@ -55,6 +55,7 @@ body {
 	background-color: #fff;
     margin-left: -65px;
     width: 320px;
+	height: 650px;
 	height: 750px;
     z-index: 99999;
     transition: 0.5s;
@@ -117,6 +118,7 @@ body {
 }
 .social-media .dropdown-container {
     margin-left: -110px;
+    margin-top: 1px;
 
 }
 
@@ -139,8 +141,6 @@ body {
 }
 .main-ul .icon {
     margin-left: 6px;
-}
-.navbar .panel {
 }
 .navbar .panel-group .panel{
     margin-bottom: 5px;
@@ -183,7 +183,6 @@ body {
 }
 .name .text-center {
     font-size: 25px;
-    margin-bottom: -25px;
 }
 .tab {
     margin-left: 2%;
@@ -197,8 +196,6 @@ body {
   z-index: 1;
     margin-top: 15px;
 }
-
-
 .roles {
     margin-bottom: 10px;
     font-size: 15px;
