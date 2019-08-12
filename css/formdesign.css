@@ -36,7 +36,7 @@ label{
     background-color: #FD6275;
     color: white;
     border: none;
-    margin-top: 22px;
+    margin-top: 8px;
 }
 
 #survey-form select option {
@@ -62,5 +62,5 @@ label{
     margin-left: 247px;
 }
  p{
-     margin-bottom: -3px;
+     margin-bottom: -10px;
 }
