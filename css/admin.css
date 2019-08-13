@@ -22,6 +22,7 @@ body {
     font-size: 15px;
     border-bottom: 1px solid #D6D6D6;
     margin-top: 10px;
+    text-align: center;
 }
 /*end*/
 .navbar {
@@ -34,7 +35,7 @@ body {
     margin-left: -570px;
     position: absolute;
     margin-top: -45px;
-    transition: 0.4s;
+    transition: 0.2s;
 }
 
 .navbar .bars i{
@@ -55,9 +56,10 @@ body {
 	background-color: #fff;
     margin-left: -65px;
     width: 320px;
+	height: 650px;
 	height: 750px;
     z-index: 99999;
-    transition: 0.8s;
+    transition: 0.5s;
 }
 
 .main-ul .pic {
@@ -86,7 +88,6 @@ body {
     font-size: 20px;
     color: white;
     list-style-type: none;
-    margin-top: 20%;
     overflow: hidden;
 }
 
@@ -117,7 +118,9 @@ body {
     margin-top: 10px;
 }
 .social-media .dropdown-container {
-    margin-left: -110px;
+    margin-left: -121px;
+    margin-top: 1px;
+    width: 175px;
 
 }
 
@@ -141,11 +144,12 @@ body {
 .main-ul .icon {
     margin-left: 6px;
 }
-.navbar .panel {
-}
 .navbar .panel-group .panel{
     margin-bottom: 5px;
     border: none;
+}
+.panel-group {
+    margin-top: 30px;
 }
 .panel-default>.panel-heading{
     background-color: white;
@@ -188,6 +192,7 @@ body {
 .tab {
     margin-left: 2%;
     margin-right: 2%;
+    margin-top: 2%;
 }
 .dropdown-container {
   position: absolute;
@@ -196,8 +201,6 @@ body {
   z-index: 1;
     margin-top: 15px;
 }
-
-
 .roles {
     margin-bottom: 10px;
     font-size: 15px;

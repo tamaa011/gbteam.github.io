@@ -1,6 +1,7 @@
 body #SearchByCategory  {
+    font-size: 15px;
     margin-left: 550px;
-    margin-bottom: 10px;
+    margin-bottom: -8px;
     font-size: 15px;
     width: 20%;
     padding: 0.5em;
