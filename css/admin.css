@@ -37,7 +37,9 @@ body {
     margin-top: -45px;
     transition: 0.2s;
 }
-
+.navbar .bars {
+    width: 231px;
+}
 .navbar .bars i{
 	color: black;	
 	font-size: 20px;
