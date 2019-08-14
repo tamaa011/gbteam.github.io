@@ -48,7 +48,7 @@ $(document).ready(function () {
   $(".bars").click(function () {
     //      $('.bars i').toggleClass('fa-times')
     $(".main").toggleClass("custom");
-      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+      document.body.style.backgroundColor = "rgba(0, 0, 0, 0.07)";
       document.body.style.transition = "0.3s";
       document.getElementById("op").style.opacity = "0.5";
   });
@@ -156,8 +156,8 @@ $(document).ready(function () {
       { "data": "hallName" },
       { "data": "hallCategory.name" },
       { "data": "hallsAverageRating" },
-      { "data": "hallPrice" },
-      { "data": "hallPhoneNumber" },
+      { "data": "hallsRatingCounter" },
+      { "data": "hallImage" },
         
          {
       "data": null,
