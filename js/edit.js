@@ -46,19 +46,20 @@ function SearchByName(){
 
 $(document).ready(function () {
   $(".bars").click(function () {
-    //      $('.bars i').toggleClass('fa-times')
     $(".main").toggleClass("custom");
-      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+      document.body.style.backgroundColor = "rgba(0, 0, 0, 0.07)";
       document.body.style.transition = "0.3s";
       document.getElementById("op").style.opacity = "0.5";
   });
+
       $(".gb").click(function () {
-    //      $('.bars i').toggleClass('fa-times')
     $(".main").remove("custom");
       document.body.style.backgroundColor = "white";
         document.getElementById("op").style.opacity = "1";
         document.body.style.transition = "0.3s";
   });
+    
+
 });
 
 // nav 
@@ -147,7 +148,6 @@ $(document).ready(function () {
     $('#example tbody').on( 'click', 'button', function () {
         alert("done");// check
     } );
-    
   //search by category 
   $('#exampleCategory').DataTable({
 
@@ -331,6 +331,31 @@ $(document).ready(function () {
     ]
   });
 
+
+//sidenav
+const $menu = $('.main');
+
+$(document).mouseup(e => {
+   if (!$menu.is(e.target)
+   && $menu.has(e.target).length === 0) 
+   {
+     $menu.removeClass('custom');
+          document.body.style.backgroundColor = "white";
+        document.getElementById("op").style.opacity = "1";
+        document.body.style.transition = "0.3s";
+  }
+ });
+
+$(document).click(function (e) {
+    e.stopPropagation();
+    var container = $(".social-media");
+
+    //check if the clicked area is dropDown or not
+    if (container.has(e.target).length === 0) {
+        $('.dropdown-container').hide();
+    }
+})
+
 //  function AddHall() {
 //    alert("done");
 //    var hallName = $("#name").val();
@@ -449,4 +474,6 @@ xmlhttp.onreadystatechange = function() {
 };
 xmlhttp.open("POST", "https://hidden-ocean-87285.herokuapp.com/halls/hallsPerCategory", true);
 xmlhttp.send();
+
+
 
