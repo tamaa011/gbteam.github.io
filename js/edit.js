@@ -46,7 +46,6 @@ function SearchByName(){
 
 $(document).ready(function () {
   $(".bars").click(function () {
-    //      $('.bars i').toggleClass('fa-times')
     $(".main").toggleClass("custom");
       document.body.style.backgroundColor = "rgba(0, 0, 0, 0.07)";
       document.body.style.transition = "0.3s";
