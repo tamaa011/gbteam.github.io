@@ -143,37 +143,6 @@ $(document).ready(function () {
     }
   });
 
-  $('#example').DataTable({
-
-    "scrollX": true,
-    "ajax": {
-      "url": "https://hidden-ocean-87285.herokuapp.com/halls/listHalls",
-      "type": "POST"
-    },
-      
-    "columns": [
-      { "data": "_id" },
-      { "data": "hallName" },
-      { "data": "hallCategory.name" },
-      { "data": "hallsAverageRating" },
-      { "data": "hallPrice" },
-      { "data": "hallPhoneNumber" },
-         {
-      "data": null,
-        'render': function (data, type, row) {
-          var id = "'"+data._id.toString()+"'";
-            return '<input id="btnEdit" type="button" onclick="EditHalls(' + id +');" value="Edit" />' +
-            '<input id="btnEdit" type="button" onclick="DeleteHalls(' + data._id + ')" value="Delete" />' + 
-            '<input id="btnEdit" type="button" onclick="HallDetails(' + data._id + ')" value="Details" />';
-            
-        } 
-    }
-    ]
-      
-  });
-
- 
-  
     //buttom function
     $('#example tbody').on( 'click', 'button', function () {
         alert("done");// check
@@ -427,17 +396,7 @@ $(document).ready(function () {
 //  }
 });
 
-function EditHalls(id){
-   alert(id);
-  }
-     function DeleteHalls(id){
-   alert("Delete "+ id);
-  }
 
-
-   function HallDetails(id){
-   alert("HallDetails "+ id);
-  }
 
 // home resp
 var xmlhttp = new XMLHttpRequest();
