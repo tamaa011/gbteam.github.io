@@ -44,39 +44,7 @@ function SearchByName(){
 }
 
 
-$(document).ready(function () {
-  $(".bars").click(function () {
-    $(".main").toggleClass("custom");
-      document.body.style.backgroundColor = "rgba(0, 0, 0, 0.07)";
-      document.body.style.transition = "0.3s";
-      document.getElementById("op").style.opacity = "0.5";
-  });
 
-      $(".gb").click(function () {
-    $(".main").remove("custom");
-      document.body.style.backgroundColor = "white";
-        document.getElementById("op").style.opacity = "1";
-        document.body.style.transition = "0.3s";
-  });
-    
-
-});
-
-// nav 
-var dropdown = document.getElementsByClassName("dropdown-btn");
-var i;
-
-for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function () {
-    this.classList.toggle("active");
-    var dropdownContent = this.nextElementSibling;
-    if (dropdownContent.style.display === "block") {
-      dropdownContent.style.display = "none";
-    } else {
-      dropdownContent.style.display = "block";
-    }
-  });
-}
 //end
 //halls  
 $(document).ready(function () {
@@ -474,6 +442,4 @@ xmlhttp.onreadystatechange = function() {
 };
 xmlhttp.open("POST", "https://hidden-ocean-87285.herokuapp.com/halls/hallsPerCategory", true);
 xmlhttp.send();
-
-
 

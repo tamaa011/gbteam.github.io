@@ -17,112 +17,6 @@
 </head>
 <body>
     <section class="nav">
-<div class="navbar">
-	  <div class="col-xs-4 col-md-4">
-           <div class="bars"><i class="fas fa-bars"><img src="img/logo2.png" style="margin-left: 20px;" > <span >G&amp;B Admin Panel</span></i></div>
-			  <div class="main">    
-   <ul class="main-ul">
-<div class="container">
-    <div class="pic">
-    <div class="bars gb"><i class="fas fa-bars speed"><img src="img/logo2.png"><span style="margin-left: -23px;">G&amp;B Admin Panel</span></i></div>
-    </div>
-    <hr>
-  <div class="panel-group" id="accordion">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a href="admin.html" class="edit"><img src="img/HomeICON.png">Home</a>
-        </h4>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><img src="img/HallICON.png" class="icon">Halls <i class="fa fa-caret-down move-hall"></i></a>
-        </h4>
-      </div>
-      <div id="collapse1" class="panel-collapse collapse ">
-        <div class="panel-body">
-        <a href="listallhalls.html">List halls</a>
-            <hr>
-        <a href="searchByCategory.html">List halls by category</a>
-            <hr>
-        <a href="searchByName.html">Search for hall</a>
-            <hr>
-        <a href="listCategories.html">List halls categories</a>
-            <hr>
-        <a href="addnewhall.html">Add new hall</a>
-            <hr>
-        <a href="updateHall.html" class="edit-update">Update Hall</a>
-          </div>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><img src="img/UsersICON.png" class="icon">Users <i class="fa fa-caret-down move"></i></a>
-        </h4>
-      </div>
-      <div id="collapse2" class="panel-collapse collapse">
-        <div class="panel-body">
-            <a href="listallusers.html" class="edit-update">List All Users</a>
-          </div>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"><img src="img/AdminICON.png" class="icon">Admins <i class="fa fa-caret-down move-admin"></i></a>
-        </h4>
-      </div>
-      <div id="collapse3" class="panel-collapse collapse">
-        <div class="panel-body">
-            <a href="ListAdmins.html">List system admins</a>
-            <hr>
-        <a href="addnewadmin.html">Add new admin</a>
-            <hr>
-        <a href="deleteAdmin.html" class="edit-update">Delete Admin</a>
-          </div>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4"><img src="img/OtherICON.png" class="icon">Other <i class="fa fa-caret-down move"></i></a>
-        </h4>
-      </div>
-      <div id="collapse4" class="panel-collapse collapse">
-        <div class="panel-body">
-            <a href="listFeedBack.html">List users feedback</a>
-            <hr>
-            <a href="sendNotification.html" class="edit-update">Send notification</a>
-
-          </div>
-      </div>
-    </div>
-  </div> 
-</div>
-                  </ul>
-	  </div>
-
-</div>
-    <div class="social-media">
- <button class="dropdown-btn"><span id="username"></span> 
-    <i class="fa fa-caret-down"></i>
-  </button>
-         <div class="dropdown-container">
-        <a href="changePassword.html">Change password</a>
-        <a href="index.html" target="_blank">Website</a>
-        <a href="https://trello.com/b/Z86BhDl2/groom-and-bride" target="_blank"> Trello</a>
-        <a href="https://github.com/tamaa011/tamaaa.github.io" target="_blank"> Github</a>
-        <a href="https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fus-east-2.console.aws.amazon.com%2Fconsole%2Fhome%3Fnc2%3Dh_ct%26region%3Dus-east-2%26src%3Dheader-signin%26state%3DhashArgs%2523%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fhomepage&forceMobileApp=0" target="_blank"> AWS </a>
-        <a href="https://cloud.mongodb.com/user#/atlas/login" target="_blank"> MongoDB</a>
-        <a href="https://id.heroku.com/login" target="_blank"> Heroku</a>
-        <a href="https://accounts.google.com/ServiceLogin/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=AddSession" target="_blank"> Gmail</a>
-        <a href="pri.html">Logout</a>
-        </div>
-	   </div>
-        </div>
         </section>
     <section id="op">
         <section class="name">   
@@ -152,5 +46,10 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>	
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+    <script>
+    $(function(){
+  $(".nav").load("nav.html");
+});
+    </script>
 </body>
 </html>
