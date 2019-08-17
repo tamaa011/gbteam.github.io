@@ -4,9 +4,11 @@ $(document).ready(function () {
     var username = localStorage.getItem("User");
     $("#username").html(username);
 $.each( actions[0].Admin, function( key, value ) {
+    
+
 });
 $.each( actions[0].Halls, function( key, value ) {
-    $(".HallsLink").append('<a href="listallhalls.html">List halls</a>')
+    $(".HallsLink").append('<a href="'+ value.split(' ').join('')+'">'+ value + '</a>');
 });
 $.each( actions[0].Users, function( key, value ) {
 });
