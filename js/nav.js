@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     var actions = JSON.parse(localStorage.getItem("actions"));
     var username = localStorage.getItem("User");
-    $("#username").val(username);
+    $("#username").html(username);
 $.each( actions[0].Admin, function( key, value ) {
 });
 $.each( actions[0].Halls, function( key, value ) {
