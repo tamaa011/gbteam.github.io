@@ -1,7 +1,7 @@
 
 
   var emailSuccess = false, messageSuccess = false;
-  
+  var adminLinks , hallsLink , userLink ;
   var $elements = $("input, textarea");
   $elements.on("focus", function() {
     var $selected = $(this);
@@ -87,7 +87,7 @@ function signIn(){
                 userEmail : userEmail,
                 userPassword : password
             }
-            console.log(requestBody)
+            
             const xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
@@ -99,9 +99,12 @@ function signIn(){
     
     xhttp.onload  = function() {
    var jsonResponse = JSON.parse(xhttp.responseText);
-   console.log(jsonResponse)
-        localStorage.setItem("token" , jsonResponse.user.token)
-            window.location.href = 'admin.html'
+  
+        localStorage.setItem("token" , jsonResponse.user.token);
+        localStorage.setItem("User" , jsonResponse.user.userName);
+        localStorage.setItem("actions" , JSON.stringify(jsonResponse.user.userRole.actions));
+
+          window.location.href = 'admin.html'
 
 };
             xhttp.send(JSON.stringify(requestBody));
