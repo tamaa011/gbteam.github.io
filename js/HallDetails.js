@@ -23,7 +23,6 @@ $("#hdPhone").html(halldata.hallPhoneNumber);
 $("#hdAddress").html(halldata.hallAdress);
 
 $.each( halldata.hallImage, function( key, value ) {
-    alert(value);
     $("#hdImages").append('<img src="'+ value+'"/>');
 });
     }
