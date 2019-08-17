@@ -155,7 +155,7 @@ function updateHall(hallimage){
 
 function EditHalls(id){
     localStorage.setItem("Id" , id);
-    window.location.href = 'updateHall.html';
+    window.location.href = 'updataHall.html';
     
   }
      function DeleteHalls(id){
@@ -170,7 +170,7 @@ function EditHalls(id){
       xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     },
     success: function (data) {
-      alert(data);
+      alert(data.message);
     }
   });
   }
