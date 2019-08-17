@@ -1,6 +1,4 @@
 $(document).ready(function () {
-  $(".nav").load("nav.html");
-
     var actions = JSON.parse(localStorage.getItem("actions"));
     var username = localStorage.getItem("User");
     $("#username").html(username);
