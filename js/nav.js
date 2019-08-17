@@ -11,4 +11,4 @@ $.each( loc[0].Halls, function( key, value ) {
 $.each( loc[0].Users, function( key, value ) {
 });
      
-}
+});
