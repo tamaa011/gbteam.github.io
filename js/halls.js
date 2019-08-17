@@ -177,5 +177,6 @@ function EditHalls(id){
 
 
    function HallDetails(id){
-   alert("HallDetails "+ id);
+     localStorage.setItem("Id" , id);
+    window.location.href = 'HallDetails.html';
   }
