@@ -34,7 +34,7 @@ $(document).ready(function () {
   });
 
 
-   
+   if(id != null){
   $.ajax({
     url: "https://hidden-ocean-87285.herokuapp.com/halls/"+id,
     method: "get",
@@ -57,6 +57,8 @@ $("#Updatedhallphone").val(halldata.hallPhoneNumber);
 $("#UpdatedHallAdress").val(halldata.hallAdress);
     }
   });
+   }
+
 
 
   $("#UpdateHallSubmit").click(function(){
