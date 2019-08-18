@@ -8,7 +8,7 @@
     margin-top: 15px;
 }
 
-#name, #email, #body, #Title, #SearchByName_Name, #new, #re, #UserName, #UserEmail, #UserPassword, #ha, #hd ,#hp ,#hl ,#hla ,#hs ,#hp ,#hi{
+#name, #email, #body, #Title, #SearchByName_Name, #new, #re, #UserName, #UserEmail, #UserPassword, #ha, #hd ,#hp ,#hl ,#hla ,#hs ,#hp ,#hi,#Updatedhallname ,#UpdatedHallAdress ,#Updatedhalldescription ,#Updatedhallprice ,#Updatedhalllong ,#Updatedhalllat ,#Updatedhallspecial ,#Updatedhallphone ,#Updatedhallimage {
   width: 60%;
   margin-bottom: 1em;
   border: 1px solid #707070;
@@ -24,12 +24,12 @@ label{
 }
 
 @media (max-width: 511px){
-  #name, #email, #body, #Title, #SearchByName_Name, #new, #re, #UserName, #UserEmail, #UserPassword, #ha, #hd ,#hp ,#hl ,#hla ,#hs ,#hp ,#hi{
+#name, #email, #body, #Title, #SearchByName_Name, #new, #re, #UserName, #UserEmail, #UserPassword, #ha, #hd ,#hp ,#hl ,#hla ,#hs ,#hp ,#hi,#Updatedhallname ,#UpdatedHallAdress ,#Updatedhalldescription ,#Updatedhallprice ,#Updatedhalllong ,#Updatedhalllat ,#Updatedhallspecial ,#Updatedhallphone ,#Updatedhallimage{
     width: 100%;
   }
 }
 
-#submit{
+#submit, #UpdateHallSubmit{
   border-radius: 10px;
   width: 30%;
     padding: 0.6em;

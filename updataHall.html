@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width , initial=1">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/updateHall.css">
+	<link rel="stylesheet" type="text/css" href="css/formdesign.css">
     <link rel="stylesheet" type="text/css" href="css/admin.css">
   <link rel="stylesheet" type="text/css" href="css/formdesign.css">
 
@@ -27,8 +27,7 @@
         <div class="add">
           <form id="survey-form">
         <label id="name-label" for="name">Hall Name<br><input type="text" id="Updatedhallname" placeholder="Hall Name" name="hallName"></label>
-        <label id="name-label" for="name"><p>Hall Adress</p>
-          
+        <label id="name-label" for="name"><p>Hall Adress</p><br>
           <input type="text" id="UpdatedHallAdress" placeholder="Hall Adress" name="hallAdress" required>
         </label>
         <label id="name-label" for="name">Hall Description<br><input type="text" id="Updatedhalldescription" placeholder="Hall Description" name="hallDescription" required></label>
@@ -37,7 +36,7 @@
         <label id="name-label" for="name">Hall Location Lat<br><input type="text" id="Updatedhalllat" placeholder="Hall Location Lat" name="hallLocationLat" ></label>
         <label id="name-label" for="name">Hall Special Offers<br><input type="text" id="Updatedhallspecial" placeholder="Hall Special Offers" name="hallSpecialOffers"></label>
         <label id="name-label" for="name">Hall Phone Number<br><input type="text" id="Updatedhallphone" placeholder="Hall Phone Number" name="hallPhoneNumber" ></label>
-        <label id="name-label" for="name">Hall Image (Max 6 Images)<br><input type="file" id="Updatedhallimage" placeholder="Hall Image" name="hallImage" multiple></label>
+        <label id="name-label" for="name">Hall Image (Max 6 Images)<br><input type="file" id="Updatedhallimage" placeholder="Hall Image" name="hallImage" multiple class="move"></label>
         <button type="button" id="UpdateHallSubmit" value="Send"> Update</button>
 
     </form>
@@ -50,9 +49,10 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>	
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+    <script>
+    $(function(){
+  $(".nav").load("nav.html");
+});
+    </script>
 </body>
 </html>
-<script>
-
-
-</script>

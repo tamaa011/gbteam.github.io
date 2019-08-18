@@ -210,3 +210,9 @@ body {
     border-radius: 10px;
     border: 1px solid #707070;
 }
+#username {
+        margin-left: -90px;
+    margin-right: 5px;
+    font-size: 15px;
+}
+
