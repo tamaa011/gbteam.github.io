@@ -18,7 +18,7 @@ $(document).ready(function () {
       { "data": "hallCategory.name" },
       { "data": "hallsAverageRating" },
       { "data": "hallPrice" },
-      { "data": "hallPhoneNumber" },
+      { "data": "hallImage" },
          {
       "data": null,
         'render': function (data, type, row) {
