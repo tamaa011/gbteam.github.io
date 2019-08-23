@@ -23,11 +23,11 @@ $(document).ready(function () {
       "data": null,
         'render': function (data, type, row) {
           var id = "'"+data._id.toString()+"'";
-            return '<input id="btnEdit" type="button" onclick="EditHalls(' + id +');" value="Edit" />' +
-            '<input id="btnEdit" type="button" onclick="DeleteHalls(' + id + ')" value="Delete" />' + 
-            '<input id="btnEdit" type="button" onclick="HallDetails(' + id + ')" value="Details" />';
+            return '<input id="btnEdit" type="button" onclick="HallDetails(' + id +');" value="Details" />' +
+            '<input id="btnEdit" type="button" onclick="EditHalls(' + id + ')" value="Update" />' + 
+            '<input id="btnEdit" type="button" onclick="DeleteHalls(' + id + ')" value="Delete" />';
             
-        } 
+        }
     }
     ]
       

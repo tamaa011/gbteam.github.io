@@ -8,7 +8,7 @@
     margin-top: 15px;
 }
 
-#name, #email, #body, #Title, #SearchByName_Name, #new, #re, #UserName, #UserEmail, #UserPassword, #ha, #hd ,#hp ,#hl ,#hla ,#hs ,#hp ,#hi,#Updatedhallname ,#UpdatedHallAdress ,#Updatedhalldescription ,#Updatedhallprice ,#Updatedhalllong ,#Updatedhalllat ,#Updatedhallspecial ,#Updatedhallphone ,#Updatedhallimage {
+#name, #email, #body, #Title, #SearchByName_Name, #new, #re, #UserName, #UserEmail, #UserPassword, #ha, #hd ,#hp ,#hl ,#hla ,#hs ,#hp ,#hi,#Updatedhallname ,#UpdatedHallAdress ,#Updatedhalldescription ,#Updatedhallprice ,#Updatedhalllong ,#Updatedhalllat ,#Updatedhallspecial ,#Updatedhallphone ,#Updatedhallimage, #hdName, #hdDescription, #hdPrice, #hdLong, #hdLat, #hdOffer, #hdPhone, #hdAddress{
   width: 60%;
   margin-bottom: 1em;
   border: 1px solid #707070;
@@ -24,7 +24,7 @@ label{
 }
 
 @media (max-width: 511px){
-#name, #email, #body, #Title, #SearchByName_Name, #new, #re, #UserName, #UserEmail, #UserPassword, #ha, #hd ,#hp ,#hl ,#hla ,#hs ,#hp ,#hi,#Updatedhallname ,#UpdatedHallAdress ,#Updatedhalldescription ,#Updatedhallprice ,#Updatedhalllong ,#Updatedhalllat ,#Updatedhallspecial ,#Updatedhallphone ,#Updatedhallimage{
+#name, #email, #body, #Title, #SearchByName_Name, #new, #re, #UserName, #UserEmail, #UserPassword, #ha, #hd ,#hp ,#hl ,#hla ,#hs ,#hp ,#hi,#Updatedhallname ,#UpdatedHallAdress ,#Updatedhalldescription ,#Updatedhallprice ,#Updatedhalllong ,#Updatedhalllat ,#Updatedhallspecial ,#Updatedhallphone ,#Updatedhallimage, #hdName, #hdDescription, #hdPrice, #hdLong, #hdLat, #hdOffer, #hdPhone, #hdAddress{
     width: 100%;
   }
 }

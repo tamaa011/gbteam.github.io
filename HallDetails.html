@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width , initial=1">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="css/addnewhall.css">
   <link rel="stylesheet" type="text/css" href="css/admin.css">
   <link rel="stylesheet" type="text/css" href="css/formdesign.css">
   <link rel="stylesheet" type="text/css" href="css/animate.css">
@@ -25,57 +24,23 @@
 
 
 <h1 class="text-center">Hall Details</h1>
-<section class="details">
-    <div class="container">
-        <h2 class="text-center">Hall Name: <span id="hdName"></span> </h2>
-<div class="row">
-<div class="col-md-4 col-xs-6">
-        <h3>Halls Description</h3>
-<div class="top">
-<textarea rows="6" cols="40" id="hdDescription">
-</textarea>
-    </div> 
-    
-</div>
-<div class="col-md-4 col-xs-6">
-        <h3>Hall Special Offers</h3>
-<div class="top">
-<textarea rows="6" cols="40" id="hdOffer">
-</textarea>
-    </div> 
-</div>
-<div class="col-md-4 col-xs-6">
-        <h3>Hall Adress</h3>
-<div class="top">
-    <p id="hdAddress"></p>
-    </div> 
-</div>
-    <div class="de">
 
+            <div class="add">
+          <form id="survey-form">
+        <label id="name-label" for="name">Hall Name<br><input type="text" id="hdName" placeholder="Hall Name" name="hallName"></label>
+        <label id="name-label" for="name"><p>Hall Adress</p><br>
+          <input type="text" id="hdAddress" placeholder="Hall Adress" name="hallAdress" >
+        </label>
+              <label id="name-label" for="name">Hall Description<br><textarea type="text" id="hdDescription" placeholder="Hall Description" name="hallDescription" ></textarea></label>
+        <label id="name-label" for="name">Hall Price<br><input type="text" id="hdPrice" placeholder="Hall Price" name="hallPrice" ></label>
+        <label id="name-label" for="name">Hall Location Long<br><input type="text" id="hdLong" placeholder="Hall Location Long" name="hallLocationLong" ></label>
+        <label id="name-label" for="name">Hall Location Lat<br><input type="text" id="hdLat" placeholder="Hall Location Lat" name="hallLocationLat" ></label>
+              <label id="name-label" for="name">Hall Special Offers<br><textarea type="text" id="hdOffer" placeholder="Hall Special Offers" name="hallSpecialOffers"></textarea></label>
+        <label id="name-label" for="name">Hall Phone Number<br><input type="text" id="hdPhone" placeholder="Hall Phone Number" name="hallPhoneNumber" ></label>
+        <label id="name-label" for="name">Hall Image<br><div  id="hdImages" class="text-center"></div></label>
 
-        </div>
-</div>
-    <div class="col-md-4 col-xs-6">
-        <div class="middle">
-            <h1> Hall Price: <span id="hdPrice"></span> </h1>
-        </div>
-    </div> 
-    <div class="col-md-4 col-xs-6">
-        <div class="middle">
-            <h1> Hall Location Long: <span id="hdLong"></span> </h1>
-        </div>
-    </div>
-    <div class="col-md-4 col-xs-6">
-        <div class="middle">
-            <h1> Hall Location Lat: <span id="hdLat"></span> </h1>
-        </div>
-    </div>
-        <h1 class="text-center">Hall Phone Number: <span id="hdPhone"></span> </h1>
-        <h1 class="text-center">Hall Images</h1>
-        <div  id="hdImages" class="text-center"></div>
-        
-        </div>
-</section>
+    </form>
+   </div>
 
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/HallDetails.js"></script>
@@ -83,6 +48,7 @@
 $(function(){
   $(".nav").load("nav.html");
 });
+
 </script>
   
 </body>

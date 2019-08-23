@@ -13,14 +13,14 @@ $(document).ready(function(){
     success: function (data) {
         window.localStorage.removeItem('Id');
         var halldata = data.data;
-$("#hdName").html(halldata.hallName);
-$("#hdDescription").html(halldata.hallDescription);
-$("#hdPrice").html(halldata.hallPrice);
-$("#hdLong").html(halldata.hallLocationLong);
-$("#hdLat").html(halldata.hallLocationLat);
-$("#hdOffer").html(halldata.hallSpecialOffers);
-$("#hdPhone").html(halldata.hallPhoneNumber);
-$("#hdAddress").html(halldata.hallAdress);
+$("#hdName").val(halldata.hallName);
+$("#hdDescription").val(halldata.hallDescription);
+$("#hdPrice").val(halldata.hallPrice);
+$("#hdLong").val(halldata.hallLocationLong);
+$("#hdLat").val(halldata.hallLocationLat);
+$("#hdOffer").val(halldata.hallSpecialOffers);
+$("#hdPhone").val(halldata.hallPhoneNumber);
+$("#hdAddress").val(halldata.hallAdress);
 
 $.each( halldata.hallImage, function( key, value ) {
     $("#hdImages").append('<img src="'+ value+'"/>');
