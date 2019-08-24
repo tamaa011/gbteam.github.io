@@ -19,6 +19,7 @@ function SearchByCategory(){
     ]
   });
 }
+
 function SearchByName(){
  
   $('#SearchByName').DataTable({
