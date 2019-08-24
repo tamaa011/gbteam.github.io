@@ -81,17 +81,18 @@ function validateName(){
     });
 
 function signIn(){
+     document.getElementById("show").style.display = "block";
             var userEmail=$("#name").val();
             var password=$("#pass").val();
             let requestBody = {
                 userEmail : userEmail,
                 userPassword : password
             }
+
             
             const xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                      document.getElementById("show").style.display = "block";
+                if (this.readyState == 4 && this.status == 200) {   
                 }
             };
             xhttp.open("POST",  "https://hidden-ocean-87285.herokuapp.com/users/signin", true);
