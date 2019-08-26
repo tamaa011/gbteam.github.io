@@ -20,6 +20,32 @@ function SearchByCategory(){
   });
 }
 
+
+function deleteAdmin(id){
+    $.ajax({
+    url: "https://hidden-ocean-87285.herokuapp.com/users/deleteAdmin",
+    method: "POST",
+    data: {
+      _id: id
+    },
+    beforeSend: function (xhr) {
+      /* Authorization header */
+      xhr.setRequestHeader('authorization', 'Bearer ' + token);
+      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    },
+    success: function (data) {
+     console.log("Admin Deleted Successfully");
+    },
+      success: function (data) {
+        alert("Admin Deleted Successfully");
+          window.location.href = 'ListAdmins.html'
+      },
+      error: function (data) {
+        alert("invalid Id");
+      }
+  });
+  }
+
 function SearchByName(){
  
   $('#SearchByName').DataTable({
@@ -280,6 +306,9 @@ $(document).ready(function () {
     });
   }
     //list feedback
+
+
+
 
   $('#exampleAdmin').DataTable({
 
