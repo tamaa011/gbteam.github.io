@@ -195,7 +195,8 @@ $(document).ready(function () {
     "columns": [
       { "data": "userName" },
       { "data": "userEmail" },
-      { "data": "_id" }
+      { "data": "_id" },
+      { "data": "date" }
     ]
   });
 
