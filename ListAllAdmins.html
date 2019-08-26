@@ -43,24 +43,16 @@
         </tfoot>
     </table>
     </section>
-<section class="name">
-    <h1 class="text-center">Delete Admin</h1>
-    </section>
-              <form id="survey-form">
-        <label id="name-label" for="name">ID<br><input type="text" id="name" placeholder="ID" name="_id" required></label>
-        <button type="button" id="submit"  onclick="deleteNewAdmin()">Send</button>
-
-    </form>
-        </section>
         <script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/edit.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.3.1.js"></script> -->
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>	
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
     <script>
 $(function(){
   $(".nav").load("nav.html");
+  
 });
     var token = window.localStorage.getItem('token');
 
