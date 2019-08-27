@@ -47,7 +47,7 @@ function deleteAdmin(id){
   }
 
 function SearchByName(){
- 
+
   $('#SearchByName').DataTable({
 
     "scrollX": true,
@@ -69,6 +69,7 @@ function SearchByName(){
     ]
   });
 }
+                   
 
 
 
@@ -199,9 +200,7 @@ $(document).ready(function () {
   });
 
   //users 
-  //need token//
-
-  $('#exampleUsers').DataTable({
+ $('#exampleUsers').DataTable({
     "scrollX": true,
     "ajax": {
       "url": "https://hidden-ocean-87285.herokuapp.com/users",
@@ -249,10 +248,12 @@ $(document).ready(function () {
       "columns": [
         { "data": "_id" },
         { "data": "userName" },
-        { "data": "userEmail" }
+        { "data": "userEmail" },
+          { "data": "date" }
       ]
     });
   }
+  //need token//
 
   //need token//
     //list feedback
@@ -275,7 +276,8 @@ $(document).ready(function () {
     },
     "columns": [
       { "data": "email" },
-      { "data": "text" }
+      { "data": "text" },
+        { "data": "date" }
     ]
   });
 
@@ -326,38 +328,8 @@ $(document).ready(function () {
       { "data": "userName" },
       { "data": "userEmail" },
       { "data": "userRole.role" },
-      { "data": "_id" }
+      { "data": "_id" },
+        { "data": "date" }
     ]
   });
-
-
-//sidenav
-const $menu = $('.main');
-
-$(document).mouseup(e => {
-   if (!$menu.is(e.target)
-   && $menu.has(e.target).length === 0) 
-   {
-     $menu.removeClass('custom');
-          document.body.style.backgroundColor = "white";
-        document.getElementById("op").style.opacity = "1";
-        document.body.style.transition = "0.3s";
-  }
- });
-
-$(document).click(function (e) {
-    e.stopPropagation();
-    var container = $(".social-media");
-
-    //check if the clicked area is dropDown or not
-    if (container.has(e.target).length === 0) {
-        $('.dropdown-container').hide();
-    }
-})
 });
-
-
-
-// home resp
-
-

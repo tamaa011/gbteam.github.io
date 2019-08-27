@@ -19,6 +19,7 @@ $(document).ready(function () {
       { "data": "hallsAverageRating" },
       { "data": "hallPrice" },
       { "data": "hallImage" },
+      { "data": "date" },
          {
       "data": null,
         'render': function (data, type, row) {
@@ -170,6 +171,9 @@ function EditHalls(id){
       xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     },
     success: function (data) {
+      alert(data.message);
+    },
+        error: function (data) {
       alert(data.message);
     }
   });

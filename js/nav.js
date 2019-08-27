@@ -31,7 +31,7 @@ $.each( actions[0].Users, function( key, value ) {
     
 
 
-// nav 
+// Right Nav
 var dropdown = document.getElementsByClassName("dropdown-btn");
 var i;
 
@@ -46,6 +46,7 @@ for (i = 0; i < dropdown.length; i++) {
     }
   });
 }
+
     const $menu = $('.main');
 
 $(document).mouseup(e => {
