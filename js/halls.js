@@ -172,6 +172,7 @@ function EditHalls(id){
     },
     success: function (data) {
       alert(data.message);
+        window.location.href = 'Listhalls.html'
     },
         error: function (data) {
       alert(data.message);

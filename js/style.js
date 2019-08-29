@@ -107,7 +107,7 @@ function signIn(){
   
         localStorage.setItem("token" , jsonResponse.user.token);
         localStorage.setItem("User" , jsonResponse.user.userName);
-        localStorage.setItem("actions" , JSON.stringify(jsonResponse.user.userRole.actions));
+        localStorage.setItem("sideNavActions" , JSON.stringify(jsonResponse.user.userRole.sideNavActions));
 
           window.location.href = 'admin.html'
 

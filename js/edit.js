@@ -1,80 +1,4 @@
-function SearchByCategory(){
-  $('#SearchByCategoryTable').DataTable({
 
-    "scrollX": true,
-    "bDestroy": true,
-    "ajax": {
-      "url": "https://hidden-ocean-87285.herokuapp.com/halls/searchByCategory",
-      "type": "POST",
-      data : {
-        hallCategory : document.getElementById("SearchByCategory").value
-      }
-    },
-    "columns": [
-      { "data": "_id" },
-      { "data": "hallName" },
-      { "data": "hallsAverageRating" },
-      { "data": "hallPrice" },
-      { "data": "hallPhoneNumber" }
-    ]
-  });
-}
-
-
-function deleteAdmin(id){
-    $.ajax({
-    url: "https://hidden-ocean-87285.herokuapp.com/users/deleteAdmin",
-    method: "POST",
-    data: {
-      _id: id
-    },
-    beforeSend: function (xhr) {
-      /* Authorization header */
-      xhr.setRequestHeader('authorization', 'Bearer ' + token);
-      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    },
-    success: function (data) {
-     console.log("Admin Deleted Successfully");
-    },
-      success: function (data) {
-        alert("Admin Deleted Successfully");
-          window.location.href = 'ListAdmins.html'
-      },
-      error: function (data) {
-        alert("invalid Id");
-      }
-  });
-  }
-
-function SearchByName(){
-
-  $('#SearchByName').DataTable({
-
-    "scrollX": true,
-    "bDestroy": true,
-    "ajax": {
-      "url": "https://hidden-ocean-87285.herokuapp.com/halls/searchByName",
-      "type": "POST",
-      data : {
-        hallName : document.getElementById("SearchByName_Name").value
-      }
-    },
-    "columns": [
-      { "data": "_id" },
-      { "data": "hallName" },
-      { "data": "hallCategory.name" },
-      { "data": "hallsAverageRating" },
-      { "data": "hallPrice" },
-      { "data": "hallPhoneNumber" }
-    ]
-  });
-}
-                   
-
-
-
-//end
-//halls  
 $(document).ready(function () {
   var token = window.localStorage.getItem('token');
   obj = { table: "customers", limit: 20 };
@@ -329,7 +253,85 @@ $(document).ready(function () {
       { "data": "userEmail" },
       { "data": "userRole.role" },
       { "data": "_id" },
-        { "data": "date" }
+        { "data": "date" },
+                 {
+      "data": null,
+        'render': function (data, type, row) {
+          var id = "'"+data._id.toString()+"'";
+            return '<input id="btnEdit" type="button" onclick="HallDetails(' + id +');" value="Details" />' +
+            '<input id="btnEdit" type="button" onclick="DeleteAdmins(' + id + ')" value="Delete" />';
+            
+        }
+    }
     ]
   });
 });
+     function DeleteAdmins(id){
+    var token = window.localStorage.getItem('token');
+  $.ajax({
+    url: "https://hidden-ocean-87285.herokuapp.com/users/deleteAdmin",
+    method: "POST",
+        data: {
+      _id: id
+    },
+   
+    beforeSend: function (xhr) {
+      /* Authorization header */
+      xhr.setRequestHeader('authorization', 'Bearer ' + token);
+      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    },
+    success: function (data) {
+      alert(data.message);
+         window.location.href = 'Listsystemadmins.html'
+    },
+        error: function (data) {
+      alert(data.message);
+    }
+  });
+  }
+function SearchByCategory(){
+  $('#SearchByCategoryTable').DataTable({
+
+    "scrollX": true,
+    "bDestroy": true,
+    "ajax": {
+      "url": "https://hidden-ocean-87285.herokuapp.com/halls/searchByCategory",
+      "type": "POST",
+      data : {
+        hallCategory : document.getElementById("SearchByCategory").value
+      }
+    },
+    "columns": [
+      { "data": "_id" },
+      { "data": "hallName" },
+      { "data": "hallsAverageRating" },
+      { "data": "hallPrice" },
+      { "data": "hallPhoneNumber" }
+    ]
+  });
+}
+
+function SearchByName(){
+
+  $('#SearchByName').DataTable({
+
+    "scrollX": true,
+    "bDestroy": true,
+    "ajax": {
+      "url": "https://hidden-ocean-87285.herokuapp.com/halls/searchByName",
+      "type": "POST",
+      data : {
+        hallName : document.getElementById("SearchByName_Name").value
+      }
+    },
+    "columns": [
+      { "data": "_id" },
+      { "data": "hallName" },
+      { "data": "hallCategory.name" },
+      { "data": "hallsAverageRating" },
+      { "data": "hallPrice" },
+      { "data": "hallPhoneNumber" }
+    ]
+  });
+}
+   

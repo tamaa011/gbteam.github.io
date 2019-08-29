@@ -1,18 +1,23 @@
 $(document).ready(function () {
-    var actions = JSON.parse(localStorage.getItem("actions"));
+    var sideNavActions = JSON.parse(localStorage.getItem("sideNavActions"));
     var username = localStorage.getItem("User");
     $("#username").html(username);
 
-$.each( actions[0].Admin, function( key, value ) {
+$.each( sideNavActions[0].Admin, function( key, value ) {
     $(".adminlink").append('<a href="'+ value.split(' ').join('')+'.html">'+ value + '</a><hr>');
 });
 
-$.each( actions[0].Halls, function( key, value ) {
+$.each( sideNavActions[0].Halls, function( key, value ) {
     $(".HallsLink").append('<a href="'+ value.split(' ').join('')+'.html">'+ value + '</a><hr>');
 });
 
-$.each( actions[0].Users, function( key, value ) {
+$.each( sideNavActions[0].Users, function( key, value ) {
     $(".userslink").append('<a href="'+ value.split(' ').join('')+'.html">'+ value + '</a><hr>');
+
+});
+
+$.each( sideNavActions[0].Other, function( key, value ) {
+    $(".OtherLink").append('<a href="'+ value.split(' ').join('')+'.html">'+ value + '</a><hr>');
 
 });
   $(".bars").click(function () {
@@ -69,4 +74,7 @@ $(document).click(function (e) {
         $('.dropdown-container').hide();
     }
 })
+});
+$(".dropdown-container a").click(function(){
+    $(this).parent().hide();
 });
