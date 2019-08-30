@@ -145,7 +145,7 @@ $(document).ready(function () {
       { "data": "userName" },
       { "data": "userEmail" },
       { "data": "_id" },
-      { "data": "date" }
+      { "data": "formatedDate" }
     ]
   });
 
@@ -173,7 +173,7 @@ $(document).ready(function () {
         { "data": "_id" },
         { "data": "userName" },
         { "data": "userEmail" },
-          { "data": "date" }
+          { "data": "formatedDate" }
       ]
     });
   }
@@ -201,7 +201,7 @@ $(document).ready(function () {
     "columns": [
       { "data": "email" },
       { "data": "text" },
-        { "data": "date" }
+        { "data": "formatedDate" }
     ]
   });
 
@@ -253,7 +253,7 @@ $(document).ready(function () {
       { "data": "userEmail" },
       { "data": "userRole.role" },
       { "data": "_id" },
-        { "data": "date" },
+        { "data": "formatedDate" },
                  {
       "data": null,
         'render': function (data, type, row) {

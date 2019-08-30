@@ -19,7 +19,7 @@ $(document).ready(function () {
       { "data": "hallsAverageRating" },
       { "data": "hallPrice" },
       { "data": "hallImage" },
-      { "data": "date" },
+      { "data": "formatedDate" },
          {
       "data": null,
         'render': function (data, type, row) {
