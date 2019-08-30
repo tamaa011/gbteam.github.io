@@ -1,4 +1,4 @@
-
+/*global $ */
 $(document).ready(function () {
   var token = window.localStorage.getItem('token');
   obj = { table: "customers", limit: 20 };
@@ -151,7 +151,6 @@ $(document).ready(function () {
 
 
   function listuser() {
-    alert("list user , mean that have an error");
     $('#exampleUsers').html('');
     $('#exampleUsers').DataTable({
       "scrollX": true,
