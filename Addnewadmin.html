@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GB</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width , initial=1">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/formdesign.css">
+    <link rel="stylesheet" type="text/css" href="css/admin.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+</head>
+<body>
+    <section class="nav"> </section>
+    <section id="op">
+        <section class="name">
+    <h1 class="text-center" >Add New Admin</h1>
+        </section>
+          <form id="survey-form">
+        <label id="name-label" for="name"><p>User Name</p><br><input type="text" id="UserName" placeholder="Name" name="userName" required></label>
+        <label id="name-label" for="name"><p>E-mail</p><br><input type="email" id="UserEmail" placeholder="E-mail" name="userEmail" required></label>
+        <label id="name-label" for="name"><p>Password</p><br><input type="password" id="UserPassword" placeholder="password" name="userPassword" required></label>
+        <label id="name-label"><p style="margin-bottom: -3px;">Role</p></label>
+        <select class="roles"><option  hidden>Choose Roles</option></select>
+        <button type="button" id="submit"  onclick="AddNewAdmin()" >Add</button>
+        </form>
+    </section>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/edit.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>	
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+</body>
+
+<script>
+$(function(){
+  $(".nav").load("nav.html");
+});
+    var token = window.localStorage.getItem('token');
+
+  $(document).ready(function(){
+
+    $.ajax({
+    url: "https://hidden-ocean-87285.herokuapp.com/roles/listRoles",
+    method: "POST",
+    data: {
+      x: JSON.stringify(obj)
+    },
+    beforeSend: function (xhr) {
+      /* Authorization header */
+      xhr.setRequestHeader('authorization', 'Bearer ' + token);
+      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    },
+    success: function (data) {
+      $.each(data.data, function (i, obj) {
+        $('.roles').append($('<option>').text(obj.role).attr('value', obj._id));
+      });
+    }
+  });
+  });
+
+  function AddNewAdmin(){
+    $.ajax({
+    url: "https://hidden-ocean-87285.herokuapp.com/users/addUser",
+    method: "POST",
+    data: {
+      userEmail: $("#UserEmail").val(),
+      userName : $("#UserName").val(),
+      userPassword : $("#UserPassword").val(),
+      userRole : $(".roles").val()
+    },
+    beforeSend: function (xhr) {
+      /* Authorization header */
+      xhr.setRequestHeader('authorization', 'Bearer ' + token);
+      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    },
+    success: function (data) {
+     console.log("addedd Successfully");
+    },
+      success: function (data) {
+        alert("add Successfully");
+          window.location.href = 'addnewadmin.html'
+      },
+      error: function (data) {
+        alert("Password Length  Must be 6 ");
+      }
+  });
+  }
+</script>
+</html>
