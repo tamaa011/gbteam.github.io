@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>GB</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width , initial=1">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/addnewhall.css">
+  <link rel="stylesheet" type="text/css" href="css/admin.css">
+  <link rel="stylesheet" type="text/css" href="css/formdesign.css">
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
+</head>
+
+<body>
+  <section class="nav">
+  </section>
+  <section id="op">
+    <div class="add">   
+      <h1 class="text-center">Add New Hall</h1>
+      <form id="survey-form" enctype="application/x-www-form-urlencoded">
+
+        <label id="name-label" for="name"><p>Hall Name</p>
+          <br>
+          <input type="text" id="name" placeholder="Hall Name" name="hallName" required>
+        </label>
+        <label id="name-label" for="name"><p>Hall Adress</p>
+          <br>
+          <input type="text" id="ha" placeholder="Hall Adress" name="hallAdress" required>
+        </label>
+        <label><span>Categories</span></label>
+        <select id="demo">
+          <option>Select Category</option>
+        </select>
+        <label id="name-label" for="name"><p>Hall Description</p>
+          <br>
+          <input type="text" id="hd" placeholder="Hall Description" name="hallDescription" required>
+        </label>
+        <label id="name-label" for="name"><p>Hall Price</p>
+          <br>
+          <input type="text" id="hp" placeholder="Hall Price" name="hallPrice" required>
+        </label>
+        <label id="name-label" for="name"><p>Hall Location Long</p>
+          <br>
+          <input type="text" id="hl" placeholder="Hall Location Long" name="hallLocationLong" required>
+        </label>
+        <label id="name-label" for="name"><p>Hall Location Lat</p>
+          <br>
+          <input type="text" id="hla" placeholder="Hall Location Lat" name="hallLocationLat" required>
+        </label>
+        <label id="name-label" for="name"><p>Hall Special Offers</p>
+          <br>
+          <input type="text" id="hs" placeholder="Hall Special Offers" name="hallSpecialOffers">
+        </label>
+        <label id="name-label" for="name"><p>Hall Phone Number</p>
+          <br>
+          <input type="text" id="hp" placeholder="Hall Phone Number" name="hallPhoneNumber" required>
+        </label>
+
+        <label id="name-label" for="name"><p>Hall Image (Max 6 Images)</p>
+          <br>
+          <input type="file" id="hi" placeholder="Hall Image" name="hallImage" multiple class="move">
+        </label>
+        <button type="button" id="submit" value="Send" onclick="AddHall()"> Add</button>
+
+        <div id="res"></div>
+      </form>
+    </div>
+  </section>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/edit.js"></script>
+  <script type="text/javascript" src="js/wow.min.js"></script>
+  <script type="text/javascript"> new WOW().init();</script>
+  <script type="text/javascript" src="js/simpleUpload.js"></script>
+  <script>
+$(function(){
+  $(".nav").load("nav.html");
+});
+    var token = window.localStorage.getItem('token');
+
+    var SERVER_URL = 'https://hidden-ocean-87285.herokuapp.com';
+    var IMAGES_UPLOAD_URL = '/halls/UploadImages';
+
+    var $fileInputElement = $('input[type="file"]');
+    var input = document.getElementById('hi'); 
+    var images = new Array();
+    //function upload() {
+      $('input[type=file]').change(function(){
+      $fileInputElement.simpleUpload(SERVER_URL + IMAGES_UPLOAD_URL, {
+
+        start: function handleStart(file) {
+
+        },
+
+        progress: function handleProgress(progress) {
+          // Received progress
+        },
+
+        success: function handleSuccess(data) {
+           images.push( data.result);
+        },
+
+        error: function handleError(error) {
+          // Upload failed
+
+          console.error(error);
+        }
+      });
+
+    });
+
+    function AddHall() {
+      console.log("images" + images);
+
+
+      var hallName = $("#name").val();
+      var hallAdress = $("#ha").val();
+      var hallCategory = $("#demo").val();
+      var hallDescription = $("#hd").val();
+      var hallPrice = $("#hp").val();
+      var hallLocationLong = $("#hl").val();
+      var hallLocationLat = $("#hla").val();
+      var hallSpecialOffers = $("#hs").val();
+      var hallPhoneNumber = $("#hp").val();
+      var hallImage = $("#hi").val();
+
+      let requestBody = {
+        hallName: hallName,
+        hallAdress: hallAdress,
+        hallCategory: hallCategory,
+        hallDescription: hallDescription,
+        hallPrice: hallPrice,
+        hallLocationLong: hallLocationLong,
+        hallLocationLat: hallLocationLat,
+        hallSpecialOffers: hallSpecialOffers,
+        hallPhoneNumber: hallPhoneNumber,
+        hallImage: images
+
+      }
+      $.ajax({
+        url: "https://hidden-ocean-87285.herokuapp.com/halls",
+        type: 'POST',
+        contentType: 'application/x-www-form-urlencoded',
+        beforeSend: function (xhr) {
+          //xhr.setRequestHeader('file',JSON.parse( fd));
+
+          xhr.setRequestHeader('authorization', 'Bearer ' + token);
+        },
+
+        data: requestBody,
+        success: function (result) {
+          alert("success");
+            window.location.href = 'Addnewhall.html'
+          // CallBack(result);
+        },
+        error: function (error) {
+          alert("error");
+        }
+      });
+
+
+    }
+
+  </script>
+</body>
+
+</html>
