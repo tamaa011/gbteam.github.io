@@ -16,7 +16,6 @@
       position: absolute;
         right: 5%;
     margin-top: -1px;
-    display: none;
         width: 15%;
 
 }
@@ -24,5 +23,4 @@
     margin-bottom: 30px;
     margin-top: 20px;
     width: 30%;
-    display: none;
 } 
