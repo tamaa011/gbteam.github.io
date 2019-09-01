@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GB</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width , initial=1">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/admin.css">
+    <link rel="stylesheet" type="text/css" href="css/policy.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
+
+</head>
+<body>
+    <section class="nav"></section>
+                <section class="name">
+                        <h1 class="text-center">Privacy Policy</h1>
+                </section>
+    <div class="priv">
+        <button type="button" onclick="editT()" class="edit" id="ed">Edit Terms of service</button> <!--edit-->
+        <br> <br>
+        <textarea rows="22" cols="170" id="demo" disabled></textarea>
+        <button type="button" onclick="savePrivacy()" class="save" id="pri" disabled>Save Privacy Policy</button> <!--save-->
+    </div>
+
+
+
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/wow.min.js"></script>
+	<script type="text/javascript"> new WOW().init();</script>
+<script>
+    
+$(function(){
+  $(".nav").load("nav.html");
+});
+
+    //privacy
+   $(document).ready(function () {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myObj = JSON.parse(this.responseText);
+      document.getElementById("demo").innerHTML = myObj.data.text;
+    }
+  };
+  xhttp.open("POST", "https://hidden-ocean-87285.herokuapp.com/policyAndPrivacy/getPolicyAndPrivacy", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send("type=privacy");
+       }); 
+    //edit
+    function editT() {
+        document.getElementsByTagName("textarea")[0].removeAttribute("disabled"); 
+        document.getElementById("ed").style.display = "none";
+        document.getElementById("pri").removeAttribute("disabled"); 
+}
+        
+    //savePrivacy
+      function savePrivacy() {
+    var token = window.localStorage.getItem('token');
+
+    $.ajax({
+      url: "https://hidden-ocean-87285.herokuapp.com/policyAndPrivacy/addPolicyAndPrivacy",
+      method: "POST",
+        
+      data: {
+        text: $("#demo").val(),
+          type: "privacy"
+        
+      },
+      beforeSend: function (xhr) {
+        /* Authorization header */
+        xhr.setRequestHeader('authorization', 'Bearer ' + token);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+      },
+      success: function (data) {
+        alert(data.message);
+          window.location.href = 'Privacypolicy.html'
+      },
+      error: function (data) {
+        alert(data.message);
+          window.location.href = 'Privacypolicy.html'
+      }
+
+    });
+      }
+</script>
+</body>
+</html>
