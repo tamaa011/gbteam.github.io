@@ -67,7 +67,7 @@
           <br>
           <input type="file" id="hi" placeholder="Hall Image" name="hallImage" multiple class="move">
         </label>
-        <button type="button" id="submit" value="Send" onclick="AddHall()"> Add</button>
+        <button type="button" id="submit" value="Send" onclick="upload()"> Add</button>
 
         <div id="res"></div>
       </form>
@@ -89,10 +89,16 @@ $(function(){
     var IMAGES_UPLOAD_URL = '/halls/UploadImages';
 
     var $fileInputElement = $('input[type="file"]');
-    var input = document.getElementById('hi'); 
-    var images = new Array();
-    //function upload() {
-      $('input[type=file]').change(function(){
+    var images= [];
+    var fileLength=0;
+    var uploadedImage=0;
+    $('input[type=file]').change(function(){
+      fileLength = this.files.length;
+      alert(fileLength)
+
+    });
+    function upload() {
+      
       $fileInputElement.simpleUpload(SERVER_URL + IMAGES_UPLOAD_URL, {
 
         start: function handleStart(file) {
@@ -104,7 +110,11 @@ $(function(){
         },
 
         success: function handleSuccess(data) {
-           images.push( data.result);
+          uploadedImage++;
+          images.push(data.result);
+          if(fileLength == uploadedImage){
+            AddHall(images);
+          }
         },
 
         error: function handleError(error) {
@@ -113,12 +123,8 @@ $(function(){
           console.error(error);
         }
       });
-
-    });
-
-    function AddHall() {
-      console.log("images" + images);
-
+    }
+    function AddHall(imagesFiles) {
 
       var hallName = $("#name").val();
       var hallAdress = $("#ha").val();
@@ -141,9 +147,10 @@ $(function(){
         hallLocationLat: hallLocationLat,
         hallSpecialOffers: hallSpecialOffers,
         hallPhoneNumber: hallPhoneNumber,
-        hallImage: images
+        hallImage: imagesFiles
 
       }
+
       $.ajax({
         url: "https://hidden-ocean-87285.herokuapp.com/halls",
         type: 'POST',
