@@ -94,8 +94,6 @@ $(function(){
     var uploadedImage=0;
     $('input[type=file]').change(function(){
       fileLength = this.files.length;
-      alert(fileLength)
-
     });
     function upload() {
       
@@ -113,7 +111,8 @@ $(function(){
           uploadedImage++;
           images.push(data.result);
           if(fileLength == uploadedImage){
-            AddHall(images);
+            var imagg = JSON.stringify(images)
+            AddHall(imagg);
           }
         },
 
