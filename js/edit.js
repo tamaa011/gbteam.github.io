@@ -305,7 +305,8 @@ function SearchByCategory(){
       { "data": "hallName" },
       { "data": "hallsAverageRating" },
       { "data": "hallPrice" },
-      { "data": "hallPhoneNumber" }
+      { "data": "hallImage" },
+      { "data": "formatedDate" }
     ]
   });
 }
@@ -319,7 +320,7 @@ function SearchByName(){
     "ajax": {
       "url": "https://hidden-ocean-87285.herokuapp.com/halls/searchByName",
       "type": "POST",
-      data : {
+      data : { 
         hallName : document.getElementById("SearchByName_Name").value
       }
     },
@@ -329,7 +330,8 @@ function SearchByName(){
       { "data": "hallCategory.name" },
       { "data": "hallsAverageRating" },
       { "data": "hallPrice" },
-      { "data": "hallPhoneNumber" }
+      { "data": "hallImage" },
+      { "data": "formatedDate" }
     ]
   });
 }

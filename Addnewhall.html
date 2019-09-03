@@ -60,7 +60,7 @@
         </label>
         <label id="name-label" for="name"><p>Hall Phone Number</p>
           <br>
-          <input type="text" id="hp" placeholder="Hall Phone Number" name="hallPhoneNumber" required>
+          <input type="text" id="hpn" placeholder="Hall Phone Number" name="hallPhoneNumber" required>
         </label>
 
         <label id="name-label" for="name"><p>Hall Image (Max 6 Images)</p>
@@ -133,7 +133,7 @@ $(function(){
       var hallLocationLong = $("#hl").val();
       var hallLocationLat = $("#hla").val();
       var hallSpecialOffers = $("#hs").val();
-      var hallPhoneNumber = $("#hp").val();
+      var hallPhoneNumber = $("#hpn").val();
       var hallImage = $("#hi").val();
 
       let requestBody = {
