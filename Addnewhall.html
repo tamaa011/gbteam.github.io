@@ -161,13 +161,14 @@ $(function(){
         },
 
         data: requestBody,
-        success: function (result) {
-          alert("success");
+        success: function (data) {
+          alert(data.message);
             window.location.href = 'Addnewhall.html'
           // CallBack(result);
         },
-        error: function (error) {
-          alert("error");
+        error: function (data) {
+          alert("Fill all the fields");
+            window.location.href = 'Addnewhall.html'
         }
       });
 
