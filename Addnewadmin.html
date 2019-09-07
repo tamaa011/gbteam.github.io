@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/formdesign.css">
     <link rel="stylesheet" type="text/css" href="css/admin.css">
+    <link rel="stylesheet" type="text/css" href="css/addnewadmin.css">
     <link rel="stylesheet" type="text/css" href="css/animate.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
@@ -24,10 +25,19 @@
           <form id="survey-form">
         <label id="name-label" for="name"><p>User Name</p><br><input type="text" id="UserName" placeholder="Name" name="userName" required></label>
         <label id="name-label" for="name"><p>E-mail</p><br><input type="email" id="UserEmail" placeholder="E-mail" name="userEmail" required></label>
-        <label id="name-label" for="name"><p>Password</p><br><input type="password" id="UserPassword" placeholder="password" name="userPassword" required></label>
-        <label id="name-label"><p style="margin-bottom: -3px;">Role</p></label>
-        <select class="roles"><option  hidden>Choose Roles</option></select>
-        <button type="button" id="submit"  onclick="AddNewAdmin()" >Add</button>
+        <label id="name-label" for="name"><p>Password</p><br><input type="password" id="UserPassword" placeholder="password" name="userPassword" required></label>       
+        <label id="name-label" for="name"><p>RE-Password</p><br><input type="password" id="REPassword" placeholder="password" name="REPassword" onkeyup="isPasswordMatch();" required> </label>
+                            <div id="message">
+  <h3>Password must contain the following:</h3>
+  <p id="length" class="invalid">Minimum <b>6 characters</b></p>
+</div>
+              <label id="name-label"><p style="margin-bottom: -3px;">Show Password</p></label>
+
+              <input type="checkbox" onclick="myFunction()" style="margin-bottom: 10px;">
+              <div id="divCheckPassword" style="margin-bottom: 10px;"></div>
+        <label id="name-label" ><p style="margin-bottom: -3px;">Role</p></label>
+        <select class="roles" onclick="editP()"><option  hidden>Choose Roles</option></select>
+        <button type="button" id="submit"  onclick="AddNewAdmin()" disabled>Add</button>
         </form>
     </section>
         <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -41,10 +51,35 @@
 $(function(){
   $(".nav").load("nav.html");
 });
+    function isPasswordMatch() {
+    var password = $("#UserPassword").val();
+    var confirmPassword = $("#REPassword").val();
+
+    if (password != confirmPassword) { $("#divCheckPassword").html("Passwords do not match!");
+                                      
+                                     }
+    else {$("#divCheckPassword").html("Passwords match.");
+        
+         }
+}
+
+$(document).ready(function () {
+    $("#txtConfirmPassword").keyup(isPasswordMatch);
+});
+    function myFunction() {
+         var x = document.getElementById("UserPassword");
+        var y = document.getElementById("REPassword");
+  if (x.type === "password" && y.type === "password" ) {
+    x.type = "text";
+      y.type = "text";
+  } else {
+    x.type = "password";
+      y.type = "password";
+  }
+}
     var token = window.localStorage.getItem('token');
 
   $(document).ready(function(){
-
     $.ajax({
     url: "https://hidden-ocean-87285.herokuapp.com/roles/listRoles",
     method: "POST",
@@ -65,6 +100,7 @@ $(function(){
   });
 
   function AddNewAdmin(){
+      
     $.ajax({
     url: "https://hidden-ocean-87285.herokuapp.com/users/addUser",
     method: "POST",
@@ -84,12 +120,51 @@ $(function(){
     },
       success: function (data) {
         alert("add Successfully");
-          window.location.href = 'addnewadmin.html'
+          window.location.href = 'Addnewadmin.html'
       },
       error: function (data) {
-        alert("Password Length  Must be 6 ");
+          var $Email = $("#UserEmail");
+          var $name = $("#UserName");
+          var mail = $Email.val().trim();
+          var name = $name.val().trim();
+          if(name.length < 1) {
+              alert("Please Fill the Name field");
+          }else if (mail.length < 1) {
+    alert("Please Fill the Email field");
+  }
       }
   });
   }
+    var myInput = document.getElementById("UserPassword");
+var letter = document.getElementById("letter");
+var capital = document.getElementById("capital");
+var number = document.getElementById("number");
+var length = document.getElementById("length");
+
+// When the user clicks on the password field, show the message box
+myInput.onfocus = function() {
+  document.getElementById("message").style.display = "block";
+}
+
+// When the user clicks outside of the password field, hide the message box
+myInput.onblur = function() {
+  document.getElementById("message").style.display = "none";
+}
+
+// When the user starts to type something inside the password field
+myInput.onkeyup = function() {
+
+  // Validate length
+  if(myInput.value.length >= 6) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+}
+function editP() {
+     document.getElementById("submit").removeAttribute("disabled"); 
+}
 </script>
 </html>

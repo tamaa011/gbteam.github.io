@@ -17,7 +17,7 @@ $(document).ready(function () {
       { "data": "hallName" },
       { "data": "hallCategory.name" },
       { "data": "hallsAverageRating" },
-      { "data": "hallPrice" },
+      { "data": "hallsRatingCounter" },
       { "data": "hallImage" },
       { "data": "formatedDate" },
          {
@@ -156,7 +156,7 @@ function updateHall(hallimage){
 
 function EditHalls(id){
     localStorage.setItem("Id" , id);
-    window.location.href = 'updataHall.html';
+    window.open("updataHall.html");
     
   }
      function DeleteHalls(id){
@@ -183,5 +183,5 @@ function EditHalls(id){
 
    function HallDetails(id){
      localStorage.setItem("Id" , id);
-    window.location.href = 'HallDetails.html';
+       window.open("HallDetails.html");
   }

@@ -1,0 +1,33 @@
+#message {
+  display:none;
+  color: #000;
+  margin-top: 5px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+#message p {
+  font-size: 18px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.valid:before {
+  position: relative;
+  left: -15px;
+  content: "✔";
+}
+.invalid:before {
+  position: relative;
+  left: -15px;
+  content: "✖";
+}

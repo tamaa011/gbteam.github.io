@@ -303,9 +303,19 @@ function SearchByCategory(){
       { "data": "_id" },
       { "data": "hallName" },
       { "data": "hallsAverageRating" },
-      { "data": "hallPrice" },
+      { "data": "hallsRatingCounter" },
       { "data": "hallImage" },
-      { "data": "formatedDate" }
+      { "data": "formatedDate" },
+         {
+      "data": null,
+        'render': function (data, type, row) {
+          var id = "'"+data._id.toString()+"'";
+            return '<input  id="btnEdit" type="button" onclick="HallDetails(' + id +');" value="Details" />' +
+            '<input id="btnEdit" type="button" onclick="EditHalls(' + id + ')" value="Update" />' + 
+            '<input id="btnEdit" type="button" onclick="DeleteHalls(' + id + ')" value="Delete" />';
+            
+        }
+    }
     ]
   });
 }
@@ -328,10 +338,51 @@ function SearchByName(){
       { "data": "hallName" },
       { "data": "hallCategory.name" },
       { "data": "hallsAverageRating" },
-      { "data": "hallPrice" },
+      { "data": "hallsRatingCounter" },
       { "data": "hallImage" },
-      { "data": "formatedDate" }
+      { "data": "formatedDate" },
+         {
+      "data": null,
+        'render': function (data, type, row) {
+          var id = "'"+data._id.toString()+"'";
+            return '<input  id="btnEdit" type="button" onclick="HallDetails(' + id +');" value="Details" />' +
+            '<input id="btnEdit" type="button" onclick="EditHalls(' + id + ')" value="Update" />' + 
+            '<input id="btnEdit" type="button" onclick="DeleteHalls(' + id + ')" value="Delete" />';
+            
+        }
+    }
     ]
   });
 }
+function EditHalls(id){
+    localStorage.setItem("Id" , id);
+    window.open("updataHall.html");
+    
+  }
+     function DeleteHalls(id){
+    var token = window.localStorage.getItem('token');
+  $.ajax({
+    url: "https://hidden-ocean-87285.herokuapp.com/halls/"+id,
+    method: "Delete",
+   
+    beforeSend: function (xhr) {
+      /* Authorization header */
+      xhr.setRequestHeader('authorization', 'Bearer ' + token);
+      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    },
+    success: function (data) {
+      alert(data.message);
+        window.location.href = 'Listhalls.html'
+    },
+        error: function (data) {
+      alert(data.message);
+    }
+  });
+  }
+
+
+   function HallDetails(id){
+     localStorage.setItem("Id" , id);
+       window.open("HallDetails.html");
+  }
    
