@@ -4,7 +4,6 @@
 <head>
   <title>GB</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width , initial=1">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="css/addnewhall.css">
@@ -96,7 +95,37 @@ $(function(){
       fileLength = this.files.length;
     });
     function upload() {
-      
+      var $name = $("#name");
+          var $Adress = $("#ha");
+          var $Description = $("#hd");
+          var $Price = $("#hp");
+          var $LocationLong = $("#hl");
+          var $LocationLat = $("#hla");
+          var $PhoneNumber = $("#hpn");
+          var name = $name.val().trim();
+          var Adress = $Adress.val().trim();
+          var Description = $Description.val().trim();
+          var Price = $Price.val().trim();
+          var LocationLong = $LocationLong.val().trim();
+          var LocationLat = $LocationLat.val().trim();
+          var PhoneNumber = $PhoneNumber.val().trim();
+          if(name.length < 1) {
+              alert("Please Fill the Name field");
+          }else if (Adress.length < 1) {
+    alert("Please Fill the Adress field");
+  }else if (Description.length < 1) {
+    alert("Please Fill the Description field");
+  }else if (Price.length < 1) {
+    alert("Please Fill the Price field");
+  }else if (LocationLong.length < 1) {
+    alert("Please Fill the Hall Location Long field");
+  }else if (LocationLat.length < 1) {
+    alert("Please Fill the Hall Location Lat field");
+  }else if (PhoneNumber.length < 1) {
+    alert("Please Fill the Hall Phone Number field");
+  }
+        
+        
       $fileInputElement.simpleUpload(SERVER_URL + IMAGES_UPLOAD_URL, {
 
         start: function handleStart(file) {
@@ -166,14 +195,14 @@ $(function(){
             window.location.href = 'Addnewhall.html'
           // CallBack(result);
         },
-        error: function (data) {
-          alert("Fill all the fields");
-            window.location.href = 'Addnewhall.html'
-        }
+      error: function (data) {
+          
+      }
       });
 
 
     }
+      
 
   </script>
 </body>

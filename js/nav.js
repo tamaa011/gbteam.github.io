@@ -1,10 +1,13 @@
 $(document).ready(function () {
     var sideNavActions = JSON.parse(localStorage.getItem("sideNavActions"));
+    var role = JSON.parse(localStorage.getItem("role"));
     var username = localStorage.getItem("User");
     $("#username").html(username);
 
+
 $.each( sideNavActions[0].Admin, function( key, value ) {
     $(".adminlink").append('<a href="'+ value.split(' ').join('')+'.html">'+ value + '</a><hr>');
+
 });
 
 $.each( sideNavActions[0].Halls, function( key, value ) {
@@ -20,6 +23,13 @@ $.each( sideNavActions[0].Other, function( key, value ) {
     $(".OtherLink").append('<a href="'+ value.split(' ').join('')+'.html">'+ value + '</a><hr>');
 
 });
+    if(role === "admin") {
+        document.getElementById("A").style.display = "none";
+    }
+        if(role === "worker") {
+        document.getElementById("A").style.display = "none";
+        document.getElementById("U").style.display = "none";
+    }
   $(".bars").click(function () {
     $(".main").toggleClass("custom");
       document.body.style.backgroundColor = "rgba(0, 0, 0, 0.07)";

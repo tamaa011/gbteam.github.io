@@ -1,3 +1,11 @@
+$(document).ready(function () {
+        var role = JSON.parse(localStorage.getItem("role"));
+
+         if(role === "admin") {
+             document.getElementsByClassName("edd").style.Color = "red";
+         }
+  });
+
 $.getScript( "js/simpleUpload.js");
 
 var halldata;
@@ -25,7 +33,7 @@ $(document).ready(function () {
         'render': function (data, type, row) {
           var id = "'"+data._id.toString()+"'";
             return '<input id="btnEdit" type="button" onclick="HallDetails(' + id +');" value="Details" />' +
-            '<input id="btnEdit" type="button" onclick="EditHalls(' + id + ')" value="Update" />' + 
+            '<input id="btnEdit" class="edd" type="button" onclick="EditHalls(' + id + ')" value="Update" />' + 
             '<input id="btnEdit" type="button" onclick="DeleteHalls(' + id + ')" value="Delete" />';
             
         }
@@ -161,6 +169,7 @@ function EditHalls(id){
   }
      function DeleteHalls(id){
     var token = window.localStorage.getItem('token');
+
   $.ajax({
     url: "https://hidden-ocean-87285.herokuapp.com/halls/"+id,
     method: "Delete",
