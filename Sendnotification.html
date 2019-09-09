@@ -50,7 +50,15 @@ $(function(){
 
   function sendNotification() {
     var token = window.localStorage.getItem('token');
-
+          var $title = $("#Title");
+          var $body = $("#body");
+          var title = $title.val().trim();
+          var body = $body.val().trim();
+      if(title < 1){
+          alert("Please Fill the Title field")
+      }else if(body < 1){
+          alert("Please Fill the Body field")
+      }else{
     $.ajax({
       url: "https://hidden-ocean-87285.herokuapp.com/notification/pushNotification",
       method: "POST",
@@ -64,14 +72,14 @@ $(function(){
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
       },
       success: function (data) {
-        alert("Massage Send Successfully");
-          window.location.href = 'sendNotification.html'
+        alert(data.message);
+          window.location.href = 'Sendnotification.html'
       },
       error: function (data) {
-        alert("fill the form");
+        alert(data.message);
       }
 
-    });
+    });}
 
   }
 </script>

@@ -355,12 +355,25 @@ function SearchByName(){
   });
 }
 function EditHalls(id){
+        var token = window.localStorage.getItem('token');
+   var role = JSON.parse(localStorage.getItem("role"));
+       if(role === "worker") {
+           alert("You can't edit this hall");
+       }else if (role === "admin"){
+           alert("You can't edit this hall");
+       }else{
     localStorage.setItem("Id" , id);
-    window.open("updataHall.html");
+    window.open("updataHall.html");}
     
   }
      function DeleteHalls(id){
     var token = window.localStorage.getItem('token');
+   var role = JSON.parse(localStorage.getItem("role"));
+       if(role === "worker") {
+           alert("You can't delete hall");
+       }else if (role === "admin"){
+           alert("You can't delete hall");
+       }else{
   $.ajax({
     url: "https://hidden-ocean-87285.herokuapp.com/halls/"+id,
     method: "Delete",
@@ -377,7 +390,7 @@ function EditHalls(id){
         error: function (data) {
       alert(data.message);
     }
-  });
+  });}
   }
 
 

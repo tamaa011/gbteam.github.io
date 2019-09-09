@@ -11,7 +11,6 @@ body {
   border: none;
   background: none;
   width: 100%;
-  text-align: left;
   cursor: pointer;
     outline: none;}
 .dropdown-container {
@@ -115,11 +114,10 @@ body {
     width: 70%;
 }
 .social-media{
-	margin-left:95%;
+	margin-left:85%;
     margin-top: 10px;
 }
 .social-media .dropdown-container {
-    margin-left: -121px;
     margin-top: 1px;
     width: 175px;
 
@@ -211,8 +209,7 @@ body {
     border: 1px solid #707070;
 }
 #username {
-        margin-left: -110px;
-    margin-right: 20px;
+    margin-right: 2px;
     font-size: 15px;
 }
 

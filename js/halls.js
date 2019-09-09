@@ -1,17 +1,13 @@
-$(document).ready(function () {
-        var role = JSON.parse(localStorage.getItem("role"));
 
-         if(role === "admin") {
-             document.getElementsByClassName("edd").style.Color = "red";
-         }
-  });
 
 $.getScript( "js/simpleUpload.js");
+        
 
 var halldata;
 var token = window.localStorage.getItem('token');
    var id= window.localStorage.getItem('Id');
 $(document).ready(function () {
+
   $('#example').DataTable({
 
     "scrollX": true,
@@ -33,15 +29,16 @@ $(document).ready(function () {
         'render': function (data, type, row) {
           var id = "'"+data._id.toString()+"'";
             return '<input id="btnEdit" type="button" onclick="HallDetails(' + id +');" value="Details" />' +
-            '<input id="btnEdit" class="edd" type="button" onclick="EditHalls(' + id + ')" value="Update" />' + 
+            '<input id="btnEdit"  type="button" onclick="EditHalls(' + id + ')" value="Update" />' + 
             '<input id="btnEdit" type="button" onclick="DeleteHalls(' + id + ')" value="Delete" />';
+                
+
             
         }
     }
     ]
       
   });
-
 
    if(id != null){
   $.ajax({
@@ -163,18 +160,31 @@ function updateHall(hallimage){
 }
 
 function EditHalls(id){
+            var token = window.localStorage.getItem('token');
+       var role = JSON.parse(localStorage.getItem("role"));
+       if(role === "worker") {
+           alert("You can't edit this hall");
+       }else if (role === "admin"){
+           alert("You can't edit this hall");
+       }else{
     localStorage.setItem("Id" , id);
-    window.open("updataHall.html");
+    window.open("updataHall.html");}
     
   }
      function DeleteHalls(id){
     var token = window.localStorage.getItem('token');
-
+   var role = JSON.parse(localStorage.getItem("role"));
+       if(role === "worker") {
+           alert("You can't delete hall");
+       }else if (role === "admin"){
+           alert("You can't delete hall");
+       }else{
   $.ajax({
     url: "https://hidden-ocean-87285.herokuapp.com/halls/"+id,
     method: "Delete",
    
     beforeSend: function (xhr) {
+
       /* Authorization header */
       xhr.setRequestHeader('authorization', 'Bearer ' + token);
       xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
@@ -186,11 +196,13 @@ function EditHalls(id){
         error: function (data) {
       alert(data.message);
     }
-  });
+  });}
   }
 
 
    function HallDetails(id){
+     
      localStorage.setItem("Id" , id);
+
        window.open("HallDetails.html");
   }
