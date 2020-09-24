@@ -24,7 +24,6 @@ $(document).ready(function () {
   });
 
   function SearchByCategory(){
-    hallCategory
     $('#exampleCategory').DataTable({
 
       "scrollX": true,

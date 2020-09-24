@@ -118,23 +118,7 @@ function signIn(){
 }
 
 
-//test
-$.urlParam = function (name) {
-    var results = new RegExp('[\?&]' + name + '=([^&#]*)')
-                      .exec(window.location.search);
 
-    return (results !== null) ? results[1] || 0 : false;
-}
-
-function validateToken(){
-    let resetPasswordToken =  $.urlParam("token")
-    //send api request hide w show 
-    //localStorage.getItem("token")
-    //localStorage.setItem("token" , token)
-}
-
-console.log($.urlParam('ref')); //registration
-console.log($.urlParam('email')); //bobo@example.com
 
 
 
