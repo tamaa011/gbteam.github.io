@@ -295,7 +295,7 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 /* Set a style for all buttons */
-button {
+.cancelbtn, .signupbtn {
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
@@ -385,7 +385,7 @@ input[type=text], input[type=password] {
 }
 
 /* Set a style for all buttons */
-button {
+.cancelbtn2, .logi {
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
