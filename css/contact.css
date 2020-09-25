@@ -1,9 +1,6 @@
 body {
     overflow-x: hidden;
 }
-*{
-	box-sizing: border-box;
-}
 /*/Start navbar/*/
 .one {
         border-top: 4px solid #FD6275;
@@ -129,9 +126,8 @@ input, textarea {
   outline:none; 
   font-family:inherit; 
   box-sizing:border-box;
-  width: 100%;
+/*  width: 100%;*/
   padding: 0px 4px;
-  color: #F5F5F5;
   margin-top: 1.25em;
 }
 
@@ -336,7 +332,7 @@ input[type=text]:focus, input[type=password]:focus {
 
 /* Set a style for all buttons */
 .cancelbtn, .signupbtn {
-  background-color: #4CAF50;
+  background-color: #FD6275;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -426,7 +422,7 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 .cancelbtn2, .logi {
-  background-color: #4CAF50;
+  background-color: #FD6275;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -535,3 +531,41 @@ span.psw {
   }
 }
 /*model2*/
+
+/*pass valid*/
+/*# sourceMappingURL=maps/style.css.map */
+#message {
+  display:none;
+  color: #000;
+  margin-top: 10px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+ #message p {
+  font-size: 18px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+   
+}
+.valid:before {
+  position: relative;
+  left: -15px;
+  content: "✔";
+}
+.invalid:before {
+  position: relative;
+  left: -15px;
+  content: "✖";
+}
+/*pass valid*/

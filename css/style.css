@@ -296,7 +296,7 @@ input[type=text]:focus, input[type=password]:focus {
 
 /* Set a style for all buttons */
 .cancelbtn, .signupbtn {
-  background-color: #4CAF50;
+  background-color: #FD6275;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -386,7 +386,7 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 .cancelbtn2, .logi {
-  background-color: #4CAF50;
+  background-color: #FD6275;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -496,3 +496,40 @@ span.psw {
 }
 /*model2*/
 
+/*pass valid*/
+/*# sourceMappingURL=maps/style.css.map */
+#message {
+  display:none;
+  color: #000;
+  margin-top: 10px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+#message p {
+  font-size: 18px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+   
+}
+.valid:before {
+  position: relative;
+  left: -15px;
+  content: "✔";
+}
+.invalid:before {
+  position: relative;
+  left: -15px;
+  content: "✖";
+}
+/*pass valid*/

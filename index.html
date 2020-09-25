@@ -163,16 +163,31 @@
       <p>Please fill this form to create an account.</p>
       <hr>
       <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
+      <input type="text" placeholder="Enter Email" name="userEmail" id="uemail" required>      
+        <label for="name"><b>Name</b></label>
+      <input type="text" placeholder="Enter Name" name="userName" id="unames" required>
 
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <input type="password" placeholder="Enter Password" name="userPassword" id="pass" required>
 
       <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      <input onkeyup="isPasswordMatch();" id="REPassword" type="password" placeholder="Repeat Password" name="psw-repeat" required>
+        <div id="message">
+          <h3>Password must contain the following:</h3>
+          <p id="length" class="invalid">Minimum <b>6 characters</b></p>
+        </div>
+              <label for="exampleInputName1"><p style=" margin-top: 8px;">Show Password</p></label>
+
+              <input type="checkbox" onclick="myFunction()" style=" margin-top: 11px;">
+              <div id="divCheckPassword"></div>
       <div class="clearfix">
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signupbtn">Sign Up</button>
+        <button type="button" class="signupbtn" id="lo2" onclick="signUp()">Sign Up</button>
+                      <div id="loading2" style="display: none;">
+    <button class="btn btn-primary btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="button" style="background-color: #FD6275" disabled>
+      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+      Loading...
+    </button>
+    </div>
       </div>
     </div>
   </form>
@@ -191,18 +206,24 @@
     </div>
 
     <div class="container2">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <label for="uname"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="userEmail" id="umail" required>
 
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <input type="password" placeholder="Enter Password" name="userPassword" id="upass" required>
         
-      <button type="submit" class="logi">Login</button>
+      <button type="button" class="logi" id="lo1" onclick="signIn()">Login</button>
+        <div id="loading1" style="display: none;">
+<button class="btn btn-primary btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="button" style="background-color: #FD6275" disabled>
+  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  Loading...
+</button>
+</div>
     </div>
 
     <div class="container2" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn2">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
+      
+      <p class="psw">Forgot <a href="#">password?</a></p>
     </div>
   </form>
 </div>
@@ -234,6 +255,155 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+var token = window.localStorage.getItem('token');
+function signIn(){
+         document.getElementById("lo1").style.display = "none";
+        document.getElementById("loading1").style.display = "block";
+            var userEmail=$("#umail").val();
+            var password=$("#upass").val();
+            let requestBody = {
+                userEmail : userEmail,
+                userPassword : password
+            }
+
+            
+            const xhttp = new XMLHttpRequest();
+
+            xhttp.open("POST",  "https://hidden-ocean-87285.herokuapp.com/users/signin", true);
+            xhttp.setRequestHeader("Content-Type", "application/json");
+    
+    xhttp.onload  = function() {
+                if (this.readyState == 4 && this.status == 200) {  
+
+                }else { 
+                    document.getElementById("lo1").style.display = "block";
+                    document.getElementById("loading1").style.display = "none";
+                    setTimeout(function(){ alert("Username or Password not correct"); }, 200);
+                }
+            
+   var jsonResponse = JSON.parse(xhttp.responseText);
+  
+        localStorage.setItem("token" , jsonResponse.user.token);
+        localStorage.setItem("User" , jsonResponse.user.userName);
+          window.location.href = 'homepage.html'
+
+};
+            xhttp.send(JSON.stringify(requestBody));
+                
+}
+        
+  function signUp(){
+      
+      
+               document.getElementById("lo2").style.display = "none";
+        document.getElementById("loading2").style.display = "block";
+            var userEmail=$("#uemail").val();
+            var userName=$("#unames").val();
+            var userPassword=$("#pass").val();
+            let requestBody = {
+                userEmail : userEmail,
+                userPassword : userPassword,
+                userName : userName
+            }
+
+            
+            const xhttp = new XMLHttpRequest();
+
+            xhttp.open("POST",  "https://hidden-ocean-87285.herokuapp.com/users/signup", true);
+            xhttp.setRequestHeader("Content-Type", "application/json");
+    
+    xhttp.onload  = function() {
+                if (this.readyState == 4 && this.status == 200) {  
+
+                }else { 
+        document.getElementById("lo2").style.display = "inline";
+        document.getElementById("loading2").style.display = "none";
+          var $Email = $("#uemail");
+          var $name = $("#unames");
+          var $password = $("#pass");
+          var mail = $Email.val().trim();
+          var name = $name.val().trim();
+          var pass = $password.val().trim();
+          if(name.length < 1) {
+              setTimeout(function(){ alert("Please Fill the Name field"); }, 200);
+          }else if (mail.length < 1) {
+              setTimeout(function(){ alert("Please Fill the Email field"); }, 200);
+  }else if (pass.length < 1){
+        setTimeout(function(){ alert("Please Fill the Password field"); }, 200);
+    }else if (this.readyState == 4 && this.status == 409) {
+               alert("Mail exists");
+               }
+                }
+            
+   var jsonResponse = JSON.parse(xhttp.responseText);
+  
+        localStorage.setItem("token" , jsonResponse.user.token);
+        localStorage.setItem("User" , jsonResponse.user.userName);
+          window.location.href = 'homepage.html'
+
+};
+            xhttp.send(JSON.stringify(requestBody));
+      
+      
+      
+        document.getElementById("lo2").style.display = "none";
+        document.getElementById("loading2").style.display = "inline";
+
+  }
+        
+// password config
+    function isPasswordMatch() {
+    var password = $("#pass").val();
+    var confirmPassword = $("#REPassword").val();
+
+    if (password != confirmPassword) { $("#divCheckPassword").html("Passwords do not match!");
+                                      
+                                     }
+    else {$("#divCheckPassword").html("Passwords match.");
+        
+         }
+}
+    function myFunction() {
+         var x = document.getElementById("pass");
+        var y = document.getElementById("REPassword");
+  if (x.type === "password" && y.type === "password" ) {
+    x.type = "text";
+      y.type = "text";
+  } else {
+    x.type = "password";
+      y.type = "password";
+  }
+}
+var myInput = document.getElementById("pass");
+var letter = document.getElementById("letter");
+var capital = document.getElementById("capital");
+var number = document.getElementById("number");
+var length = document.getElementById("length");
+
+// When the user clicks on the password field, show the message box
+myInput.onfocus = function() {
+  document.getElementById("message").style.display = "block";
+}
+
+// When the user clicks outside of the password field, hide the message box
+myInput.onblur = function() {
+  document.getElementById("message").style.display = "none";
+}
+
+// When the user starts to type something inside the password field
+myInput.onkeyup = function() {
+
+  // Validate length
+  if(myInput.value.length >= 6) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+}
+
 </script>
     
 </body>
