@@ -51,7 +51,7 @@
     <div class="text">
         <h1 class="wow flash">Welcome to Groom &amp; bride</h1>
         <p data-wow-delay=".95s" class="wow fadeInDown">Best Wedding Halls Resource In Egypt</p>
-        <a href="#dd" type="button" class="wow fadeIn">Download App</a>
+<!--        <a href="#dd" type="button" class="wow fadeIn">Download App</a>-->
     </div>
         </div>
 </section>
@@ -223,11 +223,10 @@
 
     <div class="container2" style="background-color:#f1f1f1">
       
-      <p class="psw">Forgot <a href="#">password?</a></p>
+      <p class="psw">Forgot <a>password?</a></p>
     </div>
   </form>
 </div>
-    
     </section>
 <!-- End Footer -->
 	<script type="text/javascript" src="js/jquery.min.js"></script>
@@ -337,7 +336,6 @@ function signIn(){
                 }
             
    var jsonResponse = JSON.parse(xhttp.responseText);
-  
         localStorage.setItem("token" , jsonResponse.user.token);
         localStorage.setItem("User" , jsonResponse.user.userName);
           window.location.href = 'homepage.html'
@@ -403,7 +401,6 @@ myInput.onkeyup = function() {
     length.classList.add("invalid");
   }
 }
-
 </script>
     
 </body>

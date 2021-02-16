@@ -51,16 +51,16 @@
 <!--start halls-->
     <section class="halls" id="halls">
         <div class="container-fluid">
+                    <div class="form-group">
+                    <select id="SearchByCategory" class="form-control" onchange="SearchByCategory()"><option  hidden>Choose Category</option></select>
+                    </div>
             <div class="row " id="demo">
-            </div>
-            <div class="row " id="t">
             </div>
         </div>
     </section>
 <!--end halls-->
 
 <!-- Start Footer -->
-    
 <footer>
   <div class="container">
     <div class="row">
@@ -116,10 +116,10 @@
 	<script type="text/javascript" src="js/style.js"></script>
 <!--	<script type="text/javascript"> new WOW().init();</script>-->
     <script>
-    var i = 0, len;
 var User = window.localStorage.getItem('User');
  document.getElementById("username").innerHTML = User;
-
+var token = window.localStorage.getItem('token');
+    var i = 0, len;
         
         
 $(document).ready(function () {
@@ -144,39 +144,35 @@ $(document).ready(function () {
       });
     }
   });
-    
-    
-  var token = window.localStorage.getItem('token');
-    var i = 0, len;
-    displayCD(i);
-    
-    function displayCD(i) {
-        var obj, dbParam, xmlhttp, myObj, x, txt = "";
+      });
+        function SearchByCategory(){
         obj = { table: "customers", limit: 20 };
-        dbParam = JSON.stringify(obj);
-        xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-            myObj = JSON.parse(this.responseText);
-                          
-//              localStorage.setItem("cate" , myObj.data.hallCategory[i]);
-            for (i = 0; i < myObj.data.length; i++) {
-              txt +=  "<div class='col-md-3 col-xs-6 t1t'>" + "<div class=card-hall>" + "<div class=slideshows-container>" + "<div class='mySlidess fadey'>" + '<img src="' + myObj.data[i].hallImage + '">' + "</div>" + "</div>" + "<h1 class=name>" + myObj.data[i].hallName + "</h1>" + "<p class=price> Price: " +  myObj.data[i].hallPrice + "</p>" + "<p class=cat> Category: " +  myObj.data[i].hallCategory.name + "</p>"  + "<p class=desc>" + myObj.data[i].hallDescription + "</p>" + "<p class=loc> Location: "  + myObj.data[i].hallAdress + "</p>" + "<p><button> Show" + "</button></p>" + "</div>" + "</div>";
-                
-            }
-
-              
-            document.getElementById("demo").innerHTML = txt;
-          }
-        };
-        xmlhttp.open("POST", "https://hidden-ocean-87285.herokuapp.com/halls/listHalls", true);
-        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xmlhttp.send();
-        
-
-    }
+      $.ajax({
+        "url": "https://hidden-ocean-87285.herokuapp.com/halls/searchByCategory",
+        "type": "POST",
+        data : {
+          hallCategory : document.getElementById("SearchByCategory").value,
+            limit: 2000,
+            offset: 0
+        },
+    beforeSend: function (xhr) {
+      /* Authorization header */
+      xhr.setRequestHeader('authorization', 'Bearer ' + token);
+      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    },
+    success: function (data) {
+        alert("aa");
+        $('#demo').empty();
+      $.each(data.data, function (i, obj) {
+          $('#demo').append("<div class='col-md-3 col-xs-6 t1t'>" + "<div class=card-hall>" + "<div class=slideshows-container>" + "<div class='mySlidess fadey'>" + '<img src="' + obj.hallImage + '">' + "</div>" + "</div>" + "<h1 class=name>" + obj.hallName + "</h1>" + "<p class=price> Price: " +  obj.hallPrice + "</p>" + "<p class=cat> Category: " +  obj.hallCategory.name + "</p>"  + "<p class=desc>" + obj.hallDescription + "</p>" + "<p class=loc> Location: "  + obj.hallAdress + "</p>" + "<p><button> Show" + "</button></p>" + "</div>" + "</div>");          
+            
       });
 
+    }
+  });
+        
+        }
+  
 
 
 </script>
