@@ -49,12 +49,11 @@
         </section>
 <!-- End navbar -->
 <!--start halls-->
-    <section class="halls" id="halls">
-        <div class="container-fluid">
-            <div class="row " id="demo">
+    <section class="container halls" id="halls">
+        <div class="row">
+            <div class="col-md-12 col-sm-9 " id="demo">
             </div>
-            <div class="row " id="t">
-            </div>
+
         </div>
     </section>
 <!--end halls-->
@@ -161,7 +160,34 @@ $(document).ready(function () {
                           
 //              localStorage.setItem("cate" , myObj.data.hallCategory[i]);
             for (i = 0; i < myObj.data.length; i++) {
-              txt +=  "<div class='col-md-3 col-xs-6 t1t'>" + "<div class=card-hall>" + "<div class=slideshows-container>" + "<div class='mySlidess fadey'>" + '<img src="' + myObj.data[i].hallImage + '">' + "</div>" + "</div>" + "<h1 class=name>" + myObj.data[i].hallName + "</h1>" + "<p class=price> Price: " +  myObj.data[i].hallPrice + "</p>" + "<p class=cat> Category: " +  myObj.data[i].hallCategory.name + "</p>"  + "<p class=desc>" + myObj.data[i].hallDescription + "</p>" + "<p class=loc> Location: "  + myObj.data[i].hallAdress + "</p>" + "<p><button> Show" + "</button></p>" + "</div>" + "</div>";
+              txt +=    "<div class='main-post t1t'>" +
+                            "<div class= 'row'>" +
+                                "<div class='col-md-6'>" +
+                                    '<img class= "img-responsive img-thumbnail" src="' + myObj.data[i].hallImage + '">' +
+                                "</div>" +
+                                "<div class='col-md-6'>" +
+                                    "<h3 class='post-title'>" +
+                                        myObj.data[i].hallName +
+                                    "</h3>" +
+                                    "<span class='post-data'>" +
+                                        "Price: " + "<i class='fas fa-dollar-sign fa-fw'></i>" +  myObj.data[i].hallPrice + ", " +
+                                    "</span>" +
+                                    "<span class='post-cate'>" +
+                                        "Category: " + "<i class='fa fa-tags fa-fw'></i> " + myObj.data[i].hallCategory.name +
+                                    "</span>" +
+                                    "<div class='post-content'>" +
+                                        myObj.data[i].hallDescription +
+                                        "<button class='btn btn-primary cl'>" + "<a href='#'>" + "View Post" + "</a>" + "</button>" +
+                                    "</div>" +
+                                "</div>" +
+                            "</div>" +
+                            "<hr>" + 
+                            "<p class='loc'>" +
+                                "Location: " + "<i class='fas fa-map-marker-alt fa-fw'></i>" + myObj.data[i].hallAdress +
+                            "</p>" +
+                        "</div>";
+                  
+//                  "<div class='main-post t1t'>" + "<div class= row>" + "<div class= col-md-6>" + "<div class='mySlidess fadey'>" + '<img src="' + myObj.data[i].hallImage + '">' + "</div>" + "</div>" + "<h1 class=name>" + myObj.data[i].hallName + "</h1>" + "<p class=price> Price: " +  myObj.data[i].hallPrice + "</p>" + "<p class=cat> Category: " +  myObj.data[i].hallCategory.name + "</p>"  + "<p class=desc>" + myObj.data[i].hallDescription + "</p>" + "<p class=loc> Location: "  + myObj.data[i].hallAdress + "</p>" + "<p><button> Show" + "</button></p>" + "</div>" + "</div>";
                 
             }
 

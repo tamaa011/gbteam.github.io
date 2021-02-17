@@ -39,6 +39,74 @@ body {
 }
 /*/End navbar/*/
 /*start halls*/
+
+/*start main posts*/
+.halls .main-post {
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #d8d8d8;
+    margin-bottom: 20px;
+}
+/*end main posts*/
+
+/*start post title*/
+.halls .main-post h3 {
+    margin: 0 0 10px;
+    color: #000;
+}
+/*end post title*/
+
+/*start img*/
+
+.halls .main-post img {
+    display: block;
+    margin: 10px 0 10px;
+}
+/*end img*/
+
+/*start p*/
+.halls .main-post .post-content {
+    line-height: 1.7;
+    color: #333;
+/*
+    display: -webkit-box;
+   -webkit-line-clamp: 3; 
+   -webkit-box-orient: vertical;
+*/
+}
+/*end p*/
+.main-post .post-content .cl {
+    display: block;
+    height: 35px;
+    background-color: #FD6275;
+    border-radius: 20px;
+    padding: 5px;
+    border: 0;
+    margin-top: 20px;
+}
+.main-post .post-content .cl a{
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    margin: 20px;
+}
+/*start I*/
+.halls .main-post i {
+    color: #999;
+    font-size: 15px;
+    margin-bottom: 15px
+}
+/*end I*/
+/*start span*/
+.halls .main-post .post-date,
+.halls .main-post .post-cate, 
+.halls .main-post .loc {
+    font-size: 15px;
+}
+/*end span*/
+
+
+/*
 .card-hall {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 350px;
@@ -63,7 +131,7 @@ body {
     height: 40px;
     overflow: hidden;
    display: -webkit-box;
-   -webkit-line-clamp: 2; /* number of lines to show */
+   -webkit-line-clamp: 2;  number of lines to show 
    -webkit-box-orient: vertical;
 }
 .loc {
@@ -90,9 +158,11 @@ body {
 .card-hall button:hover {
   opacity: 0.7;
 }
+*/
 /*end halls*/
 /*start slide show*/
 /* Slideshow container */
+/*
 .mySlidess img {
     width: 300px;
     height: 163.11px;
@@ -103,15 +173,18 @@ body {
   margin: auto;
 }
 img {vertical-align: middle;}
+*/
 
 
 
 /* On smaller screens, decrease text size */
+/*
 @media only screen and (max-width: 600px) {
     .name {font-size: 22px;}
     .price {font-size: 16px;}
     .card-hall {height: 390px}
 }
+*/
 /*end slide show*/
 /*/start footer/*/
 .card {
