@@ -51,7 +51,7 @@ body {
 /*start pic*/
 .down-pic{
     margin-top: -20px;
-    background-image: url(../img/edward-cisneros-446789-unsplash.png);
+    background-image: url(../img/WhatsApp%20Image%202021-02-17%20at%209.23.30%20PM.jpeg);
     background-size: cover;
     background-position: center;
     height: 660px;
@@ -69,7 +69,7 @@ body {
 .down-pic .text h1 {
     color: #fd6275;
     background: #FFFFFF; /* Fallback color */
-    background: rgba(255, 255, 255, 0.19); /* Black background with 0.6 opacity */
+    background: rgba(255, 255, 255, 0.63); /* Black background with 0.6 opacity */
     font-size: 29px;
     border-radius: 40px;
     width: 100%;
