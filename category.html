@@ -49,12 +49,12 @@
         </section>
 <!-- End navbar -->
 <!--start halls-->
-    <section class="halls" id="halls">
-        <div class="container-fluid">
+    <section class="container halls" id="halls">
+        <div class="row">
                     <div class="form-group">
                     <select id="SearchByCategory" class="form-control" onchange="SearchByCategory()"><option  hidden>Choose Category</option></select>
                     </div>
-            <div class="row " id="demo">
+            <div class="col-md-12 col-sm-9 " id="demo">
             </div>
         </div>
     </section>
@@ -107,7 +107,7 @@
                 </div>
             </div>
         </div>
-       <i class="far fa-copyright"><span>Copyright 2019 - All Rights Reserved Developed By GB Team</span></i> 
+       <i class="far fa-copyright"><span>Copyright 2021 - Team GB</span></i> 
     </div>
 </footer>
 <!-- End Footer -->
@@ -161,11 +161,36 @@ $(document).ready(function () {
       xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     },
     success: function (data) {
-        alert("aa");
         $('#demo').empty();
       $.each(data.data, function (i, obj) {
-          $('#demo').append("<div class='col-md-3 col-xs-6 t1t'>" + "<div class=card-hall>" + "<div class=slideshows-container>" + "<div class='mySlidess fadey'>" + '<img src="' + obj.hallImage + '">' + "</div>" + "</div>" + "<h1 class=name>" + obj.hallName + "</h1>" + "<p class=price> Price: " +  obj.hallPrice + "</p>" + "<p class=cat> Category: " +  obj.hallCategory.name + "</p>"  + "<p class=desc>" + obj.hallDescription + "</p>" + "<p class=loc> Location: "  + obj.hallAdress + "</p>" + "<p><button> Show" + "</button></p>" + "</div>" + "</div>");          
+          $('#demo').append( "<div class='main-post t1t'>" +
+                            "<div class= 'row'>" +
+                                "<div class='col-md-6'>" +
+                                    '<img class= "img-responsive img-thumbnail" src="' + obj.hallImage + '">' +
+                                "</div>" +
+                                "<div class='col-md-6'>" +
+                                    "<h3 class='post-title'>" +
+                                        obj.hallName +
+                                    "</h3>" +
+                                    "<span class='post-data'>" +
+                                        "Price: " + "<i class='fas fa-dollar-sign fa-fw'></i>" +  obj.hallPrice + ", " +
+                                    "</span>" +
+                                    "<span class='post-cate'>" +
+                                        "Category: " + "<i class='fa fa-tags fa-fw'></i> " + obj.hallCategory.name +
+                                    "</span>" +
+                                    "<div class='post-content'>" +
+                                        obj.hallDescription +
+                                        "<button class='btn btn-primary cl'>" + "<a href='#'>" + "View Post" + "</a>" + "</button>" +
+                                    "</div>" +
+                                "</div>" +
+                            "</div>" +
+                            "<hr>" + 
+                            "<p class='loc'>" +
+                                "Location: " + "<i class='fas fa-map-marker-alt fa-fw'></i>" + obj.hallAdress +
+                            "</p>" +
+                        "</div>");          
             
+//          "<div class='col-md-3 col-xs-6 t1t'>" + "<div class=card-hall>" + "<div class=slideshows-container>" + "<div class='mySlidess fadey'>" + '<img src="' + obj.hallImage + '">' + "</div>" + "</div>" + "<h1 class=name>" + obj.hallName + "</h1>" + "<p class=price> Price: " +  obj.hallPrice + "</p>" + "<p class=cat> Category: " +  obj.hallCategory.name + "</p>"  + "<p class=desc>" + obj.hallDescription + "</p>" + "<p class=loc> Location: "  + obj.hallAdress + "</p>" + "<p><button> Show" + "</button></p>" + "</div>" + "</div>"
       });
 
     }
