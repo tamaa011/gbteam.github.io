@@ -550,7 +550,7 @@ span.psw {
     color: #fd6275;
     background: #FFFFFF; /* Fallback color */
     background: rgba(255, 255, 255, 0.63); /* Black background with 0.6 opacity */
-    font-size: 18px;
+    font-size: 22px;
     border-radius: 40px;
     width: 100%;
     padding: 11px;
@@ -561,6 +561,6 @@ span.psw {
     .down-pic-p {
     font-family: 'Playball', cursive;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 22px;
 }
 }
