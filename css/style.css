@@ -62,7 +62,7 @@ body {
       text-align: center;
       position: absolute;
       top: 45%;
-      left: 50%;
+      left: 52%;
       transform: translate(-50%, -50%);
       color: #000;
     
@@ -75,7 +75,7 @@ body {
 .down-pic .text h1 {
     color: #fd6275;
     background: #FFFFFF; /* Fallback color */
-    background: rgba(255, 255, 255, 0.63); /* Black background with 0.6 opacity */
+    background: rgba(255, 255, 255, 0.72); /* Black background with 0.6 opacity */
     font-size: 33px;
     border-radius: 40px;
     width: 100%;
