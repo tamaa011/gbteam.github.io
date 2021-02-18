@@ -37,6 +37,14 @@ body {
     margin-left: 20px;
     
 }
+.navbar .collapse .nav li .bor {
+    height: 45px;
+    background-color: #FD6275;
+    color: #FFFFFF;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
 /*/End navbar/*/
 /*start halls*/
 
