@@ -64,13 +64,19 @@ body {
       top: 45%;
       left: 50%;
       transform: translate(-50%, -50%);
-      color: white;
+      color: #000;
+    
+}
+.down-pic-p {
+    font-family: 'Playball', cursive;
+    font-weight: bold;
+    font-size: 30px;
 }
 .down-pic .text h1 {
     color: #fd6275;
     background: #FFFFFF; /* Fallback color */
     background: rgba(255, 255, 255, 0.63); /* Black background with 0.6 opacity */
-    font-size: 29px;
+    font-size: 33px;
     border-radius: 40px;
     width: 100%;
     padding: 11px;
@@ -79,10 +85,6 @@ body {
     font-family: 'Great Vibes', cursive;
 
     
-}
-.down-pic .text p {
-    font-size: 20px;
-    font-family: Helvetica Neue;
 }
 .down-pic a{
       border: none;
@@ -542,3 +544,23 @@ span.psw {
   content: "✖";
 }
 /*pass valid*/
+
+@media  (max-width: 600px) {
+    .down-pic .text h1 {
+    color: #fd6275;
+    background: #FFFFFF; /* Fallback color */
+    background: rgba(255, 255, 255, 0.63); /* Black background with 0.6 opacity */
+    font-size: 18px;
+    border-radius: 40px;
+    width: 100%;
+    padding: 11px;
+    margin-top: 145px;
+    font-weight: bold;
+    font-family: 'Great Vibes', cursive;
+    }
+    .down-pic-p {
+    font-family: 'Playball', cursive;
+    font-weight: bold;
+    font-size: 18px;
+}
+}
