@@ -37,6 +37,9 @@ body {
     margin-left: 20px;
     
 }
+.navbar .collapse .nav li .bor i{
+    font-size: 15px;
+}
 .navbar .collapse .nav li .bor {
     height: 45px;
     background-color: #FD6275;
