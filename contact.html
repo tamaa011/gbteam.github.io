@@ -26,7 +26,7 @@
         <span class="icon-bar"></span>
       </button>
 
-      <img class="wow fadeInLeft" src="img/logo2.png" width="77" height="65.69" style="border-radius: 30%;">
+      <a href="index.html"><img class="wow fadeInLeft" src="img/logo2.png" width="77" height="65.69" style="border-radius: 30%;"></a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
@@ -61,7 +61,7 @@
 
             <button id="contact-send" type="button" class="btn btn-primary btn-lg btn-block btt wow flipInX" onclick="sendFeedback()">Send</button>
           </div>
-<!--    <p class="p">Message Sent Successfully</p>-->
+    <p class="p" style="font-size: 30px;">Feedback Sent Successfully</p>
 <!--end form-->
 <!-- Start Footer -->
 <footer>
@@ -100,8 +100,10 @@
                 <div class="card trd" style="">
                     <ul>
                      <li class="h1">Support</li>
+<!--
                       <li><a href="Privacy%20Policy.html" class="active">Privacy Policy</a></li>
                       <li><a href="terms.html">Terms Of Service</a></li>
+-->
                       <li><a href="contact.html">Contact Us</a></li>
                       <li><a href="pri.html">Admin Website</a></li>
                     </ul>
@@ -109,7 +111,7 @@
                 </div>
             </div>
         </div>
-       <i class="far fa-copyright"><span>Copyright 2019 - All Rights Reserved Developed By GB Team</span></i> 
+       <i class="far fa-copyright"><span>Copyright 2021 - Team GB</span></i> 
     </div>
 </footer>
     <section class="model">
@@ -117,6 +119,7 @@
   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
   <form class="modal-content" action="/action_page.php">
     <div class="container">
+        <h1 class="demo"></h1>
         <img src="img/logo2.png">
       <h1>Sign Up</h1>
       <p>Please fill this form to create an account.</p>
@@ -237,8 +240,9 @@ window.onclick = function(event) {
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
       },
       success: function (data) {
-        alert(data.message);
-          window.location.href = 'contact.html'
+//        alert(data.message);
+          setInterval(function(){ window.location.href = 'contact.html'; }, 2000);
+          
       },
       error: function (data) {
         alert(data.field);
