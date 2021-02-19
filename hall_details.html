@@ -47,13 +47,63 @@
         </section>
 <!-- End navbar -->
 <!--start halls-->
-    <section class="container halls" id="halls">
-        <div class="row">
-            <div class="col-md-12 col-sm-9 " id="demo">
-            </div>
+      <div class="main-panel">        
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Hall Details</h4>
+                  <form class="forms-sample">
+                    <div class="form-group">
+                      <label for="exampleInputName1">Hall Name</label>
+                      <input type="text" class="form-control" id="hdName" name="hallName" >
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail3">Hall Adress</label>
+                      <input type="text" class="form-control" id="hdAddress" name="hallAdress" >
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword4">Hall Description</label>
+                        <textarea class="form-control" id="hdDescription" name="hallDescription" required rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleSelectGender">Hall Price</label>
+                        <input type="text" class="form-control" id="hdPrice" name="hallPrice" >
+                      </div>
 
+                    <div class="form-group">
+                      <label for="exampleInputCity1">Hall Location Long</label>
+                      <input type="text" class="form-control" id="hdLong" name="hallLocationLong" >
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputCity1">Hall Location Lat</label>
+                      <input type="text" class="form-control" id="hdLat" name="hallLocationLat" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleTextarea1">Hall Special Offers</label>
+                      <textarea class="form-control" id="hdOffer"  name="hallSpecialOffers" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputCity1">Hall Phone Number</label>
+                      <input type="text" class="form-control" id="hdPhone" name="hallPhoneNumber" >
+                    </div>
+                    <div class="form-group">
+                      <label>Hall Image</label>
+                      <div class="input-group col-xs-12"  id="hdImages">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+
+        <!-- partial -->
+      </div>
 <!--end halls-->
 
 <!-- Start Footer -->
@@ -119,99 +169,39 @@
 var User = window.localStorage.getItem('User');
  document.getElementById("username").innerHTML = User;
 
-        
-        
-$(document).ready(function () {
-        if(localStorage.getItem("token") === null) {
+$(document).ready(function(){
+            if(localStorage.getItem("token") === null) {
         window.location.href = 'index.html';
     }  
-      obj = { table: "customers", limit: 20 };
-      $.ajax({
-    url: "https://hidden-ocean-87285.herokuapp.com/category/listCategories",
-    method: "POST",
-    data: {
-      x: JSON.stringify(obj)
-    },
+    var token = window.localStorage.getItem('token');
+   var id= window.localStorage.getItem('Id');
+ $.ajax({
+    url: "https://hidden-ocean-87285.herokuapp.com/halls/"+id,
+    method: "get",
+   
     beforeSend: function (xhr) {
       /* Authorization header */
       xhr.setRequestHeader('authorization', 'Bearer ' + token);
       xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     },
     success: function (data) {
-      $.each(data.data, function (i, obj) {
-        
-        $('#SearchByCategory').append($('<option>').text(obj.name).attr('value', obj._id));
+        window.localStorage.removeItem('Id');
+        var halldata = data.data;
+$("#hdName").val(halldata.hallName);
+$("#hdDescription").val(halldata.hallDescription);
+$("#hdPrice").val(halldata.hallPrice);
+$("#hdLong").val(halldata.hallLocationLong);
+$("#hdLat").val(halldata.hallLocationLat);
+$("#hdOffer").val(halldata.hallSpecialOffers);
+$("#hdPhone").val(halldata.hallPhoneNumber);
+$("#hdAddress").val(halldata.hallAdress);
 
-      });
+$.each( halldata.hallImage, function( key, value ) {
+    $("#hdImages").append('<img src="'+ value+'"/>'); 
+});
     }
   });
-    
-    
-  var token = window.localStorage.getItem('token');
-    var i = 0, len;
-    displayCD(i);
-    
-    function displayCD(i) {
-        var obj, dbParam, xmlhttp, myObj, x, txt = "";
-        obj = { table: "customers", limit: 20 };
-        dbParam = JSON.stringify(obj);
-        xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-            myObj = JSON.parse(this.responseText);
-                          
-//              localStorage.setItem("cate" , myObj.data.hallCategory[i]);
-            for (i = 0; i < myObj.data.length; i++) {
-            var id = "'"+myObj.data[i]._id.toString()+"'";
-              txt +=    "<div class='main-post t1t'>" +
-                            "<div class= 'row'>" +
-                                "<div class='col-md-6'>" +
-                                    '<img class= "img-responsive img-thumbnail" src="' + myObj.data[i].hallImage + '">' +
-                                "</div>" +
-                                "<div class='col-md-6'>" +
-                                    "<h3 class='post-title'>" +
-                                        myObj.data[i].hallName +
-                                    "</h3>" +
-                                    "<span class='post-data'>" +
-                                        "Price: " + "<i class='fas fa-dollar-sign fa-fw'></i>" +  myObj.data[i].hallPrice + ", " +
-                                    "</span>" +
-                                    "<span class='post-cate'>" +
-                                        "Category: " + "<i class='fa fa-tags fa-fw'></i> " + myObj.data[i].hallCategory.name +
-                                    "</span>" +
-                                    "<div class='post-content'>" +
-                                        myObj.data[i].hallDescription +
-                                        '<button class="btn btn-primary cl" onclick="HallDetails(' + id +');">' + "<a href='#'>" + "View Post" + "</a>" + '</button>' +
-                                    "</div>" +
-                                "</div>" +
-                            "</div>" +
-                            "<hr>" + 
-                            "<p class='loc'>" +
-                                "Location: " + "<i class='fas fa-map-marker-alt fa-fw'></i>" + myObj.data[i].hallAdress +
-                            "</p>" +
-                            "<p class='loc hidden'>" +
-                                  myObj.data[i]._id +
-                            "</p>" +
-                        "</div>";
-                                  
-            }
-
-              
-            document.getElementById("demo").innerHTML = txt;
-          }
-        };
-        xmlhttp.open("POST", "https://hidden-ocean-87285.herokuapp.com/halls/listHalls", true);
-        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xmlhttp.send();
-        
-
-    }
-      });
-   function HallDetails(id){
-     
-     localStorage.setItem("Id" , id);
-
-       window.open("Hall_details.html");
-  }
+})
         
   $("#logout").click(function(){
     window.localStorage.clear();

@@ -90,12 +90,14 @@ body {
     padding: 5px;
     border: 0;
     margin-top: 20px;
+    outline: none;
 }
 .main-post .post-content .cl a{
     color: #fff;
     text-align: center;
     text-decoration: none;
     margin: 20px;
+    outline: none;
 }
 /*start I*/
 .halls .main-post i {
