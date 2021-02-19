@@ -115,6 +115,7 @@ $(document).ready(function () {
     success: function (data) {
         $('#demo').empty();
       $.each(data.data, function (i, obj) {
+          var id = "'"+obj._id.toString()+"'";
           $('#demo').append( "<div class='main-post t1t'>" +
                             "<div class= 'row'>" +
                                 "<div class='col-md-6'>" +
@@ -132,7 +133,7 @@ $(document).ready(function () {
                                     "</span>" +
                                     "<div class='post-content'>" +
                                         obj.hallDescription +
-                                        "<button class='btn btn-primary cl'>" + "<a href='#'>" + "View Post" + "</a>" + "</button>" +
+                                        '<button class="btn btn-primary cl" onclick="HallDetails(' + id +');">' + "<a href='#'>" + "View Post" + "</a>" + '</button>' +                                 
                                     "</div>" +
                                 "</div>" +
                             "</div>" +
@@ -140,15 +141,23 @@ $(document).ready(function () {
                             "<p class='loc'>" +
                                 "Location: " + "<i class='fas fa-map-marker-alt fa-fw'></i>" + obj.hallAdress +
                             "</p>" +
+                            "<p class='loc hidden'>" +
+                                  obj._id +
+                            "</p>" +
                         "</div>");          
             
-//          "<div class='col-md-3 col-xs-6 t1t'>" + "<div class=card-hall>" + "<div class=slideshows-container>" + "<div class='mySlidess fadey'>" + '<img src="' + obj.hallImage + '">' + "</div>" + "</div>" + "<h1 class=name>" + obj.hallName + "</h1>" + "<p class=price> Price: " +  obj.hallPrice + "</p>" + "<p class=cat> Category: " +  obj.hallCategory.name + "</p>"  + "<p class=desc>" + obj.hallDescription + "</p>" + "<p class=loc> Location: "  + obj.hallAdress + "</p>" + "<p><button> Show" + "</button></p>" + "</div>" + "</div>"
       });
 
     }
   });
         
         }
+           function HallDetails(id){
+     
+     localStorage.setItem("Id" , id);
+
+       window.open("Hall_details.html");
+  }
   
   $("#logout").click(function(){
     window.localStorage.clear();

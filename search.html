@@ -96,6 +96,7 @@ var token = window.localStorage.getItem('token');
     success: function (data) {
         $('#demo').empty();
       $.each(data.data, function (i, obj) {
+          var id = "'"+obj._id.toString()+"'";
           $('#demo').append( "<div class='main-post t1t'>" +
                             "<div class= 'row'>" +
                                 "<div class='col-md-6'>" +
@@ -113,13 +114,16 @@ var token = window.localStorage.getItem('token');
                                     "</span>" +
                                     "<div class='post-content'>" +
                                         obj.hallDescription +
-                                        "<button class='btn btn-primary cl'>" + "<a href='#'>" + "View Post" + "</a>" + "</button>" +
+                                        '<button class="btn btn-primary cl" onclick="HallDetails(' + id +');">' + "<a href='#'>" + "View Post" + "</a>" + '</button>' +
                                     "</div>" +
                                 "</div>" +
                             "</div>" +
                             "<hr>" + 
                             "<p class='loc'>" +
                                 "Location: " + "<i class='fas fa-map-marker-alt fa-fw'></i>" + obj.hallAdress +
+                            "</p>" +
+                            "<p class='loc hidden'>" +
+                                  obj._id +
                             "</p>" +
                         "</div>");          
             
@@ -132,6 +136,12 @@ var token = window.localStorage.getItem('token');
   });
         
         }
+        function HallDetails(id){
+     
+     localStorage.setItem("Id" , id);
+
+       window.open("Hall_details.html");
+  }
   
   $("#logout").click(function(){
     window.localStorage.clear();
