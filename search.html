@@ -49,9 +49,11 @@
 <!--start halls-->
     <section class="container halls" id="halls">
         <div class="row">
-                    <div class="form-group">
-                    <select id="SearchByCategory" class="form-control" onchange="SearchByCategory()"><option  hidden>Choose Category</option></select>
-                    </div>
+            <div class="form-group">
+            <input type="text" class="form-control cont" id="SearchByName_Name" placeholder="Name" name="hallName" required>
+                <br>
+            <button id="submit" onclick="SearchByName()" value="Search" class=" btns">Search</button>
+            </div>
             <div class="col-md-12 col-sm-9 " id="demo">
             </div>
         </div>
@@ -69,41 +71,20 @@
 var User = window.localStorage.getItem('User');
  document.getElementById("username").innerHTML = User;
 var token = window.localStorage.getItem('token');
-    var i = 0, len;
         
-        
-$(document).ready(function () {
-            if(localStorage.getItem("token") === null) {
+    $(document).ready(function () {
+        if(localStorage.getItem("token") === null) {
         window.location.href = 'index.html';
-    } 
-      obj = { table: "customers", limit: 20 };
-      $.ajax({
-    url: "https://hidden-ocean-87285.herokuapp.com/category/listCategories",
-    method: "POST",
-    data: {
-      x: JSON.stringify(obj)
-    },
-    beforeSend: function (xhr) {
-      /* Authorization header */
-      xhr.setRequestHeader('authorization', 'Bearer ' + token);
-      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    },
-    success: function (data) {
-      $.each(data.data, function (i, obj) {
+    }  
+    }); 
         
-        $('#SearchByCategory').append($('<option>').text(obj.name).attr('value', obj._id));
-
-      });
-    }
-  });
-      });
-        function SearchByCategory(){
+        function SearchByName(){
         obj = { table: "customers", limit: 20 };
       $.ajax({
-        "url": "https://hidden-ocean-87285.herokuapp.com/halls/searchByCategory",
+        "url": "https://hidden-ocean-87285.herokuapp.com/halls/searchByName",
         "type": "POST",
         data : {
-          hallCategory : document.getElementById("SearchByCategory").value,
+          hallName : document.getElementById("SearchByName_Name").value,
             limit: 2000,
             offset: 0
         },
@@ -142,10 +123,12 @@ $(document).ready(function () {
                             "</p>" +
                         "</div>");          
             
-//          "<div class='col-md-3 col-xs-6 t1t'>" + "<div class=card-hall>" + "<div class=slideshows-container>" + "<div class='mySlidess fadey'>" + '<img src="' + obj.hallImage + '">' + "</div>" + "</div>" + "<h1 class=name>" + obj.hallName + "</h1>" + "<p class=price> Price: " +  obj.hallPrice + "</p>" + "<p class=cat> Category: " +  obj.hallCategory.name + "</p>"  + "<p class=desc>" + obj.hallDescription + "</p>" + "<p class=loc> Location: "  + obj.hallAdress + "</p>" + "<p><button> Show" + "</button></p>" + "</div>" + "</div>"
       });
 
-    }
+    },
+    error: function (error) {
+          alert(document.getElementById("SearchByName_Name").value + " " + "This Hall Not Found");
+        }
   });
         
         }

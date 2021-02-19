@@ -23,10 +23,7 @@ body {
 .navbar-default .navbar-brand:hover {
     color: #FD6275;
 }
-.navbar-inverse .navbar-nav>li>a {
-	color: #FFF;
 
-}
 .navbar-default .navbar-nav>li>a:hover{color:#FD6275;}
 .navbar-default .navbar-nav>li>.n:hover{color:#241E1E;}
 
@@ -47,7 +44,6 @@ body {
     border-radius: 20px;
     margin-top: 10px;
 }
-
 /*/End navbar/*/
 /*start halls*/
 
@@ -117,86 +113,23 @@ body {
 /*end span*/
 
 
-/*
-.card-hall {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 350px;
-    height: 450px;
-    margin: auto;
-    margin-bottom: 20px;
-    text-align: center;
-    overflow: hidden;
-}
-
-.price {
-  color: grey;
-  font-size: 20px;
-    text-align: center;
-}
-.cat {
-  color: grey;
-  font-size: 20px;
-    text-align: center;
-}
-.desc {
-    height: 40px;
-    overflow: hidden;
-   display: -webkit-box;
-   -webkit-line-clamp: 2;  number of lines to show 
-   -webkit-box-orient: vertical;
-}
-.loc {
-    text-align: left;
+.btns {
+    background-color: #FD6275;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     margin-left: 10px;
-    font-weight: bold;
-    max-height: 80px;
-    font-size: 12px;
-    
+    outline: none;
+    border: none;
 }
-
-.card-hall button {
-  border: none;
-  outline: 0;
-  padding: 12px;
-  color: white;
-  background-color: #FD6275;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
+.cont {
+    margin-left: 10px;
+    margin-right: 10px;
 }
-
-.card-hall button:hover {
-  opacity: 0.7;
-}
-*/
-/*end halls*/
-/*start slide show*/
-/* Slideshow container */
-/*
-.mySlidess img {
-    width: 300px;
-    height: 163.11px;
-}
-.slideshows-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
-img {vertical-align: middle;}
-*/
-
-
-
-/* On smaller screens, decrease text size */
-/*
-@media only screen and (max-width: 600px) {
-    .name {font-size: 22px;}
-    .price {font-size: 16px;}
-    .card-hall {height: 390px}
-}
-*/
-/*end slide show*/
 /*/start footer/*/
 .card {
   
