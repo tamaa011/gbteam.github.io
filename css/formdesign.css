@@ -1,0 +1,66 @@
+
+#survey-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+  margin: 2.5em;
+    margin-top: 15px;
+}
+
+#name, #email, #body, #Title, #SearchByName_Name, #new, #re, #UserName, #UserEmail, #UserPassword, #ha, #hd ,#hp ,#hl ,#hla ,#hs ,#hp ,#hi,#Updatedhallname ,#UpdatedHallAdress ,#Updatedhalldescription ,#Updatedhallprice ,#Updatedhalllong ,#Updatedhalllat ,#Updatedhallspecial ,#Updatedhallphone ,#Updatedhallimage, #hdName, #hdDescription, #hdPrice, #hdLong, #hdLat, #hdOffer, #hdPhone, #hdAddress ,#hpn ,#REPassword{
+  width: 60%;
+  margin-bottom: 1em;
+  border: 1px solid #707070;
+  padding: 0.5em;
+  resize: none;
+  border-radius: 10px;
+}
+
+label{
+  text-align: center;
+  border: none;
+  width: 100%;
+}
+
+@media (max-width: 511px){
+#name, #email, #body, #Title, #SearchByName_Name, #new, #re, #UserName, #UserEmail, #UserPassword, #ha, #hd ,#hp ,#hl ,#hla ,#hs ,#hp ,#hi,#Updatedhallname ,#UpdatedHallAdress ,#Updatedhalldescription ,#Updatedhallprice ,#Updatedhalllong ,#Updatedhalllat ,#Updatedhallspecial ,#Updatedhallphone ,#Updatedhallimage, #hdName, #hdDescription, #hdPrice, #hdLong, #hdLat, #hdOffer, #hdPhone, #hdAddress ,#hpn ,#REPassword{
+    width: 100%;
+  }
+}
+
+#submit, #UpdateHallSubmit{
+  border-radius: 10px;
+  width: 30%;
+    padding: 0.6em;
+    background-color: #FD6275;
+    color: white;
+    border: none;
+    margin-top: 35px;
+}
+
+#survey-form select option {
+      width: 60%;
+  margin-bottom: 1em;
+  border: 1px solid #707070;
+  padding: 0.5em;
+  resize: none;
+  border-radius: 10px;
+}
+#survey-form .roles {
+    width: 60%;
+}
+.add select {
+      width: 60%;
+  margin-bottom: 1em;
+  border: 1px solid #707070;
+  padding: 0.6em;
+  resize: none;
+  border-radius: 10px;
+}
+.add .move {
+    margin-left: 247px;
+}
+ p{
+     margin-bottom: -17px;
+}
